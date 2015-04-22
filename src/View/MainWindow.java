@@ -1,28 +1,54 @@
 package View;
 
+import Control.MainWindowController;
+import IHM.ImagePanel;
+
+import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * Created by duplai_g on 4/21/15.
  */
 public class MainWindow extends JFrame
 {
-    private JMenuBar menuBar;
+    private Menu menu;
+    private MainWindowController mainWindowController = new MainWindowController();
 
     public MainWindow()
     {
-        JButton button1 = new JButton("Button 1");
-        JPanel panel = new JPanel();
-        panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
-        panel.add(button1);
+        //testImagePanel();
+        JButton b = new JButton("Toast");
+        b.setToolTipText("test");
+        b.addActionListener(mainWindowController);
 
-        setContentPane(panel);
         setTitle("MyPhotoshop");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(800, 600);
+
+        menu = new Menu();
+        setJMenuBar(menu);
+
+        add(b);
+
         setVisible(true);
+    }
+
+    private void testImagePanel()
+    {
+        JPanel panel;
+        BufferedImage bufferedImage = null;
+        //
+        try
+        {
+            bufferedImage = ImageIO.read(new File("ressources/images/test.png"));
+        } catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        panel = new ImagePanel(bufferedImage, "Banana !");
+        setContentPane(panel);
     }
 }
