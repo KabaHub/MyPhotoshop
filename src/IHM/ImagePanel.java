@@ -15,7 +15,6 @@ import javax.swing.JPanel;
  */
 public class ImagePanel extends JPanel implements Serializable
 {
-
 	private static final long serialVersionUID = -314171089120047242L;
 	private String fileName;
 	private final int width;

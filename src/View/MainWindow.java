@@ -1,6 +1,6 @@
 package View;
 
-import Control.MainWindowController;
+import Control.Controller;
 import IHM.ImagePanel;
 
 import javax.imageio.ImageIO;
@@ -15,23 +15,18 @@ import java.io.IOException;
 public class MainWindow extends JFrame
 {
     private Menu menu;
-    private MainWindowController mainWindowController = new MainWindowController();
+    private Controller controller = new Controller();
 
     public MainWindow()
     {
         //testImagePanel();
-        JButton b = new JButton("Toast");
-        b.setToolTipText("test");
-        b.addActionListener(mainWindowController);
 
         setTitle("MyPhotoshop");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(800, 600);
 
-        menu = new Menu();
+        menu = new Menu(controller);
         setJMenuBar(menu);
-
-        add(b);
 
         setVisible(true);
     }
