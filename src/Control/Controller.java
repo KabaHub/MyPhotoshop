@@ -1,5 +1,7 @@
 package Control;
 
+import View.MainWindow;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -8,6 +10,12 @@ import java.awt.event.ActionListener;
  */
 public class Controller implements ActionListener
 {
+    MainWindow mainWindow;
+    public Controller(MainWindow mainWindow)
+    {
+        this.mainWindow = mainWindow;
+    }
+
     public void actionPerformed(ActionEvent e)
     {
         if (e.getActionCommand().contentEquals("File"))
@@ -15,7 +23,7 @@ public class Controller implements ActionListener
         }
         else if (e.getActionCommand().contentEquals("New Project"))
         {
-
+            mainWindow.testImagePanel();
         }
         else if (e.getActionCommand().contentEquals("Open Project"))
         {
@@ -24,6 +32,10 @@ public class Controller implements ActionListener
         else if (e.getActionCommand().contentEquals("Save Project"))
         {
 
+        }
+        else if (e.getActionCommand().contentEquals("Exit"))
+        {
+            System.exit(0);
         }
         else if (e.getActionCommand().contentEquals("Undo"))
         {
