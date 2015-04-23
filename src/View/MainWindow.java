@@ -6,11 +6,13 @@ import Model.*;
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  * Created by duplai_g on 4/21/15.
  */
-public class MainWindow extends JFrame
+public class MainWindow extends JFrame implements Observer
 {
     private Menu menu;
     private Controller controller = new Controller(this);
@@ -50,11 +52,9 @@ public class MainWindow extends JFrame
         jTabbedPane.add(name, panel);
     }
 
-    public void testImagePanel()
+    @Override
+    public void update(Observable o, Object arg)
     {
-        File f = new File("ressources/images/test.png");
-        Model m = new Model();
-        Project p = m.addProject(f);
-        addToTabbedPanel("Banana!", p.getImagePanel());
+
     }
 }

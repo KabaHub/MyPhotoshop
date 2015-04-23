@@ -3,6 +3,7 @@ package Control;
 import IHM.ImagePanel;
 import View.MainWindow;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -24,11 +25,9 @@ public class Controller implements ActionListener
         }
         else if (e.getActionCommand().contentEquals("New Project"))
         {
-            mainWindow.testImagePanel();
         }
         else if (e.getActionCommand().contentEquals("Open Project"))
         {
-
         }
         else if (e.getActionCommand().contentEquals("Save Project"))
         {
