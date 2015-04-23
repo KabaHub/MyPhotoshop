@@ -1,21 +1,27 @@
 package Control;
 
-import IHM.ImagePanel;
 import View.MainWindow;
+import Model.Model;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 /**
  * Created by duplai_g on 4/22/15.
  */
 public class Controller implements ActionListener
 {
-    MainWindow mainWindow;
-    public Controller(MainWindow mainWindow)
+    private Model model;
+    private MainWindow mainWindow;
+    private JFileChooser projectFileChooser = new JFileChooser(System.getProperty("user.dir"));
+    private JFileChooser imageFileChooser = new JFileChooser(System.getProperty("user.dir"));
+
+    public Controller(MainWindow mainWindow, Model model)
     {
         this.mainWindow = mainWindow;
+        this.model = model;
     }
 
     public void actionPerformed(ActionEvent e)
@@ -28,10 +34,23 @@ public class Controller implements ActionListener
         }
         else if (e.getActionCommand().contentEquals("Open Project"))
         {
+            if (projectFileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION)
+            {
+                File f = projectFileChooser.getSelectedFile();
+                System.out.println(f.getName());
+            }
+        }
+        else if (e.getActionCommand().contentEquals("Import Image"))
+        {
+            if (imageFileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION)
+            {
+                File f = imageFileChooser.getSelectedFile();
+                model.addProject(f);
+            }
         }
         else if (e.getActionCommand().contentEquals("Save Project"))
         {
-            System.out.println(((ImagePanel)mainWindow.getjTabbedPane().getSelectedComponent()).getFileName());
+            System.out.println(mainWindow.getCurrentTab().getFileName());
         }
         else if (e.getActionCommand().contentEquals("Exit"))
         {

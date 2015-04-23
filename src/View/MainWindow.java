@@ -1,6 +1,7 @@
 package View;
 
 import Control.Controller;
+import IHM.ImagePanel;
 import Model.*;
 
 import javax.swing.*;
@@ -15,8 +16,8 @@ import java.util.Observer;
 public class MainWindow extends JFrame implements Observer
 {
     private Menu menu;
-    private Controller controller = new Controller(this);
-
+    private Model model = new Model(this);
+    private Controller controller = new Controller(this, model);
 
     private JTabbedPane jTabbedPane = new JTabbedPane();
 
@@ -32,12 +33,10 @@ public class MainWindow extends JFrame implements Observer
         menu = new Menu(controller);
         setJMenuBar(menu);
 
-        //test
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BorderLayout());
         getContentPane().add(topPanel);
         topPanel.add(jTabbedPane, BorderLayout.CENTER);
-        // end test
 
         setVisible(true);
     }
@@ -52,9 +51,19 @@ public class MainWindow extends JFrame implements Observer
         jTabbedPane.add(name, panel);
     }
 
+    public ImagePanel getCurrentTab()
+    {
+        return (ImagePanel)this.getjTabbedPane().getSelectedComponent();
+    }
+
     @Override
     public void update(Observable o, Object arg)
     {
-
+        System.out.println(arg.getClass().getName());
+        if (arg.getClass().getName().contentEquals("Model.Project"))
+        {
+            Project newProject = (Project)arg;
+            addToTabbedPanel(newProject.getProjectName(), newProject.getImagePanel());
+        }
     }
 }
