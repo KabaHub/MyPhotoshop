@@ -14,6 +14,8 @@ public class MainWindow extends JFrame
 {
     private Menu menu;
     private Controller controller = new Controller(this);
+
+
     private JTabbedPane jTabbedPane = new JTabbedPane();
 
     // test
@@ -38,6 +40,11 @@ public class MainWindow extends JFrame
         setVisible(true);
     }
 
+    public JTabbedPane getjTabbedPane()
+    {
+        return jTabbedPane;
+    }
+
     public void addToTabbedPanel(String name, JPanel panel)
     {
         jTabbedPane.add(name, panel);
@@ -45,32 +52,9 @@ public class MainWindow extends JFrame
 
     public void testImagePanel()
     {
-        System.out.println("test");
         File f = new File("ressources/images/test.png");
         Model m = new Model();
         Project p = m.addProject(f);
         addToTabbedPanel("Banana!", p.getImagePanel());
-    }
-
-    public void createPage1()
-    {
-        panel1 = new JPanel();
-        panel1.setLayout( null );
-
-        JLabel label1 = new JLabel( "Username:" );
-        label1.setBounds( 10, 15, 150, 20 );
-        panel1.add( label1 );
-
-        JTextField field = new JTextField();
-        field.setBounds( 10, 35, 150, 20 );
-        panel1.add( field );
-
-        JLabel label2 = new JLabel( "Password:" );
-        label2.setBounds( 10, 60, 150, 20 );
-        panel1.add( label2 );
-
-        JPasswordField fieldPass = new JPasswordField();
-        fieldPass.setBounds( 10, 80, 150, 20 );
-        panel1.add( fieldPass );
     }
 }

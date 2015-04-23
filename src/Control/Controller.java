@@ -1,5 +1,6 @@
 package Control;
 
+import IHM.ImagePanel;
 import View.MainWindow;
 
 import java.awt.event.ActionEvent;
@@ -31,7 +32,7 @@ public class Controller implements ActionListener
         }
         else if (e.getActionCommand().contentEquals("Save Project"))
         {
-
+            System.out.println(((ImagePanel)mainWindow.getjTabbedPane().getSelectedComponent()).getFileName());
         }
         else if (e.getActionCommand().contentEquals("Exit"))
         {

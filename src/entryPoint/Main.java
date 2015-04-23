@@ -9,7 +9,7 @@ public class Main
 {
     public static void main(String[] args)
     {
-        MetalLookAndFeel.setCurrentTheme(new OceanTheme());
+        //MetalLookAndFeel.setCurrentTheme(new OceanTheme());
         MainWindow mainWindow = new MainWindow();
     }
 }
