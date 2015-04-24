@@ -33,37 +33,48 @@ public class MainWindow extends JFrame implements Observer
         menu = new Menu(controller);
         setJMenuBar(menu);
 
-        JPanel topPanel = new JPanel();
-        topPanel.setLayout(new BorderLayout());
-        getContentPane().add(topPanel);
-        topPanel.add(jTabbedPane, BorderLayout.CENTER);
+        this.getContentPane().setLayout(new BorderLayout());
+//        JPanel topPanel = new JPanel();
+//        topPanel.setLayout(new BorderLayout());
+//        topPanel.add(jTabbedPane, BorderLayout.CENTER);
+        this.getContentPane().add(jTabbedPane, BorderLayout.CENTER);
+
+        // Test
+        test();
 
         setVisible(true);
     }
 
-    public JTabbedPane getjTabbedPane()
+    public JTabbedPane getJTabbedPane()
     {
         return jTabbedPane;
     }
 
-    public void addToTabbedPanel(String name, JPanel panel)
+    public void addToTabbedPanel(String name, ProjectPane projectPanel)
     {
-        jTabbedPane.add(name, panel);
+        jTabbedPane.add(name, projectPanel);
+        getContentPane().validate();
+        getContentPane().repaint();
+        setVisible(true);
     }
-
     public ImagePanel getCurrentTab()
     {
-        return (ImagePanel)this.getjTabbedPane().getSelectedComponent();
+        return (ImagePanel)this.getJTabbedPane().getSelectedComponent();
+    }
+
+    public void test()
+    {
+       model.addProject(new File("ressources/images/test.png"));
     }
 
     @Override
     public void update(Observable o, Object arg)
     {
-        System.out.println(arg.getClass().getName());
         if (arg.getClass().getName().contentEquals("Model.Project"))
         {
             Project newProject = (Project)arg;
-            addToTabbedPanel(newProject.getProjectName(), newProject.getImagePanel());
+            ProjectPane projectPanel = new ProjectPane(newProject);
+            this.addToTabbedPanel(newProject.getProjectName(), projectPanel);
         }
     }
 }
