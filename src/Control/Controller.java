@@ -20,6 +20,7 @@ public class Controller implements ActionListener
 
     public Controller(MainWindow mainWindow, Model model)
     {
+        super();
         this.mainWindow = mainWindow;
         this.model = model;
     }
@@ -31,6 +32,7 @@ public class Controller implements ActionListener
         }
         else if (e.getActionCommand().contentEquals("New Project"))
         {
+            model.addProject();
         }
         else if (e.getActionCommand().contentEquals("Open Project"))
         {

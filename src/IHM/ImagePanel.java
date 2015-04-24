@@ -1,19 +1,19 @@
 package IHM;
 
-import java.awt.Graphics;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.Serializable;
 
 import javax.imageio.ImageIO;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 /**
  * We give you this class to help you display images.
  * You are free to use it or not, to modify it.
  */
-public class ImagePanel extends JPanel implements Serializable
+public class ImagePanel extends JPanel implements Serializable, Scrollable
 {
 	private static final long serialVersionUID = -314171089120047242L;
 	private String fileName;
@@ -110,4 +110,41 @@ public class ImagePanel extends JPanel implements Serializable
 		this.fileName = fileName;
 	}
 
+	@Override
+	public Dimension getPreferredSize() {
+		Dimension size = super.getPreferredSize();
+		size.width = width;
+		size.height = height;
+		return size;
+	}
+
+	@Override
+	public Dimension getPreferredScrollableViewportSize()
+	{
+		return getPreferredSize();
+	}
+
+	@Override
+	public int getScrollableUnitIncrement(Rectangle visibleRect, int orientation, int direction)
+	{
+		return 100;
+	}
+
+	@Override
+	public int getScrollableBlockIncrement(Rectangle visibleRect, int orientation, int direction)
+	{
+		return 200;
+	}
+
+	@Override
+	public boolean getScrollableTracksViewportWidth()
+	{
+		return false;
+	}
+
+	@Override
+	public boolean getScrollableTracksViewportHeight()
+	{
+		return false;
+	}
 }

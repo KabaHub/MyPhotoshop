@@ -18,11 +18,9 @@ public class MainWindow extends JFrame implements Observer
     private Menu menu;
     private Model model = new Model(this);
     private Controller controller = new Controller(this, model);
-
     private JTabbedPane jTabbedPane = new JTabbedPane();
 
-    // test
-    private JPanel panel1;
+    private String language = "en";
 
     public MainWindow()
     {
@@ -32,11 +30,11 @@ public class MainWindow extends JFrame implements Observer
 
         menu = new Menu(controller);
         setJMenuBar(menu);
-
         this.getContentPane().setLayout(new BorderLayout());
-//        JPanel topPanel = new JPanel();
-//        topPanel.setLayout(new BorderLayout());
-//        topPanel.add(jTabbedPane, BorderLayout.CENTER);
+
+        JPanel toolBox = new JPanel();
+        toolBox.setPreferredSize(new Dimension(32, 32));
+        this.getContentPane().add(toolBox, BorderLayout.WEST);
         this.getContentPane().add(jTabbedPane, BorderLayout.CENTER);
 
         // Test
@@ -55,16 +53,16 @@ public class MainWindow extends JFrame implements Observer
         jTabbedPane.add(name, projectPanel);
         getContentPane().validate();
         getContentPane().repaint();
-        setVisible(true);
     }
+
     public ImagePanel getCurrentTab()
     {
-        return (ImagePanel)this.getJTabbedPane().getSelectedComponent();
+        return (ImagePanel) this.getJTabbedPane().getSelectedComponent();
     }
 
     public void test()
     {
-       model.addProject(new File("ressources/images/test.png"));
+        model.addProject(new File("ressources/images/test.png"));
     }
 
     @Override
@@ -72,7 +70,7 @@ public class MainWindow extends JFrame implements Observer
     {
         if (arg.getClass().getName().contentEquals("Model.Project"))
         {
-            Project newProject = (Project)arg;
+            Project newProject = (Project) arg;
             ProjectPane projectPanel = new ProjectPane(newProject);
             this.addToTabbedPanel(newProject.getProjectName(), projectPanel);
         }
