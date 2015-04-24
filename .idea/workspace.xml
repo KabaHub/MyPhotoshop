@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bab6105-4809-42d7-8428-55e452ae4f02" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Control/Controller.java" afterPath="$PROJECT_DIR$/src/Control/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/IHM/ImagePanel.java" afterPath="$PROJECT_DIR$/src/IHM/ImagePanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/MainWindow.java" afterPath="$PROJECT_DIR$/src/View/MainWindow.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="duplai_g-myphotoshop.iws" />
@@ -673,7 +670,7 @@
       <workItem from="1429859097694" duration="15232000" />
       <workItem from="1429894896100" duration="50000" />
       <workItem from="1429895036782" duration="2124000" />
-      <workItem from="1429902165274" duration="2150000" />
+      <workItem from="1429902165274" duration="2363000" />
     </task>
     <task id="LOCAL-00001" summary="Create Model, Few Events">
       <created>1429791042955</created>
@@ -711,11 +708,17 @@
       <option name="project" value="LOCAL" />
       <updated>1429884451133</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="JSCROLLPANEL WORKS OMFG THX GF&#10;">
+      <created>1429904347755</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1429904347755</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46098000" />
+    <option name="totallyTimeSpent" value="46311000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -765,7 +768,8 @@
     <MESSAGE value="Observers and Co" />
     <MESSAGE value="Open tabs with Imported Pictures" />
     <MESSAGE value="JScrollPane that doesn't work" />
-    <option name="LAST_COMMIT_MESSAGE" value="JScrollPane that doesn't work" />
+    <MESSAGE value="JSCROLLPANEL WORKS OMFG THX GF&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="JSCROLLPANEL WORKS OMFG THX GF&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
