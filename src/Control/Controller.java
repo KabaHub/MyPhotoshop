@@ -52,7 +52,7 @@ public class Controller implements ActionListener
         }
         else if (e.getActionCommand().contentEquals("Save Project"))
         {
-            System.out.println(mainWindow.getCurrentTab().getFileName());
+            System.out.println(mainWindow.getCurrentTab().getProjectName());
         }
         else if (e.getActionCommand().contentEquals("Exit"))
         {

@@ -1,7 +1,6 @@
 package View;
 
 import Control.Controller;
-import IHM.ImagePanel;
 import Model.*;
 
 import javax.swing.*;
@@ -55,9 +54,9 @@ public class MainWindow extends JFrame implements Observer
         getContentPane().repaint();
     }
 
-    public ImagePanel getCurrentTab()
+    public ProjectPane getCurrentTab()
     {
-        return (ImagePanel) this.getJTabbedPane().getSelectedComponent();
+        return (ProjectPane) this.getJTabbedPane().getSelectedComponent();
     }
 
     public void test()
