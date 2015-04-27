@@ -17,9 +17,16 @@ public class Menu extends JMenuBar
     private JMenuItem importImage = new JMenuItem("Import Image");
     private JMenuItem saveProject = new JMenuItem("Save Project");
     private JMenuItem exit = new JMenuItem("Exit");
+
     private JMenu edit = new JMenu("Edit");
     private JMenuItem undo = new JMenuItem("Undo");
     private JMenuItem redo = new JMenuItem("Redo");
+
+    private JMenu view = new JMenu("View");
+    private JMenuItem hideInfo = new JMenuItem("Hide Project Toolbar");
+
+    private JMenu filters = new JMenu("Filters");
+    private JMenuItem apply = new JMenuItem("Apply Filter");
 
     public Menu(Controller controller)
     {
@@ -37,10 +44,19 @@ public class Menu extends JMenuBar
         file.add(exit);
         file.addActionListener(controller);
         add(file);
+
         undo.addActionListener(controller);
         edit.add(undo);
         redo.addActionListener(controller);
         edit.add(redo);
         add(edit);
+
+        hideInfo.addActionListener(controller);
+        view.add(hideInfo);
+        add(view);
+
+        apply.addActionListener(controller);
+        filters.add(apply);
+        add(filters);
     }
 }

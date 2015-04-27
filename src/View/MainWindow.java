@@ -50,6 +50,21 @@ public class MainWindow extends JFrame implements Observer
     public void addToTabbedPanel(String name, ProjectPane projectPanel)
     {
         jTabbedPane.add(name, projectPanel);
+
+//        int index = jTabbedPane.indexOfTab(name);
+//        JPanel tabNamePanel = new JPanel(new BorderLayout());
+//        tabNamePanel.setOpaque(false);
+//        JLabel tabTitle = new JLabel("New Project");
+//        ImageIcon closeImage = new ImageIcon("ressources/images/close-icon.png");
+//        JButton closeButton = new JButton(closeImage);
+//        closeButton.setMaximumSize(new Dimension(12, 12));
+//        closeButton.setPreferredSize(new Dimension(12, 12));
+//        closeButton.setToolTipText("Close this Project");
+//        closeButton.addActionListener(controller);
+//        tabNamePanel.add(tabTitle, BorderLayout.CENTER);
+//        tabNamePanel.add(closeButton, BorderLayout.EAST);
+//        jTabbedPane.setTabComponentAt(index, tabNamePanel);
+
         getContentPane().validate();
         getContentPane().repaint();
     }
@@ -71,6 +86,8 @@ public class MainWindow extends JFrame implements Observer
         {
             Project newProject = (Project) arg;
             ProjectPane projectPanel = new ProjectPane(newProject);
+            if (newProject.isHistoryEmpty())
+                projectPanel.getInfoPanel().setVisible(false);
             this.addToTabbedPanel(newProject.getProjectName(), projectPanel);
         }
     }

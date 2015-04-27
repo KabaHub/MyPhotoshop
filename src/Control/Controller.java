@@ -1,5 +1,6 @@
 package Control;
 
+import View.ChooseFilterWindow;
 import View.MainWindow;
 import Model.Model;
 
@@ -65,6 +66,17 @@ public class Controller implements ActionListener
         else if (e.getActionCommand().contentEquals("Redo"))
         {
 
+        }
+        else if (e.getActionCommand().contentEquals("Hide Project Toolbar"))
+        {
+            if (mainWindow.getCurrentTab().getInfoPanel().isVisible())
+                mainWindow.getCurrentTab().getInfoPanel().setVisible(false);
+            else
+                mainWindow.getCurrentTab().getInfoPanel().setVisible(true);
+        }
+        else if (e.getActionCommand().contentEquals("Apply Filter"))
+        {
+            ChooseFilterWindow chooseFilterWindow = new ChooseFilterWindow(model.getFilters());
         }
         else
             System.out.println("Not yet Implemented : " + e.getActionCommand());
