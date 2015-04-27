@@ -84,11 +84,24 @@ public class MainWindow extends JFrame implements Observer
     {
         if (arg.getClass().getName().contentEquals("Model.Project"))
         {
-            Project newProject = (Project) arg;
-            ProjectPane projectPanel = new ProjectPane(newProject);
-            if (newProject.isHistoryEmpty())
-                projectPanel.getInfoPanel().setVisible(false);
-            this.addToTabbedPanel(newProject.getProjectName(), projectPanel);
+            Project project = (Project) arg;
+            Boolean newProject = true;
+            for (int i = 0; i < jTabbedPane.getTabCount(); i++)
+            {
+                ProjectPane pp = (ProjectPane) jTabbedPane.getComponentAt(i);
+                if (project == pp.getProject())
+                {
+                    newProject = false;
+                    this.repaint();
+                }
+            }
+            if (newProject)
+            {
+                ProjectPane projectPanel = new ProjectPane(project);
+                if (project.isHistoryEmpty())
+                    projectPanel.getInfoPanel().setVisible(false);
+                this.addToTabbedPanel(project.getProjectName(), projectPanel);
+            }
         }
     }
 }

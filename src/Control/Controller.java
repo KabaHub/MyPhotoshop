@@ -76,7 +76,7 @@ public class Controller implements ActionListener
         }
         else if (e.getActionCommand().contentEquals("Apply Filter"))
         {
-            ChooseFilterWindow chooseFilterWindow = new ChooseFilterWindow(model.getFilters());
+            ChooseFilterWindow chooseFilterWindow = new ChooseFilterWindow(model.getFilters(), mainWindow.getCurrentTab().getProject());
         }
         else
             System.out.println("Not yet Implemented : " + e.getActionCommand());
