@@ -50,11 +50,26 @@ public class Project extends Observable implements Serializable
         return imagePanel;
     }
 
+    @Deprecated
     public void setImagePanel(BufferedImage image)
     {
         imagePanel.setImage(image);
         setChanged();
         notifyObservers(this);
+    }
+
+    public void setImageChanges(BufferedImage image, String pluginName)
+    {
+        ImageState imageState = new ImageState(this, pluginName, image);
+        history.add(imageState);
+        imagePanel.setImage(image);
+        setChanged();
+        notifyObservers(this);
+    }
+
+    public ArrayList<ImageState> getHistory()
+    {
+        return history;
     }
 
     public String getProjectName()

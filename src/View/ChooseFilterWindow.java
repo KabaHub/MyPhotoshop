@@ -80,12 +80,28 @@ public class ChooseFilterWindow extends JFrame
             {
                 ImagePanel imagePanel = project.getImagePanel();
                 BufferedImage image = imagePanel.getImage();
-                image = test();
-                project.setImagePanel(image);
+                image = executeFilter(image, selectedFilter);
+                if (image != null)
+                    project.setImageChanges(image, selectedFilter);
             }
             else if (e.getActionCommand().contentEquals("Cancel"))
             {
 
+            }
+        }
+
+        private BufferedImage executeFilter(BufferedImage image, String filterName)
+        {
+            IPlugin plugin = filters.get(filterName);
+            if (plugin != null)
+            {
+                BufferedImage result = plugin.perform(image);
+                return result;
+            }
+            else
+            {
+                System.out.println("image null");
+                return null;
             }
         }
 

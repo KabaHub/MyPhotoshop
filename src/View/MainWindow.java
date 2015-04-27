@@ -1,6 +1,7 @@
 package View;
 
 import Control.Controller;
+import IHM.ImagePanel;
 import Model.*;
 
 import javax.swing.*;
@@ -92,6 +93,7 @@ public class MainWindow extends JFrame implements Observer
                 if (project == pp.getProject())
                 {
                     newProject = false;
+                    this.revalidate();
                     this.repaint();
                 }
             }
