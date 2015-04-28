@@ -77,7 +77,7 @@ public class MainWindow extends JFrame implements Observer
 
     public void test()
     {
-        model.addProject(new File("ressources/images/test.png"));
+        model.addProject(new File("ressources/images/DarkKnight.jpg"));
     }
 
     @Override
