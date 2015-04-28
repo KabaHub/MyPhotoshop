@@ -45,6 +45,7 @@ public class PluginClassLoader extends ClassLoader
                 {
                     name = name.replace("/", ".").replace(".class", "");
                     Class c = ucl.loadClass(name);
+                    System.out.println(c.getName());
                     Class[] interfaces = c.getInterfaces();
                     for (Class i : interfaces)
                     {

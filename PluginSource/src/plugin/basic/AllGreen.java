@@ -1,5 +1,7 @@
 package plugin.basic;
 
+import java.awt.*;
+import java.awt.Color;
 import java.awt.image.BufferedImage;
 
 import plugin.IPlugin;

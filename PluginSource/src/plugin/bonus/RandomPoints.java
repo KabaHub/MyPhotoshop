@@ -1,11 +1,11 @@
-package plugin.basic;
+package plugin.bonus;
 
 import java.awt.image.BufferedImage;
 import java.util.Random;
 
 import plugin.IPlugin;
 
-public class VeryLong implements IPlugin {
+public class RandomPoints implements IPlugin {
 
 	@Override
 	public BufferedImage perform(BufferedImage img) 
@@ -16,21 +16,13 @@ public class VeryLong implements IPlugin {
 			for (int j = 0; j < img.getHeight(); j++)
 				res.setRGB(i, j, new Random().nextInt());
 		
-		try
-		{
-			Thread.sleep(5000);
-		} catch (InterruptedException e)
-		{
-			e.printStackTrace();
-		}
-		
 		return res;
 	}
 
 	@Override
 	public String getName() 
 	{
-		return "Very long";
+		return "Random Points";
 	}
 
 }

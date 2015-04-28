@@ -93,8 +93,7 @@ public class MainWindow extends JFrame implements Observer
                 if (project == pp.getProject())
                 {
                     newProject = false;
-                    this.revalidate();
-                    this.repaint();
+                    repaint();
                 }
             }
             if (newProject)
