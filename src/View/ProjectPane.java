@@ -16,6 +16,8 @@ public class ProjectPane extends JPanel
     String projectName;
     Project project;
 
+    JSplitPane jSplitPane;
+
     ImagePanel imagePanel;
     JScrollPane imageScrollPane;
 
@@ -32,6 +34,9 @@ public class ProjectPane extends JPanel
 
         initImagePanel();
         initInfoPanel();
+        jSplitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, imageScrollPane, infoPanel);
+        jSplitPane.setOneTouchExpandable(true);
+        this.add(jSplitPane, BorderLayout.CENTER);
     }
 
     private void initImagePanel()
@@ -40,7 +45,6 @@ public class ProjectPane extends JPanel
         imageScrollPane = new JScrollPane(imagePanel);
         imageScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         imageScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        this.add(imageScrollPane, BorderLayout.CENTER);
     }
 
     private void initInfoPanel()
@@ -57,8 +61,6 @@ public class ProjectPane extends JPanel
 
         histoScrollPane = new JScrollPane(histoPanel);
         infoPanel.add(histoScrollPane);
-
-        this.add(infoPanel, BorderLayout.EAST);
     }
 
     public JPanel getInfoPanel()

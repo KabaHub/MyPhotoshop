@@ -21,29 +21,29 @@ public class Project extends Observable implements Serializable
     private ImagePanel imagePanel;
     private ArrayList<ImageState> history = new ArrayList<>();
 
-    public Project(Observer o)
+    public Project(Observer o, Model model)
     {
         addObserver(o);
-        projectName = "New Project";
+        projectName = getNewProjectName(model.getProjects(), "New Project");
         BufferedImage newImage = new BufferedImage(320, 180, BufferedImage.TYPE_INT_ARGB);
         ImageState imageState = new ImageState("Original", newImage);
         history.add(imageState);
         imagePanel = new ImagePanel(newImage, projectName);
     }
 
-    public Project(Observer o, File file)
+    public Project(Observer o, Model model, File file)
     {
         addObserver(o);
-        projectName = file.getName();
+        projectName = getNewProjectName(model.getProjects(), file.getName());
         imagePanel = new ImagePanel(file);
         ImageState imageState = new ImageState("Original", imagePanel.getImage());
         history.add(imageState);
     }
 
-    public Project(Observer o, BufferedImage bufferedImage, String name)
+    public Project(Observer o, Model model, BufferedImage bufferedImage, String name)
     {
         addObserver(o);
-        projectName = name;
+        projectName = getNewProjectName(model.getProjects(), name);
         imagePanel = new ImagePanel(bufferedImage, name);
         ImageState imageState = new ImageState("Original", imagePanel.getImage());
         history.add(imageState);
@@ -59,9 +59,11 @@ public class Project extends Observable implements Serializable
         imagePanel.prepareToSerialization();
     }
 
-    public void buildImage()
+    public void buildProject()
     {
         imagePanel.buildImage();
+        for (ImageState i : history)
+            i.buildImage();
     }
 
     public ImagePanel getImagePanel()
@@ -109,7 +111,34 @@ public class Project extends Observable implements Serializable
     }
 
     public String getProjectName()
+
     {
         return projectName;
+    }
+
+
+    private String getNewProjectName(ArrayList<Project> projects, String name)
+    {
+        boolean exists = true;
+        int number = 1;
+        while (exists)
+        {
+            exists = false;
+            for (Project p : projects)
+            {
+                if (p.getProjectName().contentEquals(name))
+                {
+                    number++;
+                    int n = name.lastIndexOf('_');
+                    if (n == -1)
+                        name += '_';
+                    else
+                        name = name.substring(0, n + 1);
+                    name += number;
+                    exists = true;
+                }
+            }
+        }
+        return name;
     }
 }

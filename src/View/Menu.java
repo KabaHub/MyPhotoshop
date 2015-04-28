@@ -28,6 +28,9 @@ public class Menu extends JMenuBar
     private JMenu filters = new JMenu("Filters");
     private JMenuItem apply = new JMenuItem("Apply Filter");
 
+    private JMenu test = new JMenu("Test");
+    private JMenuItem testitem = new JMenuItem("Test");
+
     public Menu(Controller controller)
     {
         this.controller = controller;
@@ -58,5 +61,9 @@ public class Menu extends JMenuBar
         apply.addActionListener(controller);
         filters.add(apply);
         add(filters);
+
+        testitem.addActionListener(controller);
+        test.add(testitem);
+        add(test);
     }
 }

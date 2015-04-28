@@ -4,6 +4,7 @@ import View.ChooseFilterWindow;
 import View.MainWindow;
 import Model.Model;
 import Model.Project;
+import Model.ImageState;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -85,6 +86,12 @@ public class Controller implements ActionListener
         } else if (e.getActionCommand().contentEquals("Apply Filter"))
         {
             ChooseFilterWindow chooseFilterWindow = new ChooseFilterWindow(model.getFilters(), mainWindow.getCurrentTab().getProject());
+        } else if (e.getActionCommand().contentEquals("Test"))
+        {
+            System.out.println("History :");
+            System.out.println("--------------------------");
+            for (ImageState i : mainWindow.getCurrentTab().getProject().getHistory())
+                System.out.println(i.getAppliedIPlugin());
         } else
             System.out.println("Not yet Implemented : " + e.getActionCommand());
     }

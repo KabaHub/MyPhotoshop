@@ -25,9 +25,10 @@ public class Model extends Observable
         filters = pluginClassLoader.getClasses();
     }
 
+
     public Project addProject()
     {
-        Project p = new Project(o);
+        Project p = new Project(o, this);
         projects.add(p);
         setChanged();
         notifyObservers(p);
@@ -45,7 +46,7 @@ public class Model extends Observable
                 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file));
                 p = (Project)ois.readObject();
                 projects.add(p);
-                p.buildImage();
+                p.buildProject();
                 setChanged();
                 notifyObservers(p);
             } catch (IOException | ClassNotFoundException e)
@@ -55,7 +56,7 @@ public class Model extends Observable
             return p;
         } else
         {
-            Project p = new Project(o, file);
+            Project p = new Project(o, this, file);
             projects.add(p);
             setChanged();
             notifyObservers(p);
@@ -65,7 +66,7 @@ public class Model extends Observable
 
     public Project addProject(BufferedImage image, String name)
     {
-        Project p = new Project(o, image, name);
+        Project p = new Project(o, this, image, name);
         projects.add(p);
         setChanged();
         notifyObservers(p.getImagePanel());
@@ -75,6 +76,11 @@ public class Model extends Observable
     public Hashtable<String, IPlugin> getFilters()
     {
         return filters;
+    }
+
+    public ArrayList<Project> getProjects()
+    {
+        return projects;
     }
 
     private String getFileExtension(File file)
