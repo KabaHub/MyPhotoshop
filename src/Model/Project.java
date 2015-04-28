@@ -34,7 +34,11 @@ public class Project extends Observable implements Serializable
     public Project(Observer o, Model model, File file)
     {
         addObserver(o);
-        projectName = getNewProjectName(model.getProjects(), file.getName());
+        projectName = file.getName();
+        int n = projectName.lastIndexOf('.');
+        if (n != -1)
+            projectName = projectName.substring(0, n);
+        projectName = getNewProjectName(model.getProjects(), projectName);
         imagePanel = new ImagePanel(file);
         ImageState imageState = new ImageState("Original", imagePanel.getImage());
         history.add(imageState);
@@ -140,5 +144,14 @@ public class Project extends Observable implements Serializable
             }
         }
         return name;
+    }
+
+    private String getFileExtension(File file)
+    {
+        String name = file.getName();
+        int lastIndexOf = name.lastIndexOf('.');
+        if (lastIndexOf == -1)
+            return "";
+        return name.substring(lastIndexOf);
     }
 }
