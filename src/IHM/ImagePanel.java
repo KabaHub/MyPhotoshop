@@ -2,9 +2,7 @@ package IHM;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.io.Serializable;
+import java.io.*;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -22,6 +20,7 @@ public class ImagePanel extends JPanel implements Serializable, Scrollable
 	private final int imageType;
 	private final int[] pixels;
 	public transient BufferedImage image;
+	private byte[] imageByte;
 
 	/**
 	 * Create the ImagePanel
@@ -69,6 +68,30 @@ public class ImagePanel extends JPanel implements Serializable, Scrollable
 	{
 		image = new BufferedImage(width, height, imageType);
 		image.setRGB(0, 0, width, height, pixels, 0, width);
+
+		InputStream in = new ByteArrayInputStream(imageByte);
+		try
+		{
+			image = ImageIO.read(in);
+		} catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+	public void prepareToSerialization()
+	{
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		try
+		{
+			ImageIO.write(image, "png", baos);
+			baos.flush();
+			imageByte = baos.toByteArray();
+			baos.close();
+		} catch (IOException e)
+		{
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -98,6 +121,13 @@ public class ImagePanel extends JPanel implements Serializable, Scrollable
 	{
 		super.paintComponent(g);
 		g.drawImage(image, 0, 0, null);
+	}
+
+	public void drawImage(int x, int y, BufferedImage bufferedImage)
+	{
+		Graphics g = image.getGraphics();
+		g.drawImage(bufferedImage, x, y, null);
+		g.dispose();
 	}
 
 	public String getFileName()

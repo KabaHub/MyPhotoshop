@@ -20,6 +20,7 @@ public class PluginClassLoader extends ClassLoader
         File[] files = null;
         File dirToScan = new File(path);
         files = dirToScan.listFiles();
+        assert files != null;
         for (File f : files)
         {
             if (f.getName().endsWith(".jar"))
@@ -45,7 +46,6 @@ public class PluginClassLoader extends ClassLoader
                 {
                     name = name.replace("/", ".").replace(".class", "");
                     Class c = ucl.loadClass(name);
-                    System.out.println(c.getName());
                     Class[] interfaces = c.getInterfaces();
                     for (Class i : interfaces)
                     {

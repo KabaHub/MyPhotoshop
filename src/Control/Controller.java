@@ -3,11 +3,12 @@ package Control;
 import View.ChooseFilterWindow;
 import View.MainWindow;
 import Model.Model;
+import Model.Project;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
+import java.io.*;
 
 /**
  * Created by duplai_g on 4/22/15.
@@ -18,6 +19,7 @@ public class Controller implements ActionListener
     private MainWindow mainWindow;
     private JFileChooser projectFileChooser = new JFileChooser(System.getProperty("user.dir"));
     private JFileChooser imageFileChooser = new JFileChooser(System.getProperty("user.dir"));
+    private JFileChooser saveFileChooser = new JFileChooser(System.getProperty("user.dir"));
 
     public Controller(MainWindow mainWindow, Model model)
     {
@@ -30,55 +32,60 @@ public class Controller implements ActionListener
     {
         if (e.getActionCommand().contentEquals("File"))
         {
-        }
-        else if (e.getActionCommand().contentEquals("New Project"))
+        } else if (e.getActionCommand().contentEquals("New Project"))
         {
             model.addProject();
-        }
-        else if (e.getActionCommand().contentEquals("Open Project"))
+        } else if (e.getActionCommand().contentEquals("Open Project"))
         {
             if (projectFileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION)
             {
                 File f = projectFileChooser.getSelectedFile();
-                System.out.println(f.getName());
+                model.addProject(f);
             }
-        }
-        else if (e.getActionCommand().contentEquals("Import Image"))
+        } else if (e.getActionCommand().contentEquals("Import Image"))
         {
             if (imageFileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION)
             {
                 File f = imageFileChooser.getSelectedFile();
-                model.addProject(f);
+                mainWindow.getCurrentTab().getProject().importImage(f);
             }
-        }
-        else if (e.getActionCommand().contentEquals("Save Project"))
+        } else if (e.getActionCommand().contentEquals("Save Project"))
         {
             System.out.println(mainWindow.getCurrentTab().getProjectName());
-        }
-        else if (e.getActionCommand().contentEquals("Exit"))
+            if (saveFileChooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION)
+            {
+                Project p = mainWindow.getCurrentTab().getProject();
+                File f = saveFileChooser.getSelectedFile();
+                try
+                {
+                    p.prepareToSerialization();
+                    ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(f));
+                    oos.writeObject(p);
+                } catch (IOException e1)
+                {
+                    e1.printStackTrace();
+                }
+            }
+
+        } else if (e.getActionCommand().contentEquals("Exit"))
         {
             System.exit(0);
-        }
-        else if (e.getActionCommand().contentEquals("Undo"))
+        } else if (e.getActionCommand().contentEquals("Undo"))
         {
 
-        }
-        else if (e.getActionCommand().contentEquals("Redo"))
+        } else if (e.getActionCommand().contentEquals("Redo"))
         {
 
-        }
-        else if (e.getActionCommand().contentEquals("Hide Project Toolbar"))
+        } else if (e.getActionCommand().contentEquals("Hide Project Toolbar"))
         {
             if (mainWindow.getCurrentTab().getInfoPanel().isVisible())
                 mainWindow.getCurrentTab().getInfoPanel().setVisible(false);
             else
                 mainWindow.getCurrentTab().getInfoPanel().setVisible(true);
-        }
-        else if (e.getActionCommand().contentEquals("Apply Filter"))
+        } else if (e.getActionCommand().contentEquals("Apply Filter"))
         {
             ChooseFilterWindow chooseFilterWindow = new ChooseFilterWindow(model.getFilters(), mainWindow.getCurrentTab().getProject());
-        }
-        else
+        } else
             System.out.println("Not yet Implemented : " + e.getActionCommand());
     }
 }

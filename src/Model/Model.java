@@ -4,7 +4,7 @@ import plugin.IPlugin;
 import plugin.PluginClassLoader;
 
 import java.awt.image.BufferedImage;
-import java.io.File;
+import java.io.*;
 import java.util.*;
 
 /**
@@ -36,11 +36,31 @@ public class Model extends Observable
 
     public Project addProject(File file)
     {
-        Project p = new Project(o, file);
-        projects.add(p);
-        setChanged();
-        notifyObservers(p);
-        return p;
+        String ext = getFileExtension(file);
+        if (Objects.equals(ext, ".myPSD"))
+        {
+            Project p = null;
+            try
+            {
+                ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file));
+                p = (Project)ois.readObject();
+                projects.add(p);
+                p.buildImage();
+                setChanged();
+                notifyObservers(p);
+            } catch (IOException | ClassNotFoundException e)
+            {
+                e.printStackTrace();
+            }
+            return p;
+        } else
+        {
+            Project p = new Project(o, file);
+            projects.add(p);
+            setChanged();
+            notifyObservers(p);
+            return p;
+        }
     }
 
     public Project addProject(BufferedImage image, String name)
@@ -55,5 +75,14 @@ public class Model extends Observable
     public Hashtable<String, IPlugin> getFilters()
     {
         return filters;
+    }
+
+    private String getFileExtension(File file)
+    {
+        String name = file.getName();
+        int lastIndexOf = name.lastIndexOf('.');
+        if (lastIndexOf == -1)
+            return "";
+        return name.substring(lastIndexOf);
     }
 }
