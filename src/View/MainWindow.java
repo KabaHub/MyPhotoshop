@@ -6,6 +6,8 @@ import Model.*;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.Observable;
 import java.util.Observer;
@@ -52,22 +54,24 @@ public class MainWindow extends JFrame implements Observer
     {
         jTabbedPane.add(name, projectPanel);
 
-//        int index = jTabbedPane.indexOfTab(name);
-//        JPanel tabNamePanel = new JPanel(new BorderLayout());
-//        tabNamePanel.setOpaque(false);
-//        JLabel tabTitle = new JLabel("New Project");
-//        ImageIcon closeImage = new ImageIcon("ressources/images/close-icon.png");
-//        JButton closeButton = new JButton(closeImage);
-//        closeButton.setMaximumSize(new Dimension(12, 12));
-//        closeButton.setPreferredSize(new Dimension(12, 12));
-//        closeButton.setToolTipText("Close this Project");
-//        closeButton.addActionListener(controller);
-//        tabNamePanel.add(tabTitle, BorderLayout.CENTER);
-//        tabNamePanel.add(closeButton, BorderLayout.EAST);
-//        jTabbedPane.setTabComponentAt(index, tabNamePanel);
+        int index = jTabbedPane.indexOfTab(name);
+        JPanel tabNamePanel = new JPanel(new BorderLayout());
+        tabNamePanel.setOpaque(false);
+        JLabel tabTitle = new JLabel(name);
+        JButton closeButton = new CloseButton();
+        // Very ugly... without lambdas
+        closeButton.addActionListener(e -> jTabbedPane.remove(projectPanel));
+        tabNamePanel.add(tabTitle, BorderLayout.CENTER);
+        tabNamePanel.add(closeButton, BorderLayout.EAST);
+        jTabbedPane.setTabComponentAt(index, tabNamePanel);
 
         getContentPane().validate();
         getContentPane().repaint();
+    }
+
+    public void removeFromTabbedPanel(ProjectPane projectPane)
+    {
+        jTabbedPane.remove(projectPane);
     }
 
     public ProjectPane getCurrentTab()

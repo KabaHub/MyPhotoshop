@@ -68,6 +68,9 @@ public class Controller implements ActionListener
                 }
             }
 
+        } else if (e.getActionCommand().contentEquals("Close Project"))
+        {
+            mainWindow.removeFromTabbedPanel(mainWindow.getCurrentTab());
         } else if (e.getActionCommand().contentEquals("Exit"))
         {
             System.exit(0);
@@ -92,7 +95,10 @@ public class Controller implements ActionListener
             System.out.println("--------------------------");
             for (ImageState i : mainWindow.getCurrentTab().getProject().getHistory())
                 System.out.println(i.getAppliedIPlugin());
+        } else if (e.getActionCommand().contentEquals("CloseTab"))
+        {
+            mainWindow.removeFromTabbedPanel(mainWindow.getCurrentTab());
         } else
-            System.out.println("Not yet Implemented : " + e.getActionCommand());
+            System.out.println(e.getActionCommand() + " not yet Implemented : " + e.getActionCommand());
     }
 }
