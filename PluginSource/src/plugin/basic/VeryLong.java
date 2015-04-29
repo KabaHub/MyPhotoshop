@@ -18,7 +18,7 @@ public class VeryLong implements IPlugin {
 		
 		try
 		{
-			Thread.sleep(5000);
+			Thread.sleep(30000);
 		} catch (InterruptedException e)
 		{
 			e.printStackTrace();

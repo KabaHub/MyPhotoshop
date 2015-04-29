@@ -111,7 +111,7 @@ public class ImagePanel extends JPanel implements Serializable, Scrollable
 		return image;
 	}
 
-	public void setImage(BufferedImage image)
+	public synchronized void setImage(BufferedImage image)
 	{
 		this.image = image;
 	}

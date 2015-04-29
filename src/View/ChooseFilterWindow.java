@@ -1,5 +1,6 @@
 package View;
 
+import Control.PluginExecutor;
 import IHM.ImagePanel;
 import Model.Project;
 import plugin.IPlugin;
@@ -38,8 +39,11 @@ public class ChooseFilterWindow extends JFrame
         this.getContentPane().setLayout(new BoxLayout(this.getContentPane(), BoxLayout.PAGE_AXIS));
         JButton okButton = new JButton("Apply");
         okButton.addActionListener(new ButtonListener());
+        JButton stopButton = new JButton("Stop");
+        stopButton.addActionListener(new ButtonListener());
         JButton cancelButton = new JButton("Cancel");
         cancelButton.addActionListener(new ButtonListener());
+
         combo = new JComboBox();
         Enumeration filterName = filters.keys();
         while (filterName.hasMoreElements())
@@ -55,6 +59,7 @@ public class ChooseFilterWindow extends JFrame
         JPanel down = new JPanel();
         down.setLayout(new BoxLayout(down, BoxLayout.LINE_AXIS));
         down.add(okButton);
+        down.add(stopButton);
         down.add(cancelButton);
 
         this.getContentPane().add(top);
@@ -63,7 +68,7 @@ public class ChooseFilterWindow extends JFrame
         this.setVisible(true);
     }
 
-    class ItemState implements ItemListener
+    private class ItemState implements ItemListener
     {
         @Override
         public void itemStateChanged(ItemEvent e)
@@ -72,25 +77,36 @@ public class ChooseFilterWindow extends JFrame
         }
     }
 
-    class ButtonListener implements ActionListener
+    public class ButtonListener implements ActionListener
     {
+        private boolean filterRunning = false;
+
         @Override
         public void actionPerformed(ActionEvent e)
         {
             if (e.getActionCommand().contentEquals("Apply"))
             {
-                ImagePanel imagePanel = project.getImagePanel();
-                BufferedImage image = imagePanel.getImage();
-                image = executeFilter(image, selectedFilter);
-                if (image != null)
-                    project.setImageChanges(image, selectedFilter);
-            }
-            else if (e.getActionCommand().contentEquals("Cancel"))
+                IPlugin plugin = filters.get(selectedFilter);
+                if (plugin != null)
+                {
+                    if (project.isPluginRunning())
+                    {
+                        JOptionPane info = new JOptionPane();
+                        info.showMessageDialog(null, "A filter is already Running", "Warning", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                    else
+                    project.applyPlugin(plugin);
+                }
+            } else if (e.getActionCommand().contentEquals("Cancel"))
+            {
+
+            } else if (e.getActionCommand().contentEquals("Stop"))
             {
 
             }
         }
 
+        @Deprecated
         private BufferedImage executeFilter(BufferedImage image, String filterName)
         {
             IPlugin plugin = filters.get(filterName);
@@ -98,8 +114,7 @@ public class ChooseFilterWindow extends JFrame
             {
                 BufferedImage result = plugin.perform(image);
                 return result;
-            }
-            else
+            } else
             {
                 System.out.println("image null");
                 return null;
@@ -118,7 +133,7 @@ public class ChooseFilterWindow extends JFrame
             {
                 e.printStackTrace();
             }
-            return  test;
+            return test;
         }
     }
 }

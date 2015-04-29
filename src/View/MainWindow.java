@@ -26,7 +26,7 @@ public class MainWindow extends JFrame implements Observer
     {
         setTitle("MyPhotoshop");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(800, 600);
+        setSize(1200, 900);
 
         menu = new Menu(controller);
         setJMenuBar(menu);

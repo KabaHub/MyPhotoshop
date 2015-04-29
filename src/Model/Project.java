@@ -1,6 +1,8 @@
 package Model;
 
+import Control.PluginExecutor;
 import IHM.ImagePanel;
+import plugin.IPlugin;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -20,6 +22,8 @@ public class Project extends Observable implements Serializable
     private String projectName;
     private ImagePanel imagePanel;
     private ArrayList<ImageState> history = new ArrayList<>();
+
+    private boolean isPluginRunning = false;
 
     public Project(Observer o, Model model)
     {
@@ -109,6 +113,27 @@ public class Project extends Observable implements Serializable
         notifyObservers(this);
     }
 
+    public void applyPlugin(IPlugin plugin)
+    {
+        if (!isPluginRunning)
+        {
+            isPluginRunning = true;
+            PluginExecutor pluginExecutor = new PluginExecutor(this, imagePanel.getImage(), plugin);
+            Thread t = new Thread(pluginExecutor);
+            t.start();
+        }
+    }
+
+    public boolean isPluginRunning()
+    {
+        return isPluginRunning;
+    }
+
+    public void setPluginRunning(boolean b)
+    {
+        isPluginRunning = b;
+    }
+
     public ArrayList<ImageState> getHistory()
     {
         return history;
@@ -137,9 +162,21 @@ public class Project extends Observable implements Serializable
                     if (n == -1)
                         name += '_';
                     else
-                        name = name.substring(0, n + 1);
+                    {
+                        try
+                        {
+                            number = Integer.parseInt(name.substring(n + 1));
+                            if (number > 1)
+                                number++;
+                            name = name.substring(0, n + 1);
+                            exists = true;
+                        }
+                        catch (NumberFormatException e)
+                        {
+                            name += '_';
+                        }
+                    }
                     name += number;
-                    exists = true;
                 }
             }
         }

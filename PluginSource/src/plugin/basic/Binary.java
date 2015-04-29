@@ -25,7 +25,13 @@ public class Binary implements IPlugin
 		g.drawImage(img, 0, 0, null);
 		g.dispose();
 
-		return res;
+		BufferedImage res2= new BufferedImage(res.getWidth(), res.getHeight(), BufferedImage.TYPE_INT_RGB);
+
+		Graphics g2 = res2.getGraphics();
+		g2.drawImage(res, 0, 0, null);
+		g2.dispose();
+
+		return res2;
 	}
 
 	@Override

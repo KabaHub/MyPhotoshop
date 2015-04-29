@@ -35,7 +35,7 @@ public class ProjectPane extends JPanel
         initImagePanel();
         initInfoPanel();
         jSplitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, imageScrollPane, infoPanel);
-        jSplitPane.setOneTouchExpandable(true);
+        jSplitPane.setResizeWeight(1.0f);
         this.add(jSplitPane, BorderLayout.CENTER);
     }
 
