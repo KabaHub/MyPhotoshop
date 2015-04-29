@@ -85,7 +85,7 @@ public class Controller implements ActionListener
                 mainWindow.getCurrentTab().getInfoPanel().setVisible(true);
         } else if (e.getActionCommand().contentEquals("Apply Filter"))
         {
-            ChooseFilterWindow chooseFilterWindow = new ChooseFilterWindow(model.getFilters(), mainWindow.getCurrentTab().getProject());
+            new ChooseFilterWindow(model.getFilters(), mainWindow.getCurrentTab().getProject());
         } else if (e.getActionCommand().contentEquals("Test"))
         {
             System.out.println("History :");

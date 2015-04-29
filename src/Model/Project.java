@@ -106,7 +106,8 @@ public class Project extends Observable implements Serializable
         {
             e.printStackTrace();
         }
-        imagePanel.drawImage(0, 0, image);
+//        imagePanel.drawImage(0, 0, image);
+        imagePanel.setImage(image);
         ImageState imageState = new ImageState("Imported File " + file.getName(), imagePanel.getImage());
         history.add(imageState);
         setChanged();

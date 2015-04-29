@@ -15,11 +15,11 @@ public class ImagePanel extends JPanel implements Serializable, Scrollable
 {
 	private static final long serialVersionUID = -314171089120047242L;
 	private String fileName;
-	private final int width;
-	private final int height;
-	private final int imageType;
-	private final int[] pixels;
-	public transient BufferedImage image;
+	private int width;
+	private int height;
+	private int imageType;
+	private int[] pixels;
+	private transient BufferedImage image;
 	private byte[] imageByte;
 
 	/**
@@ -114,11 +114,14 @@ public class ImagePanel extends JPanel implements Serializable, Scrollable
 	public synchronized void setImage(BufferedImage image)
 	{
 		this.image = image;
+		this.height = image.getHeight();
+		this.width = image.getWidth();
 	}
 
 	@Override
 	public void paintComponent(Graphics g)
 	{
+//		System.out.println("Height: " + image.getHeight() + ",Width: " + image.getWidth());
 		super.paintComponent(g);
 		g.drawImage(image, 0, 0, null);
 	}

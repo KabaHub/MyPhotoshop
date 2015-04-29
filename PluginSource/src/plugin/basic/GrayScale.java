@@ -18,18 +18,30 @@ import javax.swing.GrayFilter;
 
 public class GrayScale implements IPlugin
 {
-	@Override
-	public BufferedImage perform(BufferedImage img)
-	{
-		java.awt.image.ColorConvertOp op = new ColorConvertOp(ColorSpace.getInstance(ColorSpace.CS_GRAY), null);
-		BufferedImage res = op.filter(img, null);
+    @Override
+    public BufferedImage perform(BufferedImage img)
+    {
+//		java.awt.image.ColorConvertOp op = new ColorConvertOp(ColorSpace.getInstance(ColorSpace.CS_GRAY), null);
+//		BufferedImage res = op.filter(img, null);
+        BufferedImage res = new BufferedImage(img.getWidth(), img.getHeight(), BufferedImage.TYPE_BYTE_GRAY);
 
-		return res;
-	}
+        Graphics g = res.getGraphics();
+        g.drawImage(img, 0, 0, null);
+        g.dispose();
 
-	@Override
-	public String getName()
-	{
-		return "GrayScale";
-	}
+        BufferedImage res2 = new BufferedImage(res.getWidth(), res.getHeight(), BufferedImage.TYPE_INT_RGB);
+
+        Graphics g2 = res2.getGraphics();
+        g2.drawImage(res, 0, 0, null);
+        g2.dispose();
+
+        return res2;
+//		return res;
+    }
+
+    @Override
+    public String getName()
+    {
+        return "GrayScale";
+    }
 }

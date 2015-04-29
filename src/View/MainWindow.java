@@ -77,7 +77,7 @@ public class MainWindow extends JFrame implements Observer
 
     public void test()
     {
-        model.addProject(new File("ressources/images/DarkKnight.jpg"));
+        model.addProject(new File("ressources/images/Black_kyurem.jpg"));
     }
 
     @Override
@@ -89,6 +89,7 @@ public class MainWindow extends JFrame implements Observer
             Boolean newProject = true;
             for (int i = 0; i < jTabbedPane.getTabCount(); i++)
             {
+                // Existing Project
                 ProjectPane pp = (ProjectPane) jTabbedPane.getComponentAt(i);
                 if (project == pp.getProject())
                 {
@@ -96,12 +97,15 @@ public class MainWindow extends JFrame implements Observer
                     repaint();
                 }
             }
+            // New Project
             if (newProject)
             {
                 ProjectPane projectPanel = new ProjectPane(project);
                 if (project.isHistoryEmpty())
                     projectPanel.getInfoPanel().setVisible(false);
                 this.addToTabbedPanel(project.getProjectName(), projectPanel);
+                // Set view to the right Tab
+                jTabbedPane.setSelectedComponent(projectPanel);
             }
         }
     }
