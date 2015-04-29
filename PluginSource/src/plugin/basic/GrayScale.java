@@ -3,7 +3,10 @@ package plugin.basic;
 import java.awt.*;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.color.ColorSpace;
+import java.awt.image.*;
 import java.awt.image.BufferedImage;
+import java.awt.image.ColorConvertOp;
 import java.awt.image.FilteredImageSource;
 import java.awt.image.ImageFilter;
 import java.awt.image.ImageProducer;
@@ -15,15 +18,11 @@ import javax.swing.GrayFilter;
 
 public class GrayScale implements IPlugin
 {
-
 	@Override
 	public BufferedImage perform(BufferedImage img)
 	{
-		BufferedImage res = new BufferedImage(img.getWidth(), img.getHeight(), BufferedImage.TYPE_BYTE_GRAY);
-
-		Graphics g = res.getGraphics();
-		g.drawImage(img, 0, 0, null);
-		g.dispose();
+		java.awt.image.ColorConvertOp op = new ColorConvertOp(ColorSpace.getInstance(ColorSpace.CS_GRAY), null);
+		BufferedImage res = op.filter(img, null);
 
 		return res;
 	}
@@ -33,5 +32,4 @@ public class GrayScale implements IPlugin
 	{
 		return "GrayScale";
 	}
-
 }
