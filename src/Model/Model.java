@@ -49,7 +49,7 @@ public class Model extends Observable
                 p.setProjectName(Project.getNewProjectName(projects, fileName));
                 projects.add(p);
                 System.out.println(p.getProjectName());
-                p.buildProject();
+                p.buildProject(o);
                 setChanged();
                 notifyObservers(p);
             } catch (IOException | ClassNotFoundException e)

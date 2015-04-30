@@ -69,8 +69,10 @@ public class Project extends Observable implements Serializable
         imagePanel.prepareToSerialization();
     }
 
-    public void buildProject()
+    // Observer required when deserialized
+    public void buildProject(Observer o)
     {
+        addObserver(o);
         imagePanel.buildImage();
         for (ImageState i : history)
             i.buildImage();
