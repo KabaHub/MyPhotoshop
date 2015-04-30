@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bab6105-4809-42d7-8428-55e452ae4f02" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PluginSource/build/plugin/bonus/Sepia.class" afterPath="$PROJECT_DIR$/PluginSource/build/plugin/bonus/Sepia.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Control/Controller.java" afterPath="$PROJECT_DIR$/src/Control/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PluginSource/src/plugin/bonus/Sepia.java" afterPath="$PROJECT_DIR$/PluginSource/src/plugin/bonus/Sepia.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/View/ImageFileFilter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="duplai_g-myphotoshop.iws" />
@@ -31,21 +29,11 @@
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Control/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.25775978">
-              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6437247">
+              <caret line="59" column="18" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Sepia.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PluginSource/src/plugin/bonus/Sepia.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -705,7 +693,7 @@
       <workItem from="1430293411703" duration="20031000" />
       <workItem from="1430323809141" duration="5040000" />
       <workItem from="1430336252140" duration="11419000" />
-      <workItem from="1430351073611" duration="30411000" />
+      <workItem from="1430351073611" duration="31261000" />
     </task>
     <task id="LOCAL-00001" summary="Create Model, Few Events">
       <created>1429791042955</created>
@@ -893,11 +881,17 @@
       <option name="project" value="LOCAL" />
       <updated>1430421378318</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Full Load and Save function !">
+      <created>1430425444193</created>
+      <option name="number" value="00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1430425444193</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202031000" />
+    <option name="totallyTimeSpent" value="202881000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -942,7 +936,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="JSCROLLPANEL WORKS OMFG THX GF&#10;" />
     <MESSAGE value="ClassLoader" />
     <MESSAGE value="Doesn't compile for strange reasons. Doesn't find the IHM module." />
     <MESSAGE value="ClassLoader OK !" />
@@ -967,7 +960,8 @@
     <MESSAGE value="Last Mandatory Filter" />
     <MESSAGE value="Save Project is ok, with the right name" />
     <MESSAGE value="Set FileFilters" />
-    <option name="LAST_COMMIT_MESSAGE" value="Set FileFilters" />
+    <MESSAGE value="Full Load and Save function !" />
+    <option name="LAST_COMMIT_MESSAGE" value="Full Load and Save function !" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1434,8 +1428,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Control/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25775978">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.6437247">
+          <caret line="59" column="18" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
