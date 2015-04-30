@@ -18,10 +18,10 @@ public class RotateLeft implements IPlugin
 		AffineTransform at = new AffineTransform();
 		int w = img.getWidth();
 		int h = img.getHeight();
-		at.translate(w / 2, h / 2);
+		at.translate(h / 2, w / 2);
 		at.rotate(-Math.PI / 2);
-		at.translate(-h / 2, -w / 2);
-		AffineTransformOp ato = new AffineTransformOp(at, AffineTransformOp.TYPE_BILINEAR);
+		at.translate(-w / 2, -h / 2);
+		AffineTransformOp ato = new AffineTransformOp(at, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
 		BufferedImage res = ato.filter(img, null);
 
 		return res;

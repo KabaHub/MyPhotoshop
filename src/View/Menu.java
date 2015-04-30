@@ -26,8 +26,9 @@ public class Menu extends JMenuBar
     private JMenu view = new JMenu("View");
     private JMenuItem hideInfo = new JMenuItem("Hide Project Toolbar");
 
-    private JMenu filters = new JMenu("Filters");
+    private JMenu filter = new JMenu("Filter");
     private JMenuItem apply = new JMenuItem("Apply Filter");
+    private JMenuItem reload = new JMenuItem("Reload Filters");
 
     private JMenu test = new JMenu("Test");
     private JMenuItem testitem = new JMenuItem("Test");
@@ -62,8 +63,10 @@ public class Menu extends JMenuBar
         add(view);
 
         apply.addActionListener(controller);
-        filters.add(apply);
-        add(filters);
+        filter.add(apply);
+        reload.addActionListener(controller);
+        filter.add(reload);
+        add(filter);
 
         testitem.addActionListener(controller);
         test.add(testitem);

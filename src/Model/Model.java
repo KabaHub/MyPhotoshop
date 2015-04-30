@@ -76,6 +76,13 @@ public class Model extends Observable
         return p;
     }
 
+    public void reloadPlugins()
+    {
+        pluginClassLoader = new PluginClassLoader();
+        pluginClassLoader.loadDirectory("plugin");
+        filters = pluginClassLoader.getClasses();
+    }
+
     public Hashtable<String, IPlugin> getFilters()
     {
         return filters;

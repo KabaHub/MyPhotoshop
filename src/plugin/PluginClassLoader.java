@@ -2,8 +2,10 @@ package plugin;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
+import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.jar.JarEntry;
@@ -17,50 +19,42 @@ public class PluginClassLoader extends ClassLoader
     public Hashtable<String, IPlugin> listPlugin = new Hashtable<>();
     public void loadDirectory(String path)
     {
-        File[] files = null;
-        File dirToScan = new File(path);
-        files = dirToScan.listFiles();
-        assert files != null;
-        for (File f : files)
+        File pluginDir = new File(path);
+        File[] files = pluginDir.listFiles();
+        for (File f : files != null ? files : new File[0])
         {
             if (f.getName().endsWith(".jar"))
             {
-                load(f);
-            }
-        }
-    }
-
-    private void load(File file)
-    {
-        try
-        {
-            URL toURL = file.toURI().toURL();
-            URLClassLoader ucl = new URLClassLoader(new URL[]{toURL});
-            JarFile jf = new JarFile(file);
-            Enumeration<JarEntry> eje = jf.entries();
-            while (eje.hasMoreElements())
-            {
-                JarEntry je = eje.nextElement();
-                String name = je.getName();
-                if (je.getName().endsWith(".class"))
+                try
                 {
-                    name = name.replace("/", ".").replace(".class", "");
-                    Class c = ucl.loadClass(name);
-                    Class[] interfaces = c.getInterfaces();
-                    for (Class i : interfaces)
+                    URLClassLoader ucl = new URLClassLoader(new URL[]{f.toURI().toURL()});
+                    JarFile jarFile = new JarFile(f);
+                    Enumeration<JarEntry> jarEntryEnumeration = jarFile.entries();
+                    while (jarEntryEnumeration.hasMoreElements())
                     {
-                        if (i.getSimpleName().equals("IPlugin"))
+                        JarEntry jarEntry = jarEntryEnumeration.nextElement();
+                        String name = jarEntry.getName();
+                        if (name.endsWith(".class"))
                         {
-                            IPlugin ip = (IPlugin) c.newInstance();
-                            listPlugin.put(ip.getName(), ip);
+                            name = name.replace("/", ".").replace(".class", "");
+                            Class c = ucl.loadClass(name);
+                            for (Class i : c.getInterfaces())
+                            {
+                                if (i.getSimpleName().contentEquals("IPlugin"))
+                                {
+                                    IPlugin plugin = (IPlugin) c.newInstance();
+                                    listPlugin.put(plugin.getName(), plugin);
+                                }
+                            }
                         }
                     }
+                    jarFile.close();
+
+                } catch (IOException | ClassNotFoundException | IllegalAccessException | InstantiationException e)
+                {
+                    e.printStackTrace();
                 }
             }
-            jf.close();
-        } catch (InstantiationException | ClassNotFoundException | IllegalAccessException | IOException e)
-        {
-            e.printStackTrace();
         }
     }
 

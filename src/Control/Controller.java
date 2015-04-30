@@ -89,6 +89,9 @@ public class Controller implements ActionListener
         } else if (e.getActionCommand().contentEquals("Apply Filter"))
         {
             new ChooseFilterWindow(model.getFilters(), mainWindow.getCurrentTab().getProject());
+        } else if (e.getActionCommand().contentEquals("Reload Filters"))
+        {
+            model.reloadPlugins();
         } else if (e.getActionCommand().contentEquals("Test"))
         {
             System.out.println("History :");

@@ -65,6 +65,7 @@ public class ChooseFilterWindow extends JFrame
         this.getContentPane().add(top);
         this.getContentPane().add(down);
 
+        this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
 
