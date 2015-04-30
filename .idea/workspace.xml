@@ -1,29 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0bab6105-4809-42d7-8428-55e452ae4f02" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PluginSource/build/plugin/basic/AllGreen.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PluginSource/build/plugin/basic/Binary.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PluginSource/build/plugin/bonus/Blur.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PluginSource/build/plugin/bonus/Gradient.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PluginSource/build/plugin/basic/GrayScale.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PluginSource/build/plugin/basic/GrayScaleV2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PluginSource/build/plugin/basic/HorizontalFlip.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PluginSource/build/plugin/IPlugin.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PluginSource/build/plugin/basic/Invert.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PluginSource/build/plugin/bonus/LaplaceFilter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PluginSource/build/plugin/bonus/RandomPoints.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PluginSource/build/plugin/basic/RotateLeft.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PluginSource/build/plugin/basic/RotateRight.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PluginSource/build/plugin/bonus/Sepia.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PluginSource/build/plugin/bonus/SobelBorders.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PluginSource/build/plugin/basic/VerticalFlip.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PluginSource/build/plugin/basic/VeryLong.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PluginSource/src/plugin/basic/HorizontalFlip.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/ChooseFilterWindow.java" afterPath="$PROJECT_DIR$/src/View/ChooseFilterWindow.java" />
+    <list default="true" id="0bab6105-4809-42d7-8428-55e452ae4f02" name="Default" comment="Sa">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Control/Controller.java" afterPath="$PROJECT_DIR$/src/Control/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Project.java" afterPath="$PROJECT_DIR$/src/Model/Project.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PluginSource/src/plugin/basic/VerticalFlip.java" afterPath="$PROJECT_DIR$/PluginSource/src/plugin/basic/VerticalFlip.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="duplai_g-myphotoshop.iws" />
@@ -47,37 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ChooseFilterWindow.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/View/ChooseFilterWindow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.1808367">
-              <caret line="99" column="49" selection-start-line="99" selection-start-column="49" selection-end-line="99" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Project.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Project.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="133" column="31" selection-start-line="133" selection-start-column="31" selection-end-line="133" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2138#2139#0" expanded="true" />
-                <element signature="e#2189#2190#0" expanded="true" />
-                <element signature="e#2376#2377#0" expanded="true" />
-                <element signature="e#2409#2410#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Control/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="102" column="65" selection-start-line="102" selection-start-column="65" selection-end-line="102" selection-end-column="65" />
+            <state vertical-scroll-proportion="0.3414305">
+              <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -141,10 +94,10 @@
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/Sepia.java" />
         <option value="$PROJECT_DIR$/src/plugin/PluginClassLoader.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/basic/VerticalFlip.java" />
-        <option value="$PROJECT_DIR$/src/Control/Controller.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/basic/HorizontalFlip.java" />
         <option value="$PROJECT_DIR$/src/Model/Project.java" />
         <option value="$PROJECT_DIR$/src/View/ChooseFilterWindow.java" />
+        <option value="$PROJECT_DIR$/src/Control/Controller.java" />
       </list>
     </option>
   </component>
@@ -786,7 +739,7 @@
       <workItem from="1430293411703" duration="20031000" />
       <workItem from="1430323809141" duration="5040000" />
       <workItem from="1430336252140" duration="11419000" />
-      <workItem from="1430351073611" duration="12090000" />
+      <workItem from="1430351073611" duration="17509000" />
     </task>
     <task id="LOCAL-00001" summary="Create Model, Few Events">
       <created>1429791042955</created>
@@ -956,11 +909,17 @@
       <option name="project" value="LOCAL" />
       <updated>1430394242120</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Last Mandatory Filter">
+      <created>1430400990286</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1430400990286</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="183710000" />
+    <option name="totallyTimeSpent" value="189129000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -975,9 +934,9 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16324325" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13385417" sideWeight="0.48216215" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27282378" sideWeight="0.48216215" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1013,9 +972,9 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16324325" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16648291" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3343949" sideWeight="0.48216215" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27282378" sideWeight="0.48216215" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27239582" sideWeight="0.5178378" order="3" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
@@ -1032,7 +991,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Observers and Co" />
     <MESSAGE value="Open tabs with Imported Pictures" />
     <MESSAGE value="JScrollPane that doesn't work" />
     <MESSAGE value="JSCROLLPANEL WORKS OMFG THX GF&#10;" />
@@ -1057,7 +1015,8 @@
     <MESSAGE value="Rotate Left" />
     <MESSAGE value="[BUG][SOLVED] Corrected Name of Opened Project" />
     <MESSAGE value="Corrected ClassLoader" />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrected ClassLoader" />
+    <MESSAGE value="Last Mandatory Filter" />
+    <option name="LAST_COMMIT_MESSAGE" value="Last Mandatory Filter" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1458,8 +1417,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
           <folding>
-            <element signature="e#2241#2242#0" expanded="true" />
-            <element signature="e#2274#2275#0" expanded="true" />
+            <element signature="e#2241#2242#0" expanded="false" />
+            <element signature="e#2274#2275#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1497,17 +1456,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Control/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/View/ChooseFilterWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="102" column="65" selection-start-line="102" selection-start-column="65" selection-end-line="102" selection-end-column="65" />
+        <state vertical-scroll-proportion="0.08906882">
+          <caret line="107" column="67" selection-start-line="107" selection-start-column="67" selection-end-line="107" selection-end-column="67" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Project.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="1.0094467">
           <caret line="133" column="31" selection-start-line="133" selection-start-column="31" selection-end-line="133" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1519,10 +1478,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/ChooseFilterWindow.java">
+    <entry file="file://$PROJECT_DIR$/src/Control/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.1808367">
-          <caret line="99" column="49" selection-start-line="99" selection-start-column="49" selection-end-line="99" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.3414305">
+          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
           <folding />
         </state>
       </provider>
