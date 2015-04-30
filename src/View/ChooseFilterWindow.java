@@ -24,7 +24,7 @@ public class ChooseFilterWindow extends JFrame
 {
     private Project project;
     private Hashtable<String, IPlugin> filters;
-    private JComboBox combo;
+    private JComboBox<String> combo;
     private String selectedFilter;
 
     public ChooseFilterWindow(Hashtable<String, IPlugin> filters, Project project)
@@ -38,16 +38,19 @@ public class ChooseFilterWindow extends JFrame
 
         this.getContentPane().setLayout(new BoxLayout(this.getContentPane(), BoxLayout.PAGE_AXIS));
         JButton okButton = new JButton("Apply");
-        okButton.addActionListener(new ButtonListener());
+        okButton.addActionListener(new ButtonListener(this));
         JButton stopButton = new JButton("Stop");
-        stopButton.addActionListener(new ButtonListener());
+        stopButton.addActionListener(new ButtonListener(this));
         JButton cancelButton = new JButton("Cancel");
-        cancelButton.addActionListener(new ButtonListener());
+        cancelButton.addActionListener(new ButtonListener(this));
 
-        combo = new JComboBox();
+        combo = new JComboBox<>();
         Enumeration filterName = filters.keys();
+        ArrayList<String> sortedFilterName = new ArrayList<>();
         while (filterName.hasMoreElements())
-            combo.addItem(filterName.nextElement());
+            sortedFilterName.add((String)filterName.nextElement());
+        Collections.sort(sortedFilterName);
+        sortedFilterName.forEach(combo::addItem);
         combo.addItemListener(new ItemState());
         combo.setSelectedIndex(0);
         selectedFilter = combo.getSelectedItem().toString();
@@ -80,8 +83,12 @@ public class ChooseFilterWindow extends JFrame
 
     public class ButtonListener implements ActionListener
     {
-        private boolean filterRunning = false;
-
+        ChooseFilterWindow chooseFilterWindow;
+        public ButtonListener(ChooseFilterWindow chooseFilterWindow)
+        {
+            super();
+            this.chooseFilterWindow = chooseFilterWindow;
+        }
         @Override
         public void actionPerformed(ActionEvent e)
         {
@@ -93,17 +100,17 @@ public class ChooseFilterWindow extends JFrame
                     if (project.isPluginRunning())
                     {
                         JOptionPane info = new JOptionPane();
-                        info.showMessageDialog(null, "A filter is already Running", "Warning", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "A filter is already Running", "Warning", JOptionPane.INFORMATION_MESSAGE);
                     }
                     else
                     project.applyPlugin(plugin);
                 }
             } else if (e.getActionCommand().contentEquals("Cancel"))
             {
-
+                chooseFilterWindow.dispose();
             } else if (e.getActionCommand().contentEquals("Stop"))
             {
-
+                project.stopPlugin();
             }
         }
 

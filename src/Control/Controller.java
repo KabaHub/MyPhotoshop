@@ -92,6 +92,8 @@ public class Controller implements ActionListener
         } else if (e.getActionCommand().contentEquals("Reload Filters"))
         {
             model.reloadPlugins();
+            JOptionPane jop = new JOptionPane();
+            jop.showMessageDialog(null, "Plugin Reloaded from plugin/", "Information", JOptionPane.WARNING_MESSAGE);
         } else if (e.getActionCommand().contentEquals("Test"))
         {
             System.out.println("History :");

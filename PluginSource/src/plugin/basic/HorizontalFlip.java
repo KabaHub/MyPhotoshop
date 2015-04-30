@@ -9,13 +9,13 @@ import java.awt.image.BufferedImage;
 
 import plugin.IPlugin;
 
-public class VerticalFlip implements IPlugin
+public class HorizontalFlip implements IPlugin
 {
 	@Override
 	public BufferedImage perform(BufferedImage img)
 	{
-		AffineTransform at = AffineTransform.getScaleInstance(1, -1);
-		at.translate(0, -img.getHeight());
+		AffineTransform at = AffineTransform.getScaleInstance(-1, 1);
+		at.translate(-img.getWidth(), 0);
 		AffineTransformOp op = new AffineTransformOp(at, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
 		img = op.filter(img, null);
 
@@ -25,7 +25,7 @@ public class VerticalFlip implements IPlugin
 	@Override
 	public String getName()
 	{
-		return "Vertical Flip";
+		return "Horizontal Flip";
 	}
 
 }

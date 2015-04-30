@@ -24,6 +24,7 @@ public class Project extends Observable implements Serializable
     private ImagePanel imagePanel;
     private ArrayList<ImageState> history = new ArrayList<>();
 
+    Thread pluginThread;
     private boolean isPluginRunning = false;
 
     public Project(Observer o, Model model)
@@ -121,8 +122,17 @@ public class Project extends Observable implements Serializable
         {
             isPluginRunning = true;
             PluginExecutor pluginExecutor = new PluginExecutor(this, imagePanel.getImage(), plugin);
-            Thread t = new Thread(pluginExecutor);
-            t.start();
+            pluginThread = new Thread(pluginExecutor);
+            pluginThread.start();
+        }
+    }
+
+    public void stopPlugin()
+    {
+        if (isPluginRunning)
+        {
+            pluginThread.stop();
+            isPluginRunning = false;
         }
     }
 
