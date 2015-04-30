@@ -1,6 +1,7 @@
 package Control;
 
 import View.ChooseFilterWindow;
+import View.ImageFileFilter;
 import View.MainWindow;
 import Model.Model;
 import Model.Project;
@@ -21,6 +22,7 @@ public class Controller implements ActionListener
     private JFileChooser projectFileChooser = new JFileChooser(System.getProperty("user.dir"));
     private JFileChooser imageFileChooser = new JFileChooser(System.getProperty("user.dir"));
     private JFileChooser saveFileChooser = new JFileChooser(System.getProperty("user.dir"));
+    private JFileChooser exportFileChooser = new JFileChooser(System.getProperty("user.dir"));
 
     public Controller(MainWindow mainWindow, Model model)
     {
@@ -38,6 +40,17 @@ public class Controller implements ActionListener
             model.addProject();
         } else if (e.getActionCommand().contentEquals("Open Project"))
         {
+            ImageFileFilter mypsdFileFilter = new ImageFileFilter("MyPhotoshop (*.myPSD)", ".myPSD");
+            ImageFileFilter pngFileFilter = new ImageFileFilter("PNG (*.png)", ".png");
+            ImageFileFilter jpgFileFilter = new ImageFileFilter("JPEG (*.jpg;*.jpeg)", new String[]{".jpg", ".jpeg"});
+            ImageFileFilter gifFileFilter = new ImageFileFilter("GIF (*.gif)", ".gif");
+            ImageFileFilter bmpFileFilter = new ImageFileFilter("BMP (*.bmp)", ".bmp");
+            projectFileChooser.setAcceptAllFileFilterUsed(false);
+            projectFileChooser.addChoosableFileFilter(mypsdFileFilter);
+            projectFileChooser.addChoosableFileFilter(pngFileFilter);
+            projectFileChooser.addChoosableFileFilter(jpgFileFilter);
+            projectFileChooser.addChoosableFileFilter(gifFileFilter);
+            projectFileChooser.addChoosableFileFilter(bmpFileFilter);
             if (projectFileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION)
             {
                 File f = projectFileChooser.getSelectedFile();
@@ -45,13 +58,39 @@ public class Controller implements ActionListener
             }
         } else if (e.getActionCommand().contentEquals("Import Image"))
         {
+            ImageFileFilter pngFileFilter = new ImageFileFilter("PNG (*.png)", ".png");
+            ImageFileFilter jpgFileFilter = new ImageFileFilter("JPEG (*.jpg;*.jpeg)", new String[]{".jpg", ".jpeg"});
+            ImageFileFilter gifFileFilter = new ImageFileFilter("GIF (*.gif)", ".gif");
+            ImageFileFilter bmpFileFilter = new ImageFileFilter("BMP (*.bmp)", ".bmp");
+            imageFileChooser.addChoosableFileFilter(pngFileFilter);
+            imageFileChooser.addChoosableFileFilter(jpgFileFilter);
+            imageFileChooser.addChoosableFileFilter(gifFileFilter);
+            imageFileChooser.addChoosableFileFilter(bmpFileFilter);
             if (imageFileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION)
             {
                 File f = imageFileChooser.getSelectedFile();
                 mainWindow.getCurrentTab().getProject().importImage(f);
             }
+        } else if (e.getActionCommand().contentEquals("Export Image"))
+        {
+            ImageFileFilter pngFileFilter = new ImageFileFilter("PNG (*.png)", ".png");
+            ImageFileFilter jpgFileFilter = new ImageFileFilter("JPEG (*.jpg,*.jpeg)", new String[]{".jpg", ".jpeg"});
+            ImageFileFilter gifFileFilter = new ImageFileFilter("GIF (*.gif)", ".gif");
+            ImageFileFilter bmpFileFilter = new ImageFileFilter("BMP (*.bmp)", ".bmp");
+            exportFileChooser.setAcceptAllFileFilterUsed(false);
+            exportFileChooser.addChoosableFileFilter(pngFileFilter);
+            exportFileChooser.addChoosableFileFilter(jpgFileFilter);
+            exportFileChooser.addChoosableFileFilter(gifFileFilter);
+            exportFileChooser.addChoosableFileFilter(bmpFileFilter);
+            if (exportFileChooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION)
+            {
+                File f = exportFileChooser.getSelectedFile();
+                System.out.println(f.getName() + exportFileChooser.getFileFilter().getDescription());
+            }
         } else if (e.getActionCommand().contentEquals("Save Project"))
         {
+            ImageFileFilter saveFileFilter = new ImageFileFilter("MyPhotoshop (*.myPSD)", ".myPSD");
+            saveFileChooser.addChoosableFileFilter(saveFileFilter);
             boolean satisfiedOfName = false;
             while (!satisfiedOfName)
             {
@@ -176,6 +215,6 @@ public class Controller implements ActionListener
         {
             mainWindow.removeFromTabbedPanel(mainWindow.getCurrentTab());
         } else
-            System.out.println(e.getActionCommand() + " not yet Implemented : " + e.getActionCommand());
+            System.out.println(e.getActionCommand() + " not yet Implemented");
     }
 }

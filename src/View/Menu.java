@@ -14,8 +14,9 @@ public class Menu extends JMenuBar
     private JMenu file = new JMenu("File");
     private JMenuItem newProject = new JMenuItem("New Project");
     private JMenuItem openProject = new JMenuItem("Open Project");
-    private JMenuItem importImage = new JMenuItem("Import Image");
     private JMenuItem saveProject = new JMenuItem("Save Project");
+    private JMenuItem importImage = new JMenuItem("Import Image");
+    private JMenuItem exportImage = new JMenuItem("Export Image");
     private JMenuItem closeProject = new JMenuItem("Close Project");
     private JMenuItem exit = new JMenuItem("Exit");
 
@@ -42,9 +43,11 @@ public class Menu extends JMenuBar
         openProject.addActionListener(controller);
         file.add(openProject);
         saveProject.addActionListener(controller);
-        file.add(importImage);
-        importImage.addActionListener(controller);
         file.add(saveProject);
+        importImage.addActionListener(controller);
+        file.add(importImage);
+        exportImage.addActionListener(controller);
+        file.add(exportImage);
         closeProject.addActionListener(controller);
         file.add(closeProject);
         exit.addActionListener(controller);
