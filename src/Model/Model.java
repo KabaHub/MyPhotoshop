@@ -45,7 +45,10 @@ public class Model extends Observable
             {
                 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file));
                 p = (Project)ois.readObject();
+                String fileName = file.getName().substring(0, file.getName().lastIndexOf('.'));
+                p.setProjectName(Project.getNewProjectName(projects, fileName));
                 projects.add(p);
+                System.out.println(p.getProjectName());
                 p.buildProject();
                 setChanged();
                 notifyObservers(p);

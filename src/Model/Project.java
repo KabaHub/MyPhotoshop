@@ -12,6 +12,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.SplittableRandom;
 
 /**
  * Created by Gabriel on 23/04/2015.
@@ -146,8 +147,12 @@ public class Project extends Observable implements Serializable
         return projectName;
     }
 
+    public void setProjectName(String name)
+    {
+        projectName = name;
+    }
 
-    private String getNewProjectName(ArrayList<Project> projects, String name)
+    public static String getNewProjectName(ArrayList<Project> projects, String name)
     {
         boolean exists = true;
         int number = 1;
