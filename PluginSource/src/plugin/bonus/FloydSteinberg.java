@@ -29,8 +29,6 @@ public class FloydSteinberg implements IPlugin
                 greyImg[i][j] = (c.getRed() + c.getGreen() + c.getBlue()) / 3;
             }
 
-        System.out.println("test");
-
         for (int j = 0; j < h; j++)
             for (int i = 0; i < w; i++)
             {
