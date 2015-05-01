@@ -1,6 +1,7 @@
 package View;
 
 import IHM.ImagePanel;
+import Model.ImageState;
 import Model.Project;
 import com.sun.org.apache.xpath.internal.operations.Bool;
 
@@ -21,9 +22,9 @@ public class ProjectPane extends JPanel
     ImagePanel imagePanel;
     JScrollPane imageScrollPane;
 
-    JPanel infoPanel;
+    JSplitPane infoPanel;
     JPanel histoPanel;
-    ArrayList<JButton> histoButtons;
+    ArrayList<JButton> histoButtons = new ArrayList<>();
     JScrollPane histoScrollPane;
 
     public ProjectPane(Project project)
@@ -49,21 +50,16 @@ public class ProjectPane extends JPanel
 
     private void initInfoPanel()
     {
-        infoPanel = new JPanel();
-
-        histoPanel = new JPanel();
-        histoPanel.setLayout(new BoxLayout(histoPanel, BoxLayout.PAGE_AXIS));
-
-//        JButton button1 = new JButton("Test");
-//        button1.setMaximumSize(new Dimension(300, 300));
-//        histoPanel.add(button1);
+        histoPanel = new JPanel(new BoxLayout(null, BoxLayout.PAGE_AXIS));
         histoPanel.setPreferredSize(new Dimension(300, 300));
+        histoScrollPane = new JScrollPane(histoPanel);
+        JPanel tmp = new JPanel();
+        infoPanel = new JSplitPane(JSplitPane.VERTICAL_SPLIT, histoScrollPane, tmp);
 
         histoScrollPane = new JScrollPane(histoPanel);
-        infoPanel.add(histoScrollPane);
     }
 
-    public JPanel getInfoPanel()
+    public JSplitPane getInfoPanel()
     {
         return infoPanel;
     }

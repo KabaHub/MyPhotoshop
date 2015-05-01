@@ -12,7 +12,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
-import java.util.SplittableRandom;
 
 /**
  * Created by Gabriel on 23/04/2015.
@@ -22,6 +21,7 @@ public class Project extends Observable implements Serializable
     private static final long serialVersionUID = -403250971215465050L;
     private String projectName;
     private ImagePanel imagePanel;
+    private int currentState = 1;
     private ArrayList<ImageState> history = new ArrayList<>();
 
     Thread pluginThread;
@@ -32,9 +32,8 @@ public class Project extends Observable implements Serializable
         addObserver(o);
         projectName = getNewProjectName(model.getProjects(), "New Project");
         BufferedImage newImage = new BufferedImage(320, 180, BufferedImage.TYPE_INT_ARGB);
-        ImageState imageState = new ImageState("Original", newImage);
-        history.add(imageState);
         imagePanel = new ImagePanel(newImage, projectName);
+        addToHistory("Original", newImage);
     }
 
     public Project(Observer o, Model model, File file)
@@ -46,8 +45,7 @@ public class Project extends Observable implements Serializable
             projectName = projectName.substring(0, n);
         projectName = getNewProjectName(model.getProjects(), projectName);
         imagePanel = new ImagePanel(file);
-        ImageState imageState = new ImageState("Original", imagePanel.getImage());
-        history.add(imageState);
+        addToHistory("Original", imagePanel.getImage());
     }
 
     public Project(Observer o, Model model, BufferedImage bufferedImage, String name)
@@ -55,8 +53,7 @@ public class Project extends Observable implements Serializable
         addObserver(o);
         projectName = getNewProjectName(model.getProjects(), name);
         imagePanel = new ImagePanel(bufferedImage, name);
-        ImageState imageState = new ImageState("Original", imagePanel.getImage());
-        history.add(imageState);
+        addToHistory("Original", imagePanel.getImage());
     }
 
     public boolean isHistoryEmpty()
@@ -93,8 +90,7 @@ public class Project extends Observable implements Serializable
 
     public void setImageChanges(BufferedImage image, String pluginName)
     {
-        ImageState imageState = new ImageState(pluginName, image);
-        history.add(imageState);
+        addToHistory(pluginName, image);
         imagePanel.setImage(image);
         setChanged();
         notifyObservers(this);
@@ -110,12 +106,17 @@ public class Project extends Observable implements Serializable
         {
             e.printStackTrace();
         }
-//        imagePanel.drawImage(0, 0, image);
         imagePanel.setImage(image);
-        ImageState imageState = new ImageState("Imported File " + file.getName(), imagePanel.getImage());
-        history.add(imageState);
+        addToHistory("Imported File " + file.getName(), imagePanel.getImage());
         setChanged();
         notifyObservers(this);
+    }
+
+    private void addToHistory(String pluginName, BufferedImage image)
+    {
+        currentState++;
+        ImageState imageState = new ImageState(pluginName, image);
+        history.add(imageState);
     }
 
     public void applyPlugin(IPlugin plugin)
@@ -199,6 +200,11 @@ public class Project extends Observable implements Serializable
             }
         }
         return name;
+    }
+
+    public int getCurrentState()
+    {
+        return currentState;
     }
 
     private String getFileExtension(File file)

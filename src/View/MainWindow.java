@@ -101,7 +101,7 @@ public class MainWindow extends JFrame implements Observer
                     repaint();
                 }
             }
-            // New Project
+            // New Project (Just Opened)
             if (newProject)
             {
                 ProjectPane projectPanel = new ProjectPane(project);

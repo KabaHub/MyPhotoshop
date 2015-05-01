@@ -170,84 +170,40 @@ public class Controller implements ActionListener
                     }
                 }
             }
-        } else if (e.getActionCommand().
-
-                contentEquals("Close Project")
-
-                )
-
+        } else if (e.getActionCommand().contentEquals("Close Project"))
         {
             mainWindow.removeFromTabbedPanel(mainWindow.getCurrentTab());
-        } else if (e.getActionCommand().
-
-                contentEquals("Exit")
-
-                )
-
+        } else if (e.getActionCommand().contentEquals("Exit"))
         {
             System.exit(0);
-        } else if (e.getActionCommand().
-
-                contentEquals("Undo")
-
-                )
-
+        } else if (e.getActionCommand().contentEquals("Undo"))
         {
 
-        } else if (e.getActionCommand().
-
-                contentEquals("Redo")
-
-                )
-
+        } else if (e.getActionCommand().contentEquals("Redo"))
         {
 
-        } else if (e.getActionCommand().
-
-                contentEquals("Hide Project Toolbar")
-
-                )
-
+        } else if (e.getActionCommand().contentEquals("Hide Project Toolbar"))
         {
             if (mainWindow.getCurrentTab().getInfoPanel().isVisible())
                 mainWindow.getCurrentTab().getInfoPanel().setVisible(false);
             else
                 mainWindow.getCurrentTab().getInfoPanel().setVisible(true);
-        } else if (e.getActionCommand().
-
-                contentEquals("Apply Filter")
-
-                )
-
+        } else if (e.getActionCommand().contentEquals("Apply Filter"))
         {
             new ChooseFilterWindow(model.getFilters(), mainWindow.getCurrentTab().getProject());
-        } else if (e.getActionCommand().
-
-                contentEquals("Reload Filters")
-
-                )
-
+        } else if (e.getActionCommand().contentEquals("Reload Filters"))
         {
             model.reloadPlugins();
+
             JOptionPane jop = new JOptionPane();
             jop.showMessageDialog(null, "Plugin Reloaded from plugin/", "Information", JOptionPane.WARNING_MESSAGE);
-        } else if (e.getActionCommand().
-
-                contentEquals("Test")
-
-                )
-
+        } else if (e.getActionCommand().contentEquals("Test"))
         {
             System.out.println("History :");
             System.out.println("--------------------------");
             for (ImageState i : mainWindow.getCurrentTab().getProject().getHistory())
                 System.out.println(i.getAppliedIPlugin());
-        } else if (e.getActionCommand().
-
-                contentEquals("CloseTab")
-
-                )
-
+        } else if (e.getActionCommand().contentEquals("CloseTab"))
         {
             mainWindow.removeFromTabbedPanel(mainWindow.getCurrentTab());
         } else
