@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bab6105-4809-42d7-8428-55e452ae4f02" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/ImageState.java" afterPath="$PROJECT_DIR$/src/Model/ImageState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Control/Controller.java" afterPath="$PROJECT_DIR$/src/Control/Controller.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/MainWindow.java" afterPath="$PROJECT_DIR$/src/View/MainWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Project.java" afterPath="$PROJECT_DIR$/src/Model/Project.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/ProjectPane.java" afterPath="$PROJECT_DIR$/src/View/ProjectPane.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -29,15 +28,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Control/Controller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="189" column="70" selection-start-line="189" selection-start-column="70" selection-end-line="189" selection-end-column="70" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ProjectPane.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/View/ProjectPane.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.78923076">
-              <caret line="57" column="90" selection-start-line="57" selection-start-column="90" selection-end-line="57" selection-end-column="90" />
+            <state vertical-scroll-proportion="1.7476923">
+              <caret line="58" column="68" selection-start-line="58" selection-start-column="68" selection-end-line="58" selection-end-column="68" />
               <folding>
-                <element signature="e#1897#1898#0" expanded="true" />
-                <element signature="e#1929#1930#0" expanded="true" />
+                <element signature="e#1848#1849#0" expanded="true" />
+                <element signature="e#1880#1881#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainWindow.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/MainWindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="111" column="48" selection-start-line="111" selection-start-column="48" selection-end-line="111" selection-end-column="48" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -106,9 +125,9 @@
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/GrayScaleV2.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/FloydSteinberg.java" />
         <option value="$PROJECT_DIR$/src/Model/Model.java" />
-        <option value="$PROJECT_DIR$/src/Control/Controller.java" />
         <option value="$PROJECT_DIR$/src/Model/Project.java" />
         <option value="$PROJECT_DIR$/src/Model/ImageState.java" />
+        <option value="$PROJECT_DIR$/src/Control/Controller.java" />
         <option value="$PROJECT_DIR$/src/View/MainWindow.java" />
         <option value="$PROJECT_DIR$/src/View/ProjectPane.java" />
       </list>
@@ -655,7 +674,7 @@
       <workItem from="1430336252140" duration="11419000" />
       <workItem from="1430351073611" duration="37789000" />
       <workItem from="1430470846757" duration="7485000" />
-      <workItem from="1430543723664" duration="6629000" />
+      <workItem from="1430543723664" duration="10322000" />
     </task>
     <task id="LOCAL-00001" summary="Create Model, Few Events">
       <created>1429791042955</created>
@@ -879,11 +898,23 @@
       <option name="project" value="LOCAL" />
       <updated>1430477741392</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Simple history">
+      <created>1430560003385</created>
+      <option name="number" value="00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1430560003385</updated>
+    </task>
+    <task id="LOCAL-00039" summary="History panel simple is ok">
+      <created>1430598929691</created>
+      <option name="number" value="00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1430598929691</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="223523000" />
+    <option name="totallyTimeSpent" value="227216000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -955,8 +986,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Images doesn't display... ?" />
-    <MESSAGE value="Filters works... On jpg..." />
     <MESSAGE value="Saving works !" />
     <MESSAGE value="[BUG][SOLVED] Two Projects with the same Name causes display problem." />
     <MESSAGE value="Project Name Corrected : No extension !" />
@@ -980,7 +1009,9 @@
     <MESSAGE value="Comments suppressed" />
     <MESSAGE value="[BUG][SOLVED] Corrected Mega Bug : Serialization loses Observer" />
     <MESSAGE value="Mandatory without History." />
-    <option name="LAST_COMMIT_MESSAGE" value="Mandatory without History." />
+    <MESSAGE value="Simple history" />
+    <MESSAGE value="History panel simple is ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="History panel simple is ok" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1292,14 +1323,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Control/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="191" column="8" selection-start-line="191" selection-start-column="8" selection-end-line="191" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/ChooseFilterWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1373,21 +1396,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Control/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="189" column="70" selection-start-line="189" selection-start-column="70" selection-end-line="189" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.9353846">
-          <caret line="114" column="47" selection-start-line="114" selection-start-column="47" selection-end-line="114" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="111" column="48" selection-start-line="111" selection-start-column="48" selection-end-line="111" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/ProjectPane.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.78923076">
-          <caret line="57" column="90" selection-start-line="57" selection-start-column="90" selection-end-line="57" selection-end-column="90" />
+        <state vertical-scroll-proportion="1.7476923">
+          <caret line="58" column="68" selection-start-line="58" selection-start-column="68" selection-end-line="58" selection-end-column="68" />
           <folding>
-            <element signature="e#1897#1898#0" expanded="true" />
-            <element signature="e#1929#1930#0" expanded="true" />
+            <element signature="e#1848#1849#0" expanded="true" />
+            <element signature="e#1880#1881#0" expanded="true" />
           </folding>
         </state>
       </provider>

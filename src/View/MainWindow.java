@@ -107,8 +107,8 @@ public class MainWindow extends JFrame implements Observer
             if (newProject)
             {
                 ProjectPane projectPanel = new ProjectPane(project);
-                if (project.isHistoryEmpty())
-                    projectPanel.getInfoPanel().setVisible(false);
+//                if (project.isHistoryEmpty())
+//                    projectPanel.getInfoPanel().setVisible(false);
                 this.addToTabbedPanel(project.getProjectName(), projectPanel);
                 // Set view to the right Tab
                 jTabbedPane.setSelectedComponent(projectPanel);

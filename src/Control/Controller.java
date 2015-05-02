@@ -185,9 +185,9 @@ public class Controller implements ActionListener
         } else if (e.getActionCommand().contentEquals("Hide Project Toolbar"))
         {
             if (mainWindow.getCurrentTab().getInfoPanel().isVisible())
-                mainWindow.getCurrentTab().getInfoPanel().setVisible(false);
+                mainWindow.getCurrentTab().setInfoPanelVisibility(false);
             else
-                mainWindow.getCurrentTab().getInfoPanel().setVisible(true);
+                mainWindow.getCurrentTab().setInfoPanelVisibility(true);
         } else if (e.getActionCommand().contentEquals("Apply Filter"))
         {
             new ChooseFilterWindow(model.getFilters(), mainWindow.getCurrentTab().getProject());
