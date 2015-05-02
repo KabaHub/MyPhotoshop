@@ -24,7 +24,7 @@ public class Project extends Observable implements Serializable
     private int currentState = 1;
     private ArrayList<ImageState> history = new ArrayList<>();
 
-    Thread pluginThread;
+    private transient Thread pluginThread;
     private boolean isPluginRunning = false;
 
     public Project(Observer o, Model model)
@@ -119,23 +119,23 @@ public class Project extends Observable implements Serializable
         history.add(imageState);
     }
 
-    public void undo()
-    {
-        if (currentState > 1 && currentState <= history.size())
-        {
-            currentState--;
-            imagePanel.setImage(history.get(currentState).getImage());
-        }
-    }
-
-    public void redo()
-    {
-        if (currentState > 1 && currentState < history.size())
-        {
-            currentState++;
-            imagePanel.setImage(history.get(currentState).getImage());
-        }
-    }
+//    public void undo()
+//    {
+//        if (currentState > 1 && currentState <= history.size())
+//        {
+//            currentState--;
+//            imagePanel.setImage(history.get(currentState).getImage());
+//        }
+//    }
+//
+//    public void redo()
+//    {
+//        if (currentState > 1 && currentState < history.size())
+//        {
+//            currentState++;
+//            imagePanel.setImage(history.get(currentState).getImage());
+//        }
+//    }
 
     public void applyPlugin(IPlugin plugin)
     {
