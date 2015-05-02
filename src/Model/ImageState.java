@@ -52,6 +52,10 @@ public class ImageState implements Serializable
         }
     }
 
+    public BufferedImage getImage()
+    {
+        return image;
+    }
     public String getAppliedIPlugin()
     {
         return appliedIPlugin;

@@ -7,6 +7,7 @@ import com.sun.org.apache.xpath.internal.operations.Bool;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 /**
@@ -24,7 +25,6 @@ public class ProjectPane extends JPanel
 
     JSplitPane infoPanel;
     JPanel histoPanel;
-    ArrayList<JButton> histoButtons = new ArrayList<>();
     JScrollPane histoScrollPane;
 
     public ProjectPane(Project project)
@@ -50,18 +50,40 @@ public class ProjectPane extends JPanel
 
     private void initInfoPanel()
     {
-        histoPanel = new JPanel(new BoxLayout(null, BoxLayout.PAGE_AXIS));
+        histoPanel = new JPanel();
+        histoPanel.setLayout(new BoxLayout(histoPanel, BoxLayout.PAGE_AXIS));
         histoPanel.setPreferredSize(new Dimension(300, 300));
+        histoPanel.setMinimumSize(new Dimension(300, 300));
         histoScrollPane = new JScrollPane(histoPanel);
+        histoScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         JPanel tmp = new JPanel();
         infoPanel = new JSplitPane(JSplitPane.VERTICAL_SPLIT, histoScrollPane, tmp);
-
-        histoScrollPane = new JScrollPane(histoPanel);
     }
 
     public JSplitPane getInfoPanel()
     {
         return infoPanel;
+    }
+
+    public void updateInfoPanel()
+    {
+        if (project.getHistory().size() > 1)
+            infoPanel.setVisible(true);
+        updateHistory();
+    }
+
+    private void updateHistory()
+    {
+        histoPanel.removeAll();
+        for (ImageState imageState : project.getHistory())
+        {
+            String appliedIPlugin = imageState.getAppliedIPlugin();
+            JButton newButton = new JButton(appliedIPlugin);
+            newButton.setPreferredSize((new Dimension(500, 500));
+            histoPanel.add(newButton);
+        }
+        this.revalidate();
+        this.repaint();
     }
 
     public Project getProject()

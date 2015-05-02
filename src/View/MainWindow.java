@@ -98,6 +98,8 @@ public class MainWindow extends JFrame implements Observer
                 if (project == pp.getProject())
                 {
                     newProject = false;
+                    // Update History
+                    pp.updateInfoPanel();
                     repaint();
                 }
             }
@@ -110,6 +112,7 @@ public class MainWindow extends JFrame implements Observer
                 this.addToTabbedPanel(project.getProjectName(), projectPanel);
                 // Set view to the right Tab
                 jTabbedPane.setSelectedComponent(projectPanel);
+                projectPanel.updateInfoPanel();
             }
         }
     }
