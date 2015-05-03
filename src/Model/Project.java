@@ -21,7 +21,7 @@ public class Project extends Observable implements Serializable
     private static final long serialVersionUID = -403250971215465050L;
     private String projectName;
     private ImagePanel imagePanel;
-    private int currentState = 1;
+    private int currentState = -1;
     private ArrayList<ImageState> history = new ArrayList<>();
 
     private transient Thread pluginThread;
@@ -115,17 +115,16 @@ public class Project extends Observable implements Serializable
     private void addToHistory(String pluginName, BufferedImage image)
     {
         currentState++;
+        history.subList(currentState, history.size()).clear();
         ImageState imageState = new ImageState(pluginName, image);
         history.add(imageState);
     }
 
     public void undo()
     {
-        System.out.println("Pre: " + currentState + " (" + history.get(currentState).getAppliedIPlugin() + ")");
-        if (currentState > 1 && currentState <= history.size())
+        if (currentState > 0 && currentState <= history.size())
         {
             currentState--;
-            System.out.println("New: " + currentState + " (" + history.get(currentState).getAppliedIPlugin() + ")");
             imagePanel.setImage(history.get(currentState).getImage());
             setChanged();
             notifyObservers(this);
@@ -134,11 +133,9 @@ public class Project extends Observable implements Serializable
 
     public void redo()
     {
-        System.out.println("Pre: " + currentState + " (" + history.get(currentState).getAppliedIPlugin() + ")");
-        if (currentState >= 1 && currentState < history.size())
+        if (currentState >= 0 && currentState + 1 < history.size())
         {
             currentState++;
-            System.out.println("New: " + currentState + " (" + history.get(currentState).getAppliedIPlugin() + ")");
             imagePanel.setImage(history.get(currentState).getImage());
             setChanged();
             notifyObservers(this);

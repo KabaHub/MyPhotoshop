@@ -3,6 +3,7 @@ package View;
 import Control.Controller;
 
 import javax.swing.*;
+import java.awt.event.KeyEvent;
 
 /**
  * Created by duplai_g on 4/22/15.
@@ -56,8 +57,10 @@ public class Menu extends JMenuBar
         add(file);
 
         undo.addActionListener(controller);
+        undo.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, KeyEvent.CTRL_DOWN_MASK));
         edit.add(undo);
         redo.addActionListener(controller);
+        redo.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, KeyEvent.CTRL_DOWN_MASK + KeyEvent.SHIFT_DOWN_MASK));
         edit.add(redo);
         add(edit);
 

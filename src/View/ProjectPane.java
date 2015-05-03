@@ -74,7 +74,7 @@ public class ProjectPane extends JPanel
     private void updateHistory()
     {
         histoPanel.removeAll();
-        int i = 1;
+        int i = 0;
         for (ImageState imageState : project.getHistory())
         {
             String appliedIPlugin = imageState.getAppliedIPlugin();

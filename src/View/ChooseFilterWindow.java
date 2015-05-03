@@ -1,17 +1,11 @@
 package View;
 
-import Control.PluginExecutor;
-import IHM.ImagePanel;
 import Model.Project;
 import plugin.IPlugin;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
+import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -38,11 +32,14 @@ public class ChooseFilterWindow extends JFrame
 
         this.getContentPane().setLayout(new BoxLayout(this.getContentPane(), BoxLayout.PAGE_AXIS));
         JButton okButton = new JButton("Apply");
+        this.getRootPane().setDefaultButton(okButton);
         okButton.addActionListener(new ButtonListener(this));
         JButton stopButton = new JButton("Stop");
         stopButton.addActionListener(new ButtonListener(this));
-        JButton cancelButton = new JButton("Cancel");
-        cancelButton.addActionListener(new ButtonListener(this));
+        JButton undoButton = new JButton("Undo");
+        undoButton.addActionListener(new ButtonListener(this));
+        JButton redoButton = new JButton("Redo");
+        redoButton.addActionListener(new ButtonListener(this));
 
         combo = new JComboBox<>();
         Enumeration filterName = filters.keys();
@@ -63,7 +60,8 @@ public class ChooseFilterWindow extends JFrame
         down.setLayout(new BoxLayout(down, BoxLayout.LINE_AXIS));
         down.add(okButton);
         down.add(stopButton);
-        down.add(cancelButton);
+        down.add(undoButton);
+        down.add(redoButton);
 
         this.getContentPane().add(top);
         this.getContentPane().add(down);
@@ -105,9 +103,12 @@ public class ChooseFilterWindow extends JFrame
                     else
                     project.applyPlugin(plugin);
                 }
-            } else if (e.getActionCommand().contentEquals("Cancel"))
+            } else if (e.getActionCommand().contentEquals("Undo"))
             {
                 project.undo();
+            } else if (e.getActionCommand().contentEquals("Redo"))
+            {
+                project.redo();
             } else if (e.getActionCommand().contentEquals("Stop"))
             {
                 project.stopPlugin();
