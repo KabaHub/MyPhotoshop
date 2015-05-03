@@ -3,14 +3,13 @@ package View;
 import IHM.ImagePanel;
 import Model.ImageState;
 import Model.Project;
-import com.sun.org.apache.xpath.internal.operations.Bool;
-
+import View.CustomComponents.CustomJPanel;
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.util.ArrayList;
+import java.awt.Color;
 
 /**
  * Created by Gabriel on 24/04/2015.
@@ -26,7 +25,7 @@ public class ProjectPane extends JPanel
     JScrollPane imageScrollPane;
 
     JSplitPane infoPanel;
-    JPanel histoPanel;
+    CustomJPanel histoPanel;
     JScrollPane histoScrollPane;
 
     public ProjectPane(Project project)
@@ -39,7 +38,7 @@ public class ProjectPane extends JPanel
         initInfoPanel();
         jSplitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, imageScrollPane, infoPanel);
         this.add(jSplitPane, BorderLayout.CENTER);
-        infoPanel.setResizeWeight(0.49f);
+        infoPanel.setResizeWeight(0.60f);
         jSplitPane.setResizeWeight(0.80f);
     }
 
@@ -53,11 +52,11 @@ public class ProjectPane extends JPanel
 
     private void initInfoPanel()
     {
-        histoPanel = new JPanel();
+        histoPanel = new CustomJPanel(CustomJPanel.BLACK);
         histoPanel.setLayout(new BoxLayout(histoPanel, BoxLayout.PAGE_AXIS));
         histoScrollPane = new JScrollPane(histoPanel);
         histoScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        JPanel tmp = new JPanel();
+        CustomJPanel tmp = new CustomJPanel(CustomJPanel.BLACK);
         infoPanel = new JSplitPane(JSplitPane.VERTICAL_SPLIT, histoScrollPane, tmp);
     }
 
@@ -91,6 +90,14 @@ public class ProjectPane extends JPanel
     {
         histoPanel.removeAll();
         int i = 0;
+        JLabel myLabel = new JLabel("History", SwingConstants.CENTER);
+        Border border = BorderFactory.createLineBorder(Color.BLACK);
+        myLabel.setBorder(border);
+        myLabel.setForeground(Color.WHITE);
+        myLabel.setMaximumSize(new Dimension(Integer.MAX_VALUE, myLabel.getMinimumSize().height));
+        myLabel.setHorizontalAlignment(JLabel.CENTER);
+        myLabel.setVerticalAlignment(JLabel.CENTER);
+        histoPanel.add(myLabel);
         for (ImageState imageState : project.getHistory())
         {
             String appliedIPlugin = imageState.getAppliedIPlugin();
@@ -99,6 +106,11 @@ public class ProjectPane extends JPanel
             newButton.setMaximumSize(new Dimension(Integer.MAX_VALUE, newButton.getMinimumSize().height));
             if (project.getCurrentState() == i)
                 newButton.setBackground(Color.LIGHT_GRAY);
+            newButton.setBackground(new Color(80, 80, 80));
+            newButton.setForeground(Color.WHITE);
+            newButton.setFocusPainted(false);
+//            newButton.setContentAreaFilled(false);
+//            newButton.setBorder(border);
             histoPanel.add(newButton);
             i++;
         }

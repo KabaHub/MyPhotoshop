@@ -3,6 +3,7 @@ package View;
 import Control.Controller;
 import IHM.ImagePanel;
 import Model.*;
+import View.CustomComponents.CustomJPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -34,7 +35,7 @@ public class MainWindow extends JFrame implements Observer
         setJMenuBar(menu);
         this.getContentPane().setLayout(new BorderLayout());
 
-        JPanel toolBox = new JPanel();
+        CustomJPanel toolBox = new CustomJPanel(CustomJPanel.BLACK);
         toolBox.setPreferredSize(new Dimension(32, 32));
         this.getContentPane().add(toolBox, BorderLayout.WEST);
         this.getContentPane().add(jTabbedPane, BorderLayout.CENTER);
@@ -106,6 +107,11 @@ public class MainWindow extends JFrame implements Observer
             // New Project (Just Opened)
             if (newProject)
             {
+//                String s = (String)JOptionPane.showInputDialog(
+//
+//                )
+//                JOptionPane sizeOption = new JOptionPane();
+//                sizeOption.showMessageDialog(this, "le message", "le titre", JOptionPane.QUESTION_MESSAGE);
                 ProjectPane projectPanel = new ProjectPane(project);
 //                if (project.isHistoryEmpty())
 //                    projectPanel.getInfoPanel().setVisible(false);
