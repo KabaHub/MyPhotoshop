@@ -199,7 +199,6 @@ public class Controller implements ActionListener
         } else if (e.getActionCommand().contentEquals("Reload Filters"))
         {
             model.reloadPlugins();
-
             JOptionPane.showMessageDialog(null, "Plugin Reloaded from plugin/", "Information", JOptionPane.WARNING_MESSAGE);
         } else if (e.getActionCommand().contentEquals("Test"))
         {
@@ -210,6 +209,9 @@ public class Controller implements ActionListener
         } else if (e.getActionCommand().contentEquals("CloseTab"))
         {
             mainWindow.removeFromTabbedPanel(mainWindow.getCurrentTab());
+        } else if (e.getActionCommand().contentEquals("About"))
+        {
+            JOptionPane.showMessageDialog(null, "MyPhotoshop by Gabriel DUPLAIX from EPITA. g.duplaix.pro@gmail.com", "About", JOptionPane.PLAIN_MESSAGE);
         } else
             System.out.println(e.getActionCommand() + " not yet Implemented");
     }
