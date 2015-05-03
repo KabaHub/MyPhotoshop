@@ -74,12 +74,16 @@ public class ProjectPane extends JPanel
     private void updateHistory()
     {
         histoPanel.removeAll();
+        int i = 1;
         for (ImageState imageState : project.getHistory())
         {
             String appliedIPlugin = imageState.getAppliedIPlugin();
             JButton newButton = new JButton(appliedIPlugin);
             newButton.setMaximumSize(new Dimension(Integer.MAX_VALUE, newButton.getMinimumSize().height));
+            if (project.getCurrentState() == i)
+                newButton.setBackground(Color.LIGHT_GRAY);
             histoPanel.add(newButton);
+            i++;
         }
         this.revalidate();
         this.repaint();

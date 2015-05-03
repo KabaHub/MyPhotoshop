@@ -119,23 +119,31 @@ public class Project extends Observable implements Serializable
         history.add(imageState);
     }
 
-//    public void undo()
-//    {
-//        if (currentState > 1 && currentState <= history.size())
-//        {
-//            currentState--;
-//            imagePanel.setImage(history.get(currentState).getImage());
-//        }
-//    }
-//
-//    public void redo()
-//    {
-//        if (currentState > 1 && currentState < history.size())
-//        {
-//            currentState++;
-//            imagePanel.setImage(history.get(currentState).getImage());
-//        }
-//    }
+    public void undo()
+    {
+        System.out.println("Pre: " + currentState + " (" + history.get(currentState).getAppliedIPlugin() + ")");
+        if (currentState > 1 && currentState <= history.size())
+        {
+            currentState--;
+            System.out.println("New: " + currentState + " (" + history.get(currentState).getAppliedIPlugin() + ")");
+            imagePanel.setImage(history.get(currentState).getImage());
+            setChanged();
+            notifyObservers(this);
+        }
+    }
+
+    public void redo()
+    {
+        System.out.println("Pre: " + currentState + " (" + history.get(currentState).getAppliedIPlugin() + ")");
+        if (currentState >= 1 && currentState < history.size())
+        {
+            currentState++;
+            System.out.println("New: " + currentState + " (" + history.get(currentState).getAppliedIPlugin() + ")");
+            imagePanel.setImage(history.get(currentState).getImage());
+            setChanged();
+            notifyObservers(this);
+        }
+    }
 
     public void applyPlugin(IPlugin plugin)
     {

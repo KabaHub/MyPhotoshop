@@ -178,10 +178,10 @@ public class Controller implements ActionListener
             System.exit(0);
         } else if (e.getActionCommand().contentEquals("Undo"))
         {
-
+            mainWindow.getCurrentTab().getProject().undo();
         } else if (e.getActionCommand().contentEquals("Redo"))
         {
-
+            mainWindow.getCurrentTab().getProject().redo();
         } else if (e.getActionCommand().contentEquals("Show Project Toolbar"))
         {
             if (mainWindow.getCurrentTab().getInfoPanel().isVisible())
@@ -190,7 +190,8 @@ public class Controller implements ActionListener
                 mainWindow.getCurrentTab().setInfoPanelVisibility(true);
         } else if (e.getActionCommand().contentEquals("Apply Filter"))
         {
-            new ChooseFilterWindow(model.getFilters(), mainWindow.getCurrentTab().getProject());
+            if (!model.getFilters().isEmpty())
+                new ChooseFilterWindow(model.getFilters(), mainWindow.getCurrentTab().getProject());
         } else if (e.getActionCommand().contentEquals("Reload Filters"))
         {
             model.reloadPlugins();

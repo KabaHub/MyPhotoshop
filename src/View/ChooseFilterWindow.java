@@ -107,7 +107,7 @@ public class ChooseFilterWindow extends JFrame
                 }
             } else if (e.getActionCommand().contentEquals("Cancel"))
             {
-                chooseFilterWindow.dispose();
+                project.undo();
             } else if (e.getActionCommand().contentEquals("Stop"))
             {
                 project.stopPlugin();
