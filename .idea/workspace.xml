@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bab6105-4809-42d7-8428-55e452ae4f02" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PluginSource/build/plugin/bonus/Sepia.class" afterPath="$PROJECT_DIR$/PluginSource/build/plugin/bonus/Sepia.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PluginSource/src/plugin/bonus/Sepia.java" afterPath="$PROJECT_DIR$/PluginSource/src/plugin/bonus/Sepia.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/ChooseFilterWindow.java" afterPath="$PROJECT_DIR$/src/View/ChooseFilterWindow.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/IHM/ImagePanel.java" afterPath="$PROJECT_DIR$/src/IHM/ImagePanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entryPoint/Main.java" afterPath="$PROJECT_DIR$/src/entryPoint/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="duplai_g-myphotoshop.iws" />
@@ -47,14 +48,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Sepia.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Sepia.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PluginSource/src/plugin/bonus/Sepia.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.52153844">
+            <state vertical-scroll-proportion="0.0">
               <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding>
-                <element signature="e#1026#1027#0" expanded="true" />
-                <element signature="e#1056#1057#0" expanded="true" />
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChooseFilterWindow.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/ChooseFilterWindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="126" column="48" selection-start-line="126" selection-start-column="48" selection-end-line="126" selection-end-column="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -66,6 +78,28 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/entryPoint/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.33740458">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImagePanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/IHM/ImagePanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="41" column="44" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -114,7 +148,6 @@
         <option value="$PROJECT_DIR$/src/View/MenuBar.java" />
         <option value="$PROJECT_DIR$/src/View/Caca.java" />
         <option value="$PROJECT_DIR$/src/Control/MainWindowController.java" />
-        <option value="$PROJECT_DIR$/src/entryPoint/Main.java" />
         <option value="$PROJECT_DIR$/src/Model/ProjectAction.java" />
         <option value="$PROJECT_DIR$/src/plugin/ClassLoader.java" />
         <option value="$PROJECT_DIR$/src/plugin/pluginClassLoader.java" />
@@ -136,7 +169,6 @@
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/Gradient.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/basic/GrayScale.java" />
         <option value="$PROJECT_DIR$/src/View/CloseButton.java" />
-        <option value="$PROJECT_DIR$/src/IHM/ImagePanel.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/basic/RotateRight.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/basic/RotateLeft.java" />
         <option value="$PROJECT_DIR$/src/plugin/PluginClassLoader.java" />
@@ -153,12 +185,14 @@
         <option value="$PROJECT_DIR$/src/Model/ImageState.java" />
         <option value="$PROJECT_DIR$/src/View/MainWindow.java" />
         <option value="$PROJECT_DIR$/src/Model/Project.java" />
-        <option value="$PROJECT_DIR$/src/View/ChooseFilterWindow.java" />
         <option value="$PROJECT_DIR$/src/Model/Model.java" />
         <option value="$PROJECT_DIR$/src/Control/Controller.java" />
         <option value="$PROJECT_DIR$/src/View/Menu.java" />
         <option value="$PROJECT_DIR$/src/View/ProjectPane.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/Sepia.java" />
+        <option value="$PROJECT_DIR$/src/View/ChooseFilterWindow.java" />
+        <option value="$PROJECT_DIR$/src/IHM/ImagePanel.java" />
+        <option value="$PROJECT_DIR$/src/entryPoint/Main.java" />
       </list>
     </option>
   </component>
@@ -704,13 +738,7 @@
       <workItem from="1430351073611" duration="37789000" />
       <workItem from="1430470846757" duration="7485000" />
       <workItem from="1430543723664" duration="10963000" />
-      <workItem from="1430643711442" duration="17730000" />
-    </task>
-    <task id="LOCAL-00001" summary="Create Model, Few Events">
-      <created>1429791042955</created>
-      <option name="number" value="00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1429791042955</updated>
+      <workItem from="1430643711442" duration="20779000" />
     </task>
     <task id="LOCAL-00002" summary="Tested Tabs">
       <created>1429794973858</created>
@@ -1000,11 +1028,17 @@
       <option name="project" value="LOCAL" />
       <updated>1430685050344</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="[BUG] Exception in Sépia filter after certain filters (Grayscale v2 ?)">
+      <created>1430686061909</created>
+      <option name="number" value="00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1430686061939</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="245587000" />
+    <option name="totallyTimeSpent" value="248636000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -1018,7 +1052,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26162162" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25621623" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1515625" sideWeight="0.48216215" order="0" side_tool="false" content_ui="combo" />
@@ -1049,7 +1083,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Size Problem corrected, new Gray filter." />
     <MESSAGE value="Close Buttons for Tabs" />
     <MESSAGE value="Rotate Left" />
     <MESSAGE value="[BUG][SOLVED] Corrected Name of Opened Project" />
@@ -1074,7 +1107,8 @@
     <MESSAGE value="[BUG][SOLVED] Added Error gestion for Opening of ex-format projects" />
     <MESSAGE value="Change Save" />
     <MESSAGE value="Changed Colors" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed Colors" />
+    <MESSAGE value="[BUG] Exception in Sépia filter after certain filters (Grayscale v2 ?)" />
+    <option name="LAST_COMMIT_MESSAGE" value="[BUG] Exception in Sépia filter after certain filters (Grayscale v2 ?)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1170,14 +1204,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.059379216">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/IHM/ImagePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -1397,16 +1423,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/ChooseFilterWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.8830769">
-          <caret line="81" column="13" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/io/ObjectStreamClass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1459,14 +1475,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entryPoint/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23538461">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/javax/swing/JMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3323077">
@@ -1491,14 +1499,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Control/PluginExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/awt/image/BufferedImage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1517,12 +1517,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PluginSource/src/plugin/bonus/Sepia.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52153844">
+        <state vertical-scroll-proportion="0.0">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
-            <element signature="e#1026#1027#0" expanded="true" />
-            <element signature="e#1056#1057#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/ChooseFilterWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="126" column="48" selection-start-line="126" selection-start-column="48" selection-end-line="126" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Control/PluginExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IHM/ImagePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="44" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entryPoint/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33740458">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

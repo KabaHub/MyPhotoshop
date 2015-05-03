@@ -121,8 +121,7 @@ public class ChooseFilterWindow extends JFrame
             IPlugin plugin = filters.get(filterName);
             if (plugin != null)
             {
-                BufferedImage result = plugin.perform(image);
-                return result;
+                return plugin.perform(image);
             } else
             {
                 System.out.println("image null");

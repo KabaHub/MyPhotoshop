@@ -1,5 +1,7 @@
 package IHM;
 
+import View.CustomComponents.CustomJPanel;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
@@ -37,6 +39,7 @@ public class ImagePanel extends JPanel implements Serializable, Scrollable
 		imageType = image.getType();
 		pixels = new int[width * height];
 		image.getRGB(0, 0, width, height, pixels, 0, width);
+		setBackground(new Color(80, 80, 80));
 	}
 
 	/**
@@ -59,6 +62,7 @@ public class ImagePanel extends JPanel implements Serializable, Scrollable
 		imageType = image.getType();
 		pixels = new int[width * height];
 		image.getRGB(0, 0, width, height, pixels, 0, width);
+		setBackground(new Color(80, 80, 80));
 	}
 
 	/**
