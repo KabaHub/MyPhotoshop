@@ -20,7 +20,8 @@ public class Sepia implements IPlugin {
 				int g = (int)Math.min(((c.getRed() * 0.340f) + (c.getGreen() * 0.675f) + (c.getBlue() * 0.160f)), 255);
 				int b = (int)Math.min(((c.getRed() * 0.273f) + (c.getGreen() * 0.535f) + (c.getBlue() * 0.132f)), 255);
 				c = new Color(r, g, b);
-				img.setRGB(i, j, c.getRGB());
+				if (c.getRGB() != NULL)
+					img.setRGB(i, j, c.getRGB());
 			}
 
 		return img;

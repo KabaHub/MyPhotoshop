@@ -104,9 +104,9 @@ public class ProjectPane extends JPanel
             JButton newButton = new JButton(appliedIPlugin);
             newButton.addActionListener(new ButtonListener(i));
             newButton.setMaximumSize(new Dimension(Integer.MAX_VALUE, newButton.getMinimumSize().height));
-            if (project.getCurrentState() == i)
-                newButton.setBackground(Color.LIGHT_GRAY);
             newButton.setBackground(new Color(80, 80, 80));
+            if (project.getCurrentState() == i)
+                newButton.setBackground(new Color(100, 100, 100));
             newButton.setForeground(Color.WHITE);
             newButton.setFocusPainted(false);
 //            newButton.setContentAreaFilled(false);
