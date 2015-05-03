@@ -194,15 +194,13 @@ public class Controller implements ActionListener
                 new ChooseFilterWindow(model.getFilters(), mainWindow.getCurrentTab().getProject());
             else
             {
-                JOptionPane jop = new JOptionPane();
-                jop.showMessageDialog(null, "No Plugin found in plugin/ !", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "No Plugin found in plugin/ !", "Error", JOptionPane.ERROR_MESSAGE);
             }
         } else if (e.getActionCommand().contentEquals("Reload Filters"))
         {
             model.reloadPlugins();
 
-            JOptionPane jop = new JOptionPane();
-            jop.showMessageDialog(null, "Plugin Reloaded from plugin/", "Information", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Plugin Reloaded from plugin/", "Information", JOptionPane.WARNING_MESSAGE);
         } else if (e.getActionCommand().contentEquals("Test"))
         {
             System.out.println("History :");

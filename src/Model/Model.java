@@ -55,8 +55,7 @@ public class Model extends Observable
                 notifyObservers(p);
             } catch (ClassNotFoundException | IOException e)
             {
-                JOptionPane jop = new JOptionPane();
-                jop.showMessageDialog(null, "Couldn't load " + file.getName() + System.getProperty("line.separator") + e.getLocalizedMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Couldn't load " + file.getName() + System.getProperty("line.separator") + e.getLocalizedMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
             return p;
         } else
