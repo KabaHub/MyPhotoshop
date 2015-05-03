@@ -13,6 +13,7 @@ public class ImageFileFilter extends FileFilter
     protected String description;
     protected ArrayList<String> extensions = new ArrayList<>();
     private String format = null;
+    
 
     public ImageFileFilter(String description, String extension)
     {
