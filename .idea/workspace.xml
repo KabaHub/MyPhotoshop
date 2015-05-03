@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bab6105-4809-42d7-8428-55e452ae4f02" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/ChooseFilterWindow.java" afterPath="$PROJECT_DIR$/src/View/ChooseFilterWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Model.java" afterPath="$PROJECT_DIR$/src/Model/Model.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Project.java" afterPath="$PROJECT_DIR$/src/Model/Project.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/ProjectPane.java" afterPath="$PROJECT_DIR$/src/View/ProjectPane.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="duplai_g-myphotoshop.iws" />
@@ -700,7 +696,7 @@
       <workItem from="1430351073611" duration="37789000" />
       <workItem from="1430470846757" duration="7485000" />
       <workItem from="1430543723664" duration="10963000" />
-      <workItem from="1430643711442" duration="15427000" />
+      <workItem from="1430643711442" duration="15457000" />
     </task>
     <task id="LOCAL-00001" summary="Create Model, Few Events">
       <created>1429791042955</created>
@@ -972,11 +968,17 @@
       <option name="project" value="LOCAL" />
       <updated>1430659569417</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Added Error gestion for Opening of ex-format projects">
+      <created>1430663914294</created>
+      <option name="number" value="00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1430663914294</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="243284000" />
+    <option name="totallyTimeSpent" value="243314000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -1021,7 +1023,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="MultiThreading OK&#10;" />
     <MESSAGE value="Sobel Filter, CHANGED GRAY FILTER" />
     <MESSAGE value="Sépia Filter" />
     <MESSAGE value="More filters" />
@@ -1046,7 +1047,8 @@
     <MESSAGE value="[BUG][SOLVED] Crash if plugin is empty" />
     <MESSAGE value="Error message if no plugins" />
     <MESSAGE value="Functionnal history !" />
-    <option name="LAST_COMMIT_MESSAGE" value="Functionnal history !" />
+    <MESSAGE value="Added Error gestion for Opening of ex-format projects" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Error gestion for Opening of ex-format projects" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
