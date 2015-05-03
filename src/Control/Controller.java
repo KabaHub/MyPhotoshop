@@ -192,6 +192,11 @@ public class Controller implements ActionListener
         {
             if (!model.getFilters().isEmpty())
                 new ChooseFilterWindow(model.getFilters(), mainWindow.getCurrentTab().getProject());
+            else
+            {
+                JOptionPane jop = new JOptionPane();
+                jop.showMessageDialog(null, "No Plugin found in plugin/ !", "Error", JOptionPane.ERROR_MESSAGE);
+            }
         } else if (e.getActionCommand().contentEquals("Reload Filters"))
         {
             model.reloadPlugins();
