@@ -3,6 +3,7 @@ package Model;
 import plugin.IPlugin;
 import plugin.PluginClassLoader;
 
+import javax.swing.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.*;
@@ -44,7 +45,7 @@ public class Model extends Observable
             try
             {
                 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file));
-                p = (Project)ois.readObject();
+                p = (Project) ois.readObject();
                 String fileName = file.getName().substring(0, file.getName().lastIndexOf('.'));
                 p.setProjectName(Project.getNewProjectName(projects, fileName));
                 projects.add(p);
@@ -52,9 +53,10 @@ public class Model extends Observable
                 p.buildProject(o);
                 setChanged();
                 notifyObservers(p);
-            } catch (IOException | ClassNotFoundException e)
+            } catch (ClassNotFoundException | IOException e)
             {
-                e.printStackTrace();
+                JOptionPane jop = new JOptionPane();
+                jop.showMessageDialog(null, "Couldn't load " + file.getName() + System.getProperty("line.separator") + e.getLocalizedMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
             return p;
         } else

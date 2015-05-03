@@ -7,6 +7,8 @@ import com.sun.org.apache.xpath.internal.operations.Bool;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
@@ -71,6 +73,20 @@ public class ProjectPane extends JPanel
         updateHistory();
     }
 
+    protected class ButtonListener implements ActionListener
+    {
+        private int indexOfState;
+        public ButtonListener(int indexOfState)
+        {
+            this.indexOfState = indexOfState;
+        }
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            project.setCurrentState(indexOfState);
+        }
+    }
+
     private void updateHistory()
     {
         histoPanel.removeAll();
@@ -79,6 +95,7 @@ public class ProjectPane extends JPanel
         {
             String appliedIPlugin = imageState.getAppliedIPlugin();
             JButton newButton = new JButton(appliedIPlugin);
+            newButton.addActionListener(new ButtonListener(i));
             newButton.setMaximumSize(new Dimension(Integer.MAX_VALUE, newButton.getMinimumSize().height));
             if (project.getCurrentState() == i)
                 newButton.setBackground(Color.LIGHT_GRAY);

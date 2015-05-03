@@ -79,7 +79,7 @@ public class ChooseFilterWindow extends JFrame
         }
     }
 
-    public class ButtonListener implements ActionListener
+    protected class ButtonListener implements ActionListener
     {
         ChooseFilterWindow chooseFilterWindow;
         public ButtonListener(ChooseFilterWindow chooseFilterWindow)

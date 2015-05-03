@@ -212,8 +212,7 @@ public class Project extends Observable implements Serializable
                                 number++;
                             name = name.substring(0, n + 1);
                             exists = true;
-                        }
-                        catch (NumberFormatException e)
+                        } catch (NumberFormatException e)
                         {
                             name += '_';
                         }
@@ -230,6 +229,18 @@ public class Project extends Observable implements Serializable
         return currentState;
     }
 
+    public void setCurrentState(int newState)
+    {
+        if (newState >= 0 && newState < history.size())
+        {
+            currentState = newState;
+            imagePanel.setImage(history.get(currentState).getImage());
+            setChanged();
+            notifyObservers(this);
+        }
+    }
+
+    @Deprecated
     private String getFileExtension(File file)
     {
         String name = file.getName();
