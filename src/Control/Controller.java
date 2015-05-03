@@ -182,7 +182,7 @@ public class Controller implements ActionListener
         } else if (e.getActionCommand().contentEquals("Redo"))
         {
 
-        } else if (e.getActionCommand().contentEquals("Hide Project Toolbar"))
+        } else if (e.getActionCommand().contentEquals("Show Project Toolbar"))
         {
             if (mainWindow.getCurrentTab().getInfoPanel().isVisible())
                 mainWindow.getCurrentTab().setInfoPanelVisibility(false);

@@ -36,8 +36,9 @@ public class ProjectPane extends JPanel
         initImagePanel();
         initInfoPanel();
         jSplitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, imageScrollPane, infoPanel);
-        jSplitPane.setResizeWeight(1.0f);
         this.add(jSplitPane, BorderLayout.CENTER);
+        infoPanel.setResizeWeight(0.49f);
+        jSplitPane.setResizeWeight(0.80f);
     }
 
     private void initImagePanel()
@@ -56,7 +57,6 @@ public class ProjectPane extends JPanel
         histoScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         JPanel tmp = new JPanel();
         infoPanel = new JSplitPane(JSplitPane.VERTICAL_SPLIT, histoScrollPane, tmp);
-        infoPanel.setMinimumSize(new Dimension(250, Integer.MAX_VALUE));
     }
 
     public JSplitPane getInfoPanel()

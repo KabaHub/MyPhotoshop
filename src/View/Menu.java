@@ -25,7 +25,7 @@ public class Menu extends JMenuBar
     private JMenuItem redo = new JMenuItem("Redo");
 
     private JMenu view = new JMenu("View");
-    private JMenuItem hideInfo = new JMenuItem("Hide Project Toolbar");
+    private JMenuItem hideInfo = new JMenuItem("Show Project Toolbar");
 
     private JMenu filter = new JMenu("Filter");
     private JMenuItem apply = new JMenuItem("Apply Filter");
