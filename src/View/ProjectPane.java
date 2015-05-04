@@ -122,8 +122,6 @@ public class ProjectPane extends CustomJPanel
                 newButton.setBackground(new Color(100, 100, 100));
             newButton.setForeground(Color.WHITE);
             newButton.setFocusPainted(false);
-//            newButton.setContentAreaFilled(false);
-//            newButton.setBorder(border);
             histoPanel.add(newButton);
             i++;
         }
