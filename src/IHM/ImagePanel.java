@@ -8,6 +8,7 @@ import java.awt.print.PageFormat;
 import java.awt.print.Printable;
 import java.awt.print.PrinterException;
 import java.io.*;
+import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -16,7 +17,7 @@ import javax.swing.*;
  * We give you this class to help you display images.
  * You are free to use it or not, to modify it.
  */
-public class ImagePanel extends JPanel implements Serializable, Scrollable, Printable
+public class ImagePanel extends CustomJPanel implements Serializable, Scrollable, Printable
 {
 	private static final long serialVersionUID = -314171089120047242L;
 	private String fileName;
@@ -24,7 +25,8 @@ public class ImagePanel extends JPanel implements Serializable, Scrollable, Prin
 	private int height;
 	private int imageType;
 	private int[] pixels;
-	private transient BufferedImage image;
+//	private transient BufferedImage image;
+	private transient ArrayList<BufferedImage> layers = new ArrayList<>();
 	private byte[] imageByte;
 
 	/**
@@ -35,8 +37,10 @@ public class ImagePanel extends JPanel implements Serializable, Scrollable, Prin
 	 */
 	public ImagePanel(BufferedImage image, String name)
 	{
+		super(CustomJPanel.GREY);
 		fileName = name;
-		this.image = image;
+//		this.image = image;
+		layers.add(image);
 		width = image.getWidth();
 		height = image.getHeight();
 		imageType = image.getType();
@@ -52,6 +56,8 @@ public class ImagePanel extends JPanel implements Serializable, Scrollable, Prin
 	 */
 	public ImagePanel(File file)
 	{
+		super(CustomJPanel.GREY);
+		BufferedImage image = null;
 		try
 		{
 			image = ImageIO.read(file);
@@ -66,6 +72,8 @@ public class ImagePanel extends JPanel implements Serializable, Scrollable, Prin
 		pixels = new int[width * height];
 		image.getRGB(0, 0, width, height, pixels, 0, width);
 		setBackground(new Color(80, 80, 80));
+		//
+		layers.add(image);
 	}
 
 	/**
@@ -73,7 +81,8 @@ public class ImagePanel extends JPanel implements Serializable, Scrollable, Prin
 	 */
 	public void buildImage()
 	{
-		image = new BufferedImage(width, height, imageType);
+//		image = new BufferedImage(width, height, imageType);
+		BufferedImage image = new BufferedImage(width, height, imageType);
 		image.setRGB(0, 0, width, height, pixels, 0, width);
 
 		InputStream in = new ByteArrayInputStream(imageByte);
@@ -84,6 +93,8 @@ public class ImagePanel extends JPanel implements Serializable, Scrollable, Prin
 		{
 			e.printStackTrace();
 		}
+
+		layers.add(image);
 	}
 
 	public void prepareToSerialization()
@@ -91,7 +102,8 @@ public class ImagePanel extends JPanel implements Serializable, Scrollable, Prin
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		try
 		{
-			ImageIO.write(image, "png", baos);
+//			ImageIO.write(image, "png", baos);
+			ImageIO.write(layers.get(0), "png", baos);
 			baos.flush();
 			imageByte = baos.toByteArray();
 			baos.close();
@@ -115,12 +127,13 @@ public class ImagePanel extends JPanel implements Serializable, Scrollable, Prin
 
 	public BufferedImage getImage()
 	{
-		return image;
+		return layers.get(0);
 	}
 
 	public synchronized void setImage(BufferedImage image)
 	{
-		this.image = image;
+//		this.image = image;
+		layers.set(0, image);
 		this.height = image.getHeight();
 		this.width = image.getWidth();
 	}
@@ -130,12 +143,15 @@ public class ImagePanel extends JPanel implements Serializable, Scrollable, Prin
 	{
 //		System.out.println("Height: " + image.getHeight() + ",Width: " + image.getWidth());
 		super.paintComponent(g);
-		g.drawImage(image, 0, 0, null);
+//		g.drawImage(image, 0, 0, null);
+		for (BufferedImage i : layers)
+			g.drawImage(i, 0, 0, null);
 	}
 
 	public void drawImage(int x, int y, BufferedImage bufferedImage)
 	{
-		Graphics g = image.getGraphics();
+//		Graphics g = image.getGraphics();
+		Graphics g = layers.get(0).getGraphics();
 		g.drawImage(bufferedImage, x, y, null);
 		g.dispose();
 	}
@@ -191,12 +207,15 @@ public class ImagePanel extends JPanel implements Serializable, Scrollable, Prin
 	@Override
 	public int print(Graphics graphics, PageFormat pageFormat, int pageIndex) throws PrinterException
 	{
+		BufferedImage image = layers.get(0);
 		if (pageIndex > 0)
 			return NO_SUCH_PAGE;
-//		Graphics2D g2d = (Graphics2D)graphics;
-//		g2d.translate(pageFormat.getImageableX(), pageFormat.getImageableY());
-		graphics.translate((int)pageFormat.getImageableX(), (int)pageFormat.getImageableY());
-		graphics.drawImage(image, 0, 0, null);
+		Graphics2D g = (Graphics2D)graphics;
+		g.translate(pageFormat.getImageableX(), pageFormat.getImageableY());
+		int x = (int)Math.round((pageFormat.getImageableWidth() - image.getWidth() / 2f));
+		int y = (int)Math.round((pageFormat.getImageableHeight() - image.getHeight() / 2f));
+		g.drawImage(image, x, y, null);
+
 		return PAGE_EXISTS;
 	}
 }

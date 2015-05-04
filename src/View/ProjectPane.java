@@ -14,7 +14,7 @@ import java.awt.Color;
 /**
  * Created by Gabriel on 24/04/2015.
  */
-public class ProjectPane extends JPanel
+public class ProjectPane extends CustomJPanel
 {
     String projectName;
     Project project;
@@ -30,6 +30,7 @@ public class ProjectPane extends JPanel
 
     public ProjectPane(Project project)
     {
+        super(CustomJPanel.GREY);
         this.setLayout(new BorderLayout());
         this.project = project;
         projectName = project.getProjectName();

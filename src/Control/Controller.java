@@ -8,6 +8,7 @@ import Model.Project;
 import Model.ImageState;
 
 import javax.imageio.ImageIO;
+import javax.print.attribute.PrintRequestAttributeSet;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -182,6 +183,7 @@ public class Controller implements ActionListener
             if (printerJob.printDialog())
             {
                 try {
+                    printerJob.setJobName(mainWindow.getCurrentTab().getProjectName());
                     printerJob.print();
                 } catch (PrinterException e1)
                 {
