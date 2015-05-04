@@ -246,6 +246,15 @@ public class Project extends Observable implements Serializable
         return imagePanel.getLayers();
     }
 
+    public void setLayerVisible(Layer l, boolean b)
+    {
+        int i = imagePanel.getLayers().indexOf(l);
+        if (i != -1)
+            imagePanel.getLayers().get(i).setVisible(b);
+        setChanged();
+        notifyObservers(this);
+    }
+
     @Deprecated
     private String getFileExtension(File file)
     {

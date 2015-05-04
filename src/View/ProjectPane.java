@@ -119,7 +119,7 @@ public class ProjectPane extends CustomJPanel
             newButton.setMaximumSize(new Dimension(Integer.MAX_VALUE, newButton.getMinimumSize().height));
             newButton.setBackground(new Color(80, 80, 80));
             if (project.getCurrentState() == i)
-                newButton.setBackground(new Color(100, 100, 100));
+                newButton.setBackground(new Color(110, 110, 110));
             newButton.setForeground(Color.WHITE);
             newButton.setFocusPainted(false);
             histoPanel.add(newButton);
@@ -131,17 +131,17 @@ public class ProjectPane extends CustomJPanel
 
     protected class LayerButtonListener implements ActionListener
     {
-        private int indexOfLayer;
+        private Layer l;
 
-        public LayerButtonListener(int indexOfLayer)
+        public LayerButtonListener(Layer l)
         {
-            this.indexOfLayer = indexOfLayer;
+            this.l = l;
         }
 
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            project.setCurrentState(indexOfLayer);
+            project.setLayerVisible(l, !l.isVisible());
         }
     }
 
@@ -149,23 +149,23 @@ public class ProjectPane extends CustomJPanel
     {
         layerPanel.removeAll();
         int i = 0;
-        JLabel myLabel = new JLabel("History", SwingConstants.CENTER);
+        JLabel myLabel = new JLabel("Layers", SwingConstants.CENTER);
         Border border = BorderFactory.createLineBorder(Color.BLACK);
         myLabel.setBorder(border);
         myLabel.setForeground(Color.WHITE);
         myLabel.setMaximumSize(new Dimension(Integer.MAX_VALUE, myLabel.getMinimumSize().height));
         myLabel.setHorizontalAlignment(JLabel.CENTER);
         myLabel.setVerticalAlignment(JLabel.CENTER);
-        histoPanel.add(myLabel);
+        layerPanel.add(myLabel);
         for (Layer l : project.getLayers())
         {
             String layerName = l.getName();
             JButton newButton = new JButton(layerName);
-            newButton.addActionListener(new LayerButtonListener(i));
+            newButton.addActionListener(new LayerButtonListener(l));
             newButton.setMaximumSize(new Dimension(Integer.MAX_VALUE, newButton.getMinimumSize().height));
             newButton.setBackground(new Color(80, 80, 80));
             if (l.isVisible())
-                newButton.setBackground(new Color(100, 100, 100));
+                newButton.setBackground(new Color(110, 110, 110));
             newButton.setForeground(Color.WHITE);
             newButton.setFocusPainted(false);
             layerPanel.add(newButton);
