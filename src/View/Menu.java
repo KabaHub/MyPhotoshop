@@ -19,6 +19,7 @@ public class Menu extends JMenuBar
     private JMenuItem importImage = new JMenuItem("Import Image");
     private JMenuItem exportImage = new JMenuItem("Export Image");
     private JMenuItem closeProject = new JMenuItem("Close Project");
+    private JMenuItem printProject = new JMenuItem("Print");
     private JMenuItem exit = new JMenuItem("Exit");
 
     private JMenu edit = new JMenu("Edit");
@@ -59,6 +60,8 @@ public class Menu extends JMenuBar
         closeProject.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, KeyEvent.CTRL_DOWN_MASK + KeyEvent.SHIFT_DOWN_MASK));
         closeProject.addActionListener(controller);
         file.add(closeProject);
+        printProject.addActionListener(controller);
+        file.add(printProject);
         exit.addActionListener(controller);
         file.add(exit);
         file.addActionListener(controller);

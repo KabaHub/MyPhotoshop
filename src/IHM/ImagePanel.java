@@ -4,6 +4,9 @@ import View.CustomComponents.CustomJPanel;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.awt.print.PageFormat;
+import java.awt.print.Printable;
+import java.awt.print.PrinterException;
 import java.io.*;
 
 import javax.imageio.ImageIO;
@@ -13,7 +16,7 @@ import javax.swing.*;
  * We give you this class to help you display images.
  * You are free to use it or not, to modify it.
  */
-public class ImagePanel extends JPanel implements Serializable, Scrollable
+public class ImagePanel extends JPanel implements Serializable, Scrollable, Printable
 {
 	private static final long serialVersionUID = -314171089120047242L;
 	private String fileName;
@@ -183,5 +186,17 @@ public class ImagePanel extends JPanel implements Serializable, Scrollable
 	public boolean getScrollableTracksViewportHeight()
 	{
 		return false;
+	}
+
+	@Override
+	public int print(Graphics graphics, PageFormat pageFormat, int pageIndex) throws PrinterException
+	{
+		if (pageIndex > 0)
+			return NO_SUCH_PAGE;
+//		Graphics2D g2d = (Graphics2D)graphics;
+//		g2d.translate(pageFormat.getImageableX(), pageFormat.getImageableY());
+		graphics.translate((int)pageFormat.getImageableX(), (int)pageFormat.getImageableY());
+		graphics.drawImage(image, 0, 0, null);
+		return PAGE_EXISTS;
 	}
 }

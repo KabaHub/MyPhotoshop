@@ -12,6 +12,8 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+import java.awt.print.PrinterException;
+import java.awt.print.PrinterJob;
 import java.io.*;
 
 /**
@@ -173,6 +175,20 @@ public class Controller implements ActionListener
         } else if (e.getActionCommand().contentEquals("Close Project"))
         {
             mainWindow.removeFromTabbedPanel(mainWindow.getCurrentTab());
+        } else if (e.getActionCommand().contentEquals("Print"))
+        {
+            PrinterJob printerJob = PrinterJob.getPrinterJob();
+            printerJob.setPrintable(mainWindow.getCurrentTab().getProject().getImagePanel());
+            if (printerJob.printDialog())
+            {
+                try {
+                    printerJob.print();
+                } catch (PrinterException e1)
+                {
+                    e1.printStackTrace();
+                }
+            }
+            System.out.println("test");
         } else if (e.getActionCommand().contentEquals("Exit"))
         {
             System.exit(0);
