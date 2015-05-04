@@ -8,6 +8,7 @@ import java.awt.print.PageFormat;
 import java.awt.print.Printable;
 import java.awt.print.PrinterException;
 import java.io.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
@@ -26,8 +27,7 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
 	private int imageType;
 	private int[] pixels;
 //	private transient BufferedImage image;
-	private transient ArrayList<BufferedImage> layers = new ArrayList<>();
-	private byte[] imageByte;
+	private transient ArrayList<Layer> layers = new ArrayList<>();
 
 	/**
 	 * Create the ImagePanel
@@ -40,7 +40,7 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
 		super(CustomJPanel.GREY);
 		fileName = name;
 //		this.image = image;
-		layers.add(image);
+		layers.add(new Layer("Layer 0", image));
 		width = image.getWidth();
 		height = image.getHeight();
 		imageType = image.getType();
@@ -66,14 +66,14 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
 		{
 			e.printStackTrace();
 		}
+		assert image != null;
 		width = image.getWidth();
 		height = image.getHeight();
 		imageType = image.getType();
 		pixels = new int[width * height];
 		image.getRGB(0, 0, width, height, pixels, 0, width);
 		setBackground(new Color(80, 80, 80));
-		//
-		layers.add(image);
+		layers.add(new Layer("Layer 0", image));
 	}
 
 	/**
@@ -81,36 +81,12 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
 	 */
 	public void buildImage()
 	{
-//		image = new BufferedImage(width, height, imageType);
-		BufferedImage image = new BufferedImage(width, height, imageType);
-		image.setRGB(0, 0, width, height, pixels, 0, width);
-
-		InputStream in = new ByteArrayInputStream(imageByte);
-		try
-		{
-			image = ImageIO.read(in);
-		} catch (IOException e)
-		{
-			e.printStackTrace();
-		}
-
-		layers.add(image);
+		layers.forEach(IHM.Layer::buildImage);
 	}
 
 	public void prepareToSerialization()
 	{
-		ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		try
-		{
-//			ImageIO.write(image, "png", baos);
-			ImageIO.write(layers.get(0), "png", baos);
-			baos.flush();
-			imageByte = baos.toByteArray();
-			baos.close();
-		} catch (IOException e)
-		{
-			e.printStackTrace();
-		}
+		layers.forEach(IHM.Layer::prepareToSerialization);
 	}
 
 	@Override
@@ -127,13 +103,13 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
 
 	public BufferedImage getImage()
 	{
-		return layers.get(0);
+		return layers.get(0).getImage();
 	}
 
 	public synchronized void setImage(BufferedImage image)
 	{
 //		this.image = image;
-		layers.set(0, image);
+		layers.get(0).setImage(image);
 		this.height = image.getHeight();
 		this.width = image.getWidth();
 	}
@@ -144,14 +120,14 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
 //		System.out.println("Height: " + image.getHeight() + ",Width: " + image.getWidth());
 		super.paintComponent(g);
 //		g.drawImage(image, 0, 0, null);
-		for (BufferedImage i : layers)
-			g.drawImage(i, 0, 0, null);
+		for (Layer l : layers)
+			g.drawImage(l.getImage(), 0, 0, null);
 	}
 
 	public void drawImage(int x, int y, BufferedImage bufferedImage)
 	{
 //		Graphics g = image.getGraphics();
-		Graphics g = layers.get(0).getGraphics();
+		Graphics g = layers.get(0).getImage().getGraphics();
 		g.drawImage(bufferedImage, x, y, null);
 		g.dispose();
 	}
@@ -207,7 +183,7 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
 	@Override
 	public int print(Graphics graphics, PageFormat pageFormat, int pageIndex) throws PrinterException
 	{
-		BufferedImage image = layers.get(0);
+		BufferedImage image = layers.get(0).getImage();
 		if (pageIndex > 0)
 			return NO_SUCH_PAGE;
 		Graphics2D g = (Graphics2D)graphics;
