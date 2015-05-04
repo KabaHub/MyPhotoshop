@@ -1,9 +1,11 @@
 package View;
 
 import IHM.ImagePanel;
+import IHM.Layer;
 import Model.ImageState;
 import Model.Project;
 import View.CustomComponents.CustomJPanel;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
@@ -26,7 +28,9 @@ public class ProjectPane extends CustomJPanel
 
     JSplitPane infoPanel;
     CustomJPanel histoPanel;
+    CustomJPanel layerPanel;
     JScrollPane histoScrollPane;
+    JScrollPane layerScrollPane;
 
     public ProjectPane(Project project)
     {
@@ -57,8 +61,13 @@ public class ProjectPane extends CustomJPanel
         histoPanel.setLayout(new BoxLayout(histoPanel, BoxLayout.PAGE_AXIS));
         histoScrollPane = new JScrollPane(histoPanel);
         histoScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        CustomJPanel tmp = new CustomJPanel(CustomJPanel.BLACK);
-        infoPanel = new JSplitPane(JSplitPane.VERTICAL_SPLIT, histoScrollPane, tmp);
+
+        layerPanel = new CustomJPanel(CustomJPanel.BLACK);
+        layerPanel.setLayout(new BoxLayout(layerPanel, BoxLayout.PAGE_AXIS));
+        layerScrollPane = new JScrollPane(layerPanel);
+        layerScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+
+        infoPanel = new JSplitPane(JSplitPane.VERTICAL_SPLIT, histoScrollPane, layerPanel);
     }
 
     public JSplitPane getInfoPanel()
@@ -71,15 +80,18 @@ public class ProjectPane extends CustomJPanel
         if (project.getHistory().size() > 1)
             infoPanel.setVisible(true);
         updateHistory();
+        updateLayers();
     }
 
-    protected class ButtonListener implements ActionListener
+    protected class HistoButtonListener implements ActionListener
     {
         private int indexOfState;
-        public ButtonListener(int indexOfState)
+
+        public HistoButtonListener(int indexOfState)
         {
             this.indexOfState = indexOfState;
         }
+
         @Override
         public void actionPerformed(ActionEvent e)
         {
@@ -103,7 +115,7 @@ public class ProjectPane extends CustomJPanel
         {
             String appliedIPlugin = imageState.getAppliedIPlugin();
             JButton newButton = new JButton(appliedIPlugin);
-            newButton.addActionListener(new ButtonListener(i));
+            newButton.addActionListener(new HistoButtonListener(i));
             newButton.setMaximumSize(new Dimension(Integer.MAX_VALUE, newButton.getMinimumSize().height));
             newButton.setBackground(new Color(80, 80, 80));
             if (project.getCurrentState() == i)
@@ -119,6 +131,52 @@ public class ProjectPane extends CustomJPanel
         this.repaint();
     }
 
+    protected class LayerButtonListener implements ActionListener
+    {
+        private int indexOfLayer;
+
+        public LayerButtonListener(int indexOfLayer)
+        {
+            this.indexOfLayer = indexOfLayer;
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            project.setCurrentState(indexOfLayer);
+        }
+    }
+
+    private void updateLayers()
+    {
+        layerPanel.removeAll();
+        int i = 0;
+        JLabel myLabel = new JLabel("History", SwingConstants.CENTER);
+        Border border = BorderFactory.createLineBorder(Color.BLACK);
+        myLabel.setBorder(border);
+        myLabel.setForeground(Color.WHITE);
+        myLabel.setMaximumSize(new Dimension(Integer.MAX_VALUE, myLabel.getMinimumSize().height));
+        myLabel.setHorizontalAlignment(JLabel.CENTER);
+        myLabel.setVerticalAlignment(JLabel.CENTER);
+        histoPanel.add(myLabel);
+        for (Layer l : project.getLayers())
+        {
+            String layerName = l.getName();
+            JButton newButton = new JButton(layerName);
+            newButton.addActionListener(new LayerButtonListener(i));
+            newButton.setMaximumSize(new Dimension(Integer.MAX_VALUE, newButton.getMinimumSize().height));
+            newButton.setBackground(new Color(80, 80, 80));
+            if (l.isVisible())
+                newButton.setBackground(new Color(100, 100, 100));
+            newButton.setForeground(Color.WHITE);
+            newButton.setFocusPainted(false);
+            layerPanel.add(newButton);
+            i++;
+        }
+        this.revalidate();
+        this.repaint();
+    }
+
     public void setInfoPanelVisibility(boolean b)
     {
         if (!b)
@@ -126,8 +184,7 @@ public class ProjectPane extends CustomJPanel
             jSplitPane.setDividerSize(0);
             jSplitPane.setDividerLocation(infoPanel.getLocation().x + infoPanel.getSize().width);
             infoPanel.setVisible(false);
-        }
-        else
+        } else
         {
             jSplitPane.setDividerSize(5);
             jSplitPane.resetToPreferredSizes();

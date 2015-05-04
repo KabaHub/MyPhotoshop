@@ -2,24 +2,23 @@ package IHM;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 
 /**
  * Created by Gabriel on 04/05/2015.
  */
-public class Layer
+public class Layer implements Serializable
 {
-    private BufferedImage image;
+    private transient BufferedImage image;
     private String name;
     private byte[] imageByte;
+    private boolean visible;
 
     public Layer(String name, BufferedImage image)
     {
         this.image = image;
         this.name = name;
+        this.visible = true;
     }
 
     public BufferedImage getImage()
@@ -70,5 +69,15 @@ public class Layer
         {
             e.printStackTrace();
         }
+    }
+
+    public boolean isVisible()
+    {
+        return visible;
+    }
+
+    public void setVisible(boolean visible)
+    {
+        this.visible = visible;
     }
 }

@@ -49,7 +49,6 @@ public class Model extends Observable
                 String fileName = file.getName().substring(0, file.getName().lastIndexOf('.'));
                 p.setProjectName(Project.getNewProjectName(projects, fileName));
                 projects.add(p);
-                System.out.println(p.getProjectName());
                 p.buildProject(o);
                 setChanged();
                 notifyObservers(p);

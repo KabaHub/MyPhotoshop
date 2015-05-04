@@ -8,7 +8,6 @@ import java.awt.print.PageFormat;
 import java.awt.print.Printable;
 import java.awt.print.PrinterException;
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
@@ -26,8 +25,7 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
 	private int height;
 	private int imageType;
 	private int[] pixels;
-//	private transient BufferedImage image;
-	private transient ArrayList<Layer> layers = new ArrayList<>();
+	private ArrayList<Layer> layers = new ArrayList<>();
 
 	/**
 	 * Create the ImagePanel
@@ -39,7 +37,6 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
 	{
 		super(CustomJPanel.GREY);
 		fileName = name;
-//		this.image = image;
 		layers.add(new Layer("Layer 0", image));
 		width = image.getWidth();
 		height = image.getHeight();
@@ -108,7 +105,6 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
 
 	public synchronized void setImage(BufferedImage image)
 	{
-//		this.image = image;
 		layers.get(0).setImage(image);
 		this.height = image.getHeight();
 		this.width = image.getWidth();
@@ -117,16 +113,13 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
 	@Override
 	public void paintComponent(Graphics g)
 	{
-//		System.out.println("Height: " + image.getHeight() + ",Width: " + image.getWidth());
 		super.paintComponent(g);
-//		g.drawImage(image, 0, 0, null);
 		for (Layer l : layers)
 			g.drawImage(l.getImage(), 0, 0, null);
 	}
 
 	public void drawImage(int x, int y, BufferedImage bufferedImage)
 	{
-//		Graphics g = image.getGraphics();
 		Graphics g = layers.get(0).getImage().getGraphics();
 		g.drawImage(bufferedImage, x, y, null);
 		g.dispose();
@@ -140,6 +133,11 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
 	public void setFileName(String fileName)
 	{
 		this.fileName = fileName;
+	}
+
+	public ArrayList<Layer> getLayers()
+	{
+		return layers;
 	}
 
 	@Override

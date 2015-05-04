@@ -2,6 +2,7 @@ package Model;
 
 import Control.PluginExecutor;
 import IHM.ImagePanel;
+import IHM.Layer;
 import plugin.IPlugin;
 
 import javax.imageio.ImageIO;
@@ -238,6 +239,11 @@ public class Project extends Observable implements Serializable
             setChanged();
             notifyObservers(this);
         }
+    }
+
+    public ArrayList<Layer> getLayers()
+    {
+        return imagePanel.getLayers();
     }
 
     @Deprecated
