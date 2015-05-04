@@ -13,6 +13,8 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+import java.awt.print.PageFormat;
+import java.awt.print.Paper;
 import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
 import java.io.*;
@@ -179,11 +181,18 @@ public class Controller implements ActionListener
         } else if (e.getActionCommand().contentEquals("Print"))
         {
             PrinterJob printerJob = PrinterJob.getPrinterJob();
-            printerJob.setPrintable(mainWindow.getCurrentTab().getProject().getImagePanel());
             if (printerJob.printDialog())
             {
                 try {
                     printerJob.setJobName(mainWindow.getCurrentTab().getProjectName());
+                    double x = mainWindow.getCurrentTab().getProject().getImagePanel().getWidth();
+                    double y = mainWindow.getCurrentTab().getProject().getImagePanel().getHeight();
+                    PageFormat pageFormat = printerJob.defaultPage();
+                    Paper paper = new Paper();
+                    paper.setSize(2*x, 2*y);
+                    paper.setImageableArea(0, 0, 2*x, 2*y);
+                    pageFormat.setPaper(paper);
+                    printerJob.setPrintable(mainWindow.getCurrentTab().getProject().getImagePanel(), pageFormat);
                     printerJob.print();
                 } catch (PrinterException e1)
                 {

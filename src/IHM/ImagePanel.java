@@ -189,9 +189,9 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
 			return NO_SUCH_PAGE;
 		Graphics2D g = (Graphics2D)graphics;
 		g.translate(pageFormat.getImageableX(), pageFormat.getImageableY());
-		int x = (int)Math.round((pageFormat.getImageableWidth() - image.getWidth() / 2f));
-		int y = (int)Math.round((pageFormat.getImageableHeight() - image.getHeight() / 2f));
-		g.drawImage(image, x, y, null);
+//		int x = (int)Math.round((pageFormat.getImageableWidth() - image.getWidth() / 2f));
+//		int y = (int)Math.round((pageFormat.getImageableHeight() - image.getHeight() / 2f));
+		g.drawImage(image, 0, 0, null);
 
 		return PAGE_EXISTS;
 	}
