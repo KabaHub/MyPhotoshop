@@ -8,7 +8,10 @@ import Model.Project;
 import Model.ImageState;
 
 import javax.imageio.ImageIO;
+import javax.print.attribute.HashPrintRequestAttributeSet;
 import javax.print.attribute.PrintRequestAttributeSet;
+import javax.print.attribute.standard.MediaPrintableArea;
+import javax.print.attribute.standard.PrinterResolution;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -183,23 +186,26 @@ public class Controller implements ActionListener
             PrinterJob printerJob = PrinterJob.getPrinterJob();
             if (printerJob.printDialog())
             {
-                try {
+                try
+                {
+
                     printerJob.setJobName(mainWindow.getCurrentTab().getProjectName());
                     double x = mainWindow.getCurrentTab().getProject().getImagePanel().getWidth();
                     double y = mainWindow.getCurrentTab().getProject().getImagePanel().getHeight();
                     PageFormat pageFormat = printerJob.defaultPage();
                     Paper paper = new Paper();
-                    paper.setSize(2*x, 2*y);
-                    paper.setImageableArea(0, 0, 2*x, 2*y);
+//                    paper.setSize(2*x, 2*y);
+                    paper.setSize(x + y, x + y);
+                    paper.setImageableArea(0, 0, Integer.MAX_VALUE, Integer.MAX_VALUE);
                     pageFormat.setPaper(paper);
                     printerJob.setPrintable(mainWindow.getCurrentTab().getProject().getImagePanel(), pageFormat);
+                    PrintRequestAttributeSet aset = new HashPrintRequestAttributeSet();
                     printerJob.print();
                 } catch (PrinterException e1)
                 {
                     e1.printStackTrace();
                 }
             }
-            System.out.println("test");
         } else if (e.getActionCommand().contentEquals("Exit"))
         {
             System.exit(0);

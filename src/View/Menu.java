@@ -62,6 +62,7 @@ public class Menu extends JMenuBar
         closeProject.addActionListener(controller);
         file.add(closeProject);
         printProject.addActionListener(controller);
+        printProject.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P, KeyEvent.CTRL_DOWN_MASK));
         file.add(printProject);
         exit.addActionListener(controller);
         file.add(exit);
