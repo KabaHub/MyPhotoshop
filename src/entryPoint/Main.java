@@ -11,6 +11,7 @@ public class Main
 {
     public static void main(String[] args)
     {
+        // test
         String nimbusName = "javax.swing.plaf.nimbus.NimbusLookAndFeel";
         for (UIManager.LookAndFeelInfo l : UIManager.getInstalledLookAndFeels())
         {
