@@ -115,7 +115,10 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
 	{
 		super.paintComponent(g);
 		for (Layer l : layers)
-			g.drawImage(l.getImage(), 0, 0, null);
+		{
+			if (l.isVisible())
+				g.drawImage(l.getImage(), 0, 0, null);
+		}
 	}
 
 	public void drawImage(int x, int y, BufferedImage bufferedImage)
