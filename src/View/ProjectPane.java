@@ -64,18 +64,35 @@ public class ProjectPane extends CustomJPanel
         histoScrollPane = new JScrollPane(histoPanel);
         histoScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
-        CustomJPanel optionLayerPanel = new CustomJPanel(CustomJPanel.GREY);
-        optionLayerPanel.setLayout(new BorderLayout());
+        CustomJPanel layersPanel = new CustomJPanel(CustomJPanel.GREY);
+        layersPanel.setLayout(new BorderLayout());
         layerPanel = new CustomJPanel(CustomJPanel.BLACK);
         layerPanel.setLayout(new BoxLayout(layerPanel, BoxLayout.PAGE_AXIS));
         layerScrollPane = new JScrollPane(layerPanel);
         layerScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        optionLayerPanel.add(layerScrollPane, BorderLayout.CENTER);
+        layersPanel.add(layerScrollPane, BorderLayout.CENTER);
+
+        CustomJPanel layerOptionPanel = new CustomJPanel(CustomJPanel.GREY);
+        layerOptionPanel.setLayout(new BoxLayout(layerOptionPanel, BoxLayout.LINE_AXIS));
         JButton addLayer = new JButton("Add Layer");
         addLayer.addActionListener(new LayerOptionButtonListener());
-        optionLayerPanel.add(addLayer, BorderLayout.SOUTH);
+        layerOptionPanel.add(addLayer);
+        JButton hideLayer = new JButton("Hide Layer");
+        hideLayer.addActionListener(new LayerOptionButtonListener());
+        layerOptionPanel.add(hideLayer);
+        JButton swapUpLayer = new JButton("^");
+        swapUpLayer.addActionListener(new LayerOptionButtonListener());
+        layerOptionPanel.add(swapUpLayer);
+        JButton swapDownLayer = new JButton("v");
+        swapDownLayer.addActionListener(new LayerOptionButtonListener());
+        layerOptionPanel.add(swapDownLayer);
+        JButton closeLayer = new JButton("X");
+        closeLayer.addActionListener(new LayerOptionButtonListener());
+        layerOptionPanel.add(closeLayer);
 
-        infoPanel = new JSplitPane(JSplitPane.VERTICAL_SPLIT, histoScrollPane, optionLayerPanel);
+        layersPanel.add(layerOptionPanel, BorderLayout.SOUTH);
+
+        infoPanel = new JSplitPane(JSplitPane.VERTICAL_SPLIT, histoScrollPane, layersPanel);
     }
 
     public JSplitPane getInfoPanel()
@@ -150,14 +167,12 @@ public class ProjectPane extends CustomJPanel
         public void actionPerformed(ActionEvent e)
         {
             project.setCurrentLayer(layerPosition);
-//            project.setLayerVisible(l, !l.isVisible());
         }
     }
 
     private void updateLayers()
     {
         layerPanel.removeAll();
-        int i = 0;
         JLabel myLabel = new JLabel("Layers", SwingConstants.CENTER);
         Border border = BorderFactory.createLineBorder(Color.BLACK);
         myLabel.setBorder(border);
@@ -175,11 +190,13 @@ public class ProjectPane extends CustomJPanel
             newButton.setMaximumSize(new Dimension(Integer.MAX_VALUE, newButton.getMinimumSize().height));
             newButton.setBackground(new Color(80, 80, 80));
             if (j == project.getCurrentLayer())
+            {
                 newButton.setBackground(new Color(130, 130, 130));
-            newButton.setForeground(Color.WHITE);
+                if (!project.getLayers().get(project.getCurrentLayer()).isVisible())
+                    newButton.setForeground(new Color(70, 70, 70));
+            }
             newButton.setFocusPainted(false);
             layerPanel.add(newButton);
-            i++;
         }
         this.revalidate();
         this.repaint();
@@ -218,6 +235,10 @@ public class ProjectPane extends CustomJPanel
             if (e.getActionCommand().contentEquals("Add Layer"))
             {
                 project.addLayer();
+            } else if (e.getActionCommand().contentEquals("Hide Layer"))
+            {
+                int l = project.getCurrentLayer();
+                project.setLayerVisible(l, !project.getLayerVisible(l));
             }
         }
     }

@@ -265,13 +265,19 @@ public class Project extends Observable implements Serializable
         notifyObservers(this);
     }
 
-    public void setLayerVisible(Layer l, boolean b)
+    public void setLayerVisible(int layer, boolean b)
     {
+        Layer l = getLayers().get(layer);
         int i = imagePanel.getLayers().indexOf(l);
         if (i != -1)
             imagePanel.getLayers().get(i).setVisible(b);
         setChanged();
         notifyObservers(this);
+    }
+
+    public boolean getLayerVisible(int layer)
+    {
+        return getLayers().get(layer).isVisible();
     }
 
     @Deprecated
