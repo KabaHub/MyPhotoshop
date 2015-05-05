@@ -249,6 +249,7 @@ public class Project extends Observable implements Serializable
     public void addLayer()
     {
         imagePanel.addLayer();
+        addToHistory("Added Layer", imagePanel);
         setChanged();
         notifyObservers(this);
     }

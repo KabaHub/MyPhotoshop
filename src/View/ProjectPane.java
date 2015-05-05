@@ -1,5 +1,6 @@
 package View;
 
+import Control.ZoomMouseController;
 import IHM.ImagePanel;
 import IHM.Layer;
 import Model.ImageState;
@@ -52,6 +53,8 @@ public class ProjectPane extends CustomJPanel
     private void initImagePanel()
     {
         imagePanel = project.getImagePanel();
+        // !!!!!!
+        imagePanel.addMouseWheelListener(new ZoomMouseController(imagePanel));
         imageScrollPane = new JScrollPane(imagePanel);
         imageScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         imageScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);

@@ -3,6 +3,7 @@ package IHM;
 import View.CustomComponents.CustomJPanel;
 
 import java.awt.*;
+import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.awt.print.PageFormat;
 import java.awt.print.Printable;
@@ -27,6 +28,7 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
     private int[] pixels;
     private int currentLayer = 0;
     private ArrayList<Layer> layers = new ArrayList<>();
+    private float zoom = 1f;
 
     /**
      * Create the ImagePanel
@@ -140,6 +142,14 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
     public void paintComponent(Graphics g)
     {
         super.paintComponent(g);
+//        float z = zoom*zoom;
+//        AffineTransform t = new AffineTransform();
+//        float zoomWidth = width * z;
+//        float zoomHeight = height * z;
+//        t.translate(width/2 - zoomWidth/2, height/2 - zoomHeight/2);
+//        t.scale(z, z);
+//        Graphics2D g2d = (Graphics2D)g;
+//        g2d.setTransform(t);
         layers.stream().filter(Layer::isVisible).forEach(l -> g.drawImage(l.getImage(), 0, 0, null));
     }
 
@@ -214,5 +224,15 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
         }
 
         return PAGE_EXISTS;
+    }
+
+    public float getZoom()
+    {
+        return zoom;
+    }
+
+    public void setZoom(float zoom)
+    {
+        this.zoom = zoom;
     }
 }
