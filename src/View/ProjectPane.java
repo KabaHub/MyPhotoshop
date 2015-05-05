@@ -142,10 +142,10 @@ public class ProjectPane extends CustomJPanel
             JButton newButton = new JButton(appliedIPlugin);
             newButton.addActionListener(new HistoButtonListener(i));
             newButton.setMaximumSize(new Dimension(Integer.MAX_VALUE, newButton.getMinimumSize().height));
-            newButton.setBackground(new Color(80, 80, 80));
-            if (project.getCurrentState() == i)
-                newButton.setBackground(new Color(110, 110, 110));
+            newButton.setBackground(new Color(60, 60, 60));
             newButton.setForeground(Color.WHITE);
+            if (project.getCurrentState() == i)
+                newButton.setBackground(new Color(120, 120, 120));
             newButton.setFocusPainted(false);
             histoPanel.add(newButton);
             i++;
@@ -188,13 +188,12 @@ public class ProjectPane extends CustomJPanel
             JButton newButton = new JButton(layerName);
             newButton.addActionListener(new LayerButtonListener(j));
             newButton.setMaximumSize(new Dimension(Integer.MAX_VALUE, newButton.getMinimumSize().height));
-            newButton.setBackground(new Color(80, 80, 80));
+            newButton.setBackground(new Color(60, 60, 60));
+            newButton.setForeground(new Color(255, 255, 255));
             if (j == project.getCurrentLayer())
-            {
-                newButton.setBackground(new Color(130, 130, 130));
-                if (!project.getLayers().get(project.getCurrentLayer()).isVisible())
-                    newButton.setForeground(new Color(70, 70, 70));
-            }
+                newButton.setBackground(new Color(120, 120, 120));
+            if (!project.getLayers().get(j).isVisible())
+                newButton.setForeground(new Color(80, 80, 80));
             newButton.setFocusPainted(false);
             layerPanel.add(newButton);
         }
