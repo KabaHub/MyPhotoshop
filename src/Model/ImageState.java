@@ -18,9 +18,7 @@ import java.util.stream.Collectors;
 public class ImageState implements Serializable
 {
     private String appliedIPlugin;
-//    private transient BufferedImage image;
     private ArrayList<Layer> layers = new ArrayList<>();
-//    private byte[] imageByte;
     Date date;
 
     public ImageState(String appliedIPlugin, ArrayList<Layer> layers)
@@ -33,14 +31,12 @@ public class ImageState implements Serializable
 
     public void buildImage()
     {
-        for (Layer l : layers)
-            l.buildImage();
+        layers.forEach(IHM.Layer::buildImage);
     }
 
     public void prepareToSerialization()
     {
-        for (Layer l : layers)
-            l.prepareToSerialization();
+        layers.forEach(IHM.Layer::prepareToSerialization);
     }
 
     public ArrayList<Layer> getLayers()

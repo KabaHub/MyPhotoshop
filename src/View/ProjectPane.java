@@ -62,12 +62,18 @@ public class ProjectPane extends CustomJPanel
         histoScrollPane = new JScrollPane(histoPanel);
         histoScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
+        CustomJPanel optionLayerPanel = new CustomJPanel(CustomJPanel.GREY);
+        optionLayerPanel.setLayout(new BorderLayout());
         layerPanel = new CustomJPanel(CustomJPanel.BLACK);
         layerPanel.setLayout(new BoxLayout(layerPanel, BoxLayout.PAGE_AXIS));
         layerScrollPane = new JScrollPane(layerPanel);
         layerScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        optionLayerPanel.add(layerScrollPane, BorderLayout.CENTER);
+        JButton addLayer = new JButton("Add Layer");
+        addLayer.addActionListener(new LayerOptionButtonListener());
+        optionLayerPanel.add(addLayer, BorderLayout.SOUTH);
 
-        infoPanel = new JSplitPane(JSplitPane.VERTICAL_SPLIT, histoScrollPane, layerPanel);
+        infoPanel = new JSplitPane(JSplitPane.VERTICAL_SPLIT, histoScrollPane, optionLayerPanel);
     }
 
     public JSplitPane getInfoPanel()
@@ -131,17 +137,18 @@ public class ProjectPane extends CustomJPanel
 
     protected class LayerButtonListener implements ActionListener
     {
-        private Layer l;
+        private int layerPosition;
 
-        public LayerButtonListener(Layer l)
+        public LayerButtonListener(int layerPosition)
         {
-            this.l = l;
+            this.layerPosition = layerPosition;
         }
 
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            project.setLayerVisible(l, !l.isVisible());
+            project.setCurrentLayer(layerPosition);
+//            project.setLayerVisible(l, !l.isVisible());
         }
     }
 
@@ -157,11 +164,12 @@ public class ProjectPane extends CustomJPanel
         myLabel.setHorizontalAlignment(JLabel.CENTER);
         myLabel.setVerticalAlignment(JLabel.CENTER);
         layerPanel.add(myLabel);
-        for (Layer l : project.getLayers())
+        for (int j = project.getLayers().size() - 1; j >= 0; j--)
         {
+            Layer l = project.getLayers().get(j);
             String layerName = l.getName();
             JButton newButton = new JButton(layerName);
-            newButton.addActionListener(new LayerButtonListener(l));
+            newButton.addActionListener(new LayerButtonListener(i));
             newButton.setMaximumSize(new Dimension(Integer.MAX_VALUE, newButton.getMinimumSize().height));
             newButton.setBackground(new Color(80, 80, 80));
             if (l.isVisible())
@@ -198,6 +206,18 @@ public class ProjectPane extends CustomJPanel
     public String getProjectName()
     {
         return projectName;
+    }
+
+    private class LayerOptionButtonListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            if (e.getActionCommand().contentEquals("Add Layer"))
+            {
+                project.addLayer();
+            }
+        }
     }
 }
 

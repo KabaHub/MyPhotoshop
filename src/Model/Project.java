@@ -126,7 +126,6 @@ public class Project extends Observable implements Serializable
         if (currentState > 0 && currentState <= history.size())
         {
             currentState--;
-//            imagePanel.setImage(history.get(currentState).getImage());
             imagePanel.restoreImage(history.get(currentState).getLayers());
             setChanged();
             notifyObservers(this);
@@ -138,7 +137,6 @@ public class Project extends Observable implements Serializable
         if (currentState >= 0 && currentState + 1 < history.size())
         {
             currentState++;
-//            imagePanel.setImage(history.get(currentState).getImage());
             imagePanel.restoreImage(history.get(currentState).getLayers());
             setChanged();
             notifyObservers(this);
@@ -237,7 +235,6 @@ public class Project extends Observable implements Serializable
         if (newState >= 0 && newState < history.size())
         {
             currentState = newState;
-//            imagePanel.setImage(history.get(currentState).getImage());
             imagePanel.restoreImage(history.get(currentState).getLayers());
             setChanged();
             notifyObservers(this);
@@ -247,6 +244,23 @@ public class Project extends Observable implements Serializable
     public ArrayList<Layer> getLayers()
     {
         return imagePanel.getLayers();
+    }
+
+    public void addLayer()
+    {
+        imagePanel.addLayer();
+        setChanged();
+        notifyObservers(this);
+    }
+
+    public int getCurrentLayer()
+    {
+        return imagePanel.getCurrentLayer();
+    }
+
+    public void setCurrentLayer(int layer)
+    {
+        imagePanel.setCurrentLayer(layer);
     }
 
     public void setLayerVisible(Layer l, boolean b)

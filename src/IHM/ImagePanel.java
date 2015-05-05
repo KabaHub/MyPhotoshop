@@ -25,6 +25,7 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
 	private int height;
 	private int imageType;
 	private int[] pixels;
+	private int currentLayer = 0;
 	private ArrayList<Layer> layers = new ArrayList<>();
 
 	/**
@@ -100,7 +101,7 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
 
 	public BufferedImage getImage()
 	{
-		return layers.get(0).getImage();
+		return layers.get(currentLayer).getImage();
 	}
 
 	public synchronized void restoreImage(ArrayList<Layer> layers)
@@ -110,22 +111,36 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
 
 	public synchronized void setImage(BufferedImage image)
 	{
-		layers.get(0).setImage(image);
+		layers.get(currentLayer).setImage(image);
 		this.height = image.getHeight();
 		this.width = image.getWidth();
+	}
+
+	public void addLayer()
+	{
+		BufferedImage newImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+		layers.add(new Layer("Layer " + layers.size(), newImage));
+		currentLayer++;
+	}
+
+	public int getCurrentLayer()
+	{
+		return currentLayer;
+	}
+
+	public void setCurrentLayer(int currentLayer)
+	{
+		this.currentLayer = currentLayer;
 	}
 
 	@Override
 	public void paintComponent(Graphics g)
 	{
 		super.paintComponent(g);
-		for (Layer l : layers)
-		{
-			if (l.isVisible())
-				g.drawImage(l.getImage(), 0, 0, null);
-		}
+		layers.stream().filter(Layer::isVisible).forEach(l -> g.drawImage(l.getImage(), 0, 0, null));
 	}
 
+	@Deprecated
 	public void drawImage(int x, int y, BufferedImage bufferedImage)
 	{
 		Graphics g = layers.get(0).getImage().getGraphics();
@@ -136,11 +151,6 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
 	public String getFileName()
 	{
 		return fileName;
-	}
-
-	public void setFileName(String fileName)
-	{
-		this.fileName = fileName;
 	}
 
 	public ArrayList<Layer> getLayers()
