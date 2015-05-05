@@ -5,6 +5,8 @@ import IHM.Layer;
 import Model.ImageState;
 import Model.Project;
 import View.CustomComponents.CustomJPanel;
+import com.sun.jmx.snmp.agent.SnmpUserDataFactory;
+import org.omg.PortableInterceptor.SUCCESSFUL;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -169,11 +171,11 @@ public class ProjectPane extends CustomJPanel
             Layer l = project.getLayers().get(j);
             String layerName = l.getName();
             JButton newButton = new JButton(layerName);
-            newButton.addActionListener(new LayerButtonListener(i));
+            newButton.addActionListener(new LayerButtonListener(j));
             newButton.setMaximumSize(new Dimension(Integer.MAX_VALUE, newButton.getMinimumSize().height));
             newButton.setBackground(new Color(80, 80, 80));
-            if (l.isVisible())
-                newButton.setBackground(new Color(110, 110, 110));
+            if (j == project.getCurrentLayer())
+                newButton.setBackground(new Color(130, 130, 130));
             newButton.setForeground(Color.WHITE);
             newButton.setFocusPainted(false);
             layerPanel.add(newButton);

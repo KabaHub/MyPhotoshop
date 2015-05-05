@@ -261,6 +261,8 @@ public class Project extends Observable implements Serializable
     public void setCurrentLayer(int layer)
     {
         imagePanel.setCurrentLayer(layer);
+        setChanged();
+        notifyObservers(this);
     }
 
     public void setLayerVisible(Layer l, boolean b)
