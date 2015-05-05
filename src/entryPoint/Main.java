@@ -11,6 +11,7 @@ public class Main
 {
     public static void main(String[] args)
     {
+        CustomSplashScreen customSplashScreen = new CustomSplashScreen();
         String nimbusName = "javax.swing.plaf.nimbus.NimbusLookAndFeel";
         for (UIManager.LookAndFeelInfo l : UIManager.getInstalledLookAndFeels())
         {
@@ -26,6 +27,6 @@ public class Main
             }
         }
 //        MetalLookAndFeel.setCurrentTheme(new OceanTheme());
-        MainWindow mainWindow = new MainWindow();
+        MainWindow mainWindow = new MainWindow(customSplashScreen);
     }
 }

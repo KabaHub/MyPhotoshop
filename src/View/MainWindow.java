@@ -4,6 +4,7 @@ import Control.Controller;
 import IHM.ImagePanel;
 import Model.*;
 import View.CustomComponents.CustomJPanel;
+import entryPoint.CustomSplashScreen;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,7 +26,7 @@ public class MainWindow extends JFrame implements Observer
 
     private String language = "en";
 
-    public MainWindow()
+    public MainWindow(CustomSplashScreen splashScreenToDispose)
     {
         setTitle("MyPhotoshop");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -44,6 +45,7 @@ public class MainWindow extends JFrame implements Observer
         test();
 
         setVisible(true);
+        splashScreenToDispose.dispose();
     }
 
     public JTabbedPane getJTabbedPane()
