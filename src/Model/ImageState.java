@@ -1,11 +1,16 @@
 package Model;
 
 
+import IHM.Layer;
+
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.stream.Collectors;
 
 /**
  * Created by Gabriel on 24/04/2015.
@@ -13,48 +18,34 @@ import java.util.Date;
 public class ImageState implements Serializable
 {
     private String appliedIPlugin;
-    private transient BufferedImage image;
-    private byte[] imageByte;
+//    private transient BufferedImage image;
+    private ArrayList<Layer> layers = new ArrayList<>();
+//    private byte[] imageByte;
     Date date;
 
-    public ImageState(String appliedIPlugin, BufferedImage image)
+    public ImageState(String appliedIPlugin, ArrayList<Layer> layers)
     {
         this.appliedIPlugin = appliedIPlugin;
-        this.image = image;
+        this.layers.addAll(layers.stream().map(l -> new Layer(l.getName(), l.getImage())).collect(Collectors.toList()));
         date = Calendar.getInstance().getTime();
         prepareToSerialization();
     }
 
     public void buildImage()
     {
-        InputStream in = new ByteArrayInputStream(imageByte);
-        try
-        {
-            image = ImageIO.read(in);
-        } catch (IOException e)
-        {
-            e.printStackTrace();
-        }
+        for (Layer l : layers)
+            l.buildImage();
     }
 
     public void prepareToSerialization()
     {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        try
-        {
-            ImageIO.write(image, "png", baos);
-            baos.flush();
-            imageByte = baos.toByteArray();
-            baos.close();
-        } catch (IOException e)
-        {
-            e.printStackTrace();
-        }
+        for (Layer l : layers)
+            l.prepareToSerialization();
     }
 
-    public BufferedImage getImage()
+    public ArrayList<Layer> getLayers()
     {
-        return image;
+        return layers;
     }
     public String getAppliedIPlugin()
     {

@@ -103,6 +103,11 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
 		return layers.get(0).getImage();
 	}
 
+	public synchronized void restoreImage(ArrayList<Layer> layers)
+	{
+		this.layers = layers;
+	}
+
 	public synchronized void setImage(BufferedImage image)
 	{
 		layers.get(0).setImage(image);

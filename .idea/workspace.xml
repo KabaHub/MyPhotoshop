@@ -2,27 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bab6105-4809-42d7-8428-55e452ae4f02" name="Default" comment="Emboss filter">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ressources/images/splashscreen.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/entryPoint/CustomSplashScreen.java" />
-      <change type="DELETED" beforePath="D:\WORK\EPITA\Projets\Ing1\MyPhotoshop\duplai_g-myphotoshop\PluginSource\build\plugin\IPlugin.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\WORK\EPITA\Projets\Ing1\MyPhotoshop\duplai_g-myphotoshop\PluginSource\build\plugin\basic\AllGreen.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\WORK\EPITA\Projets\Ing1\MyPhotoshop\duplai_g-myphotoshop\PluginSource\build\plugin\basic\Binary.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\WORK\EPITA\Projets\Ing1\MyPhotoshop\duplai_g-myphotoshop\PluginSource\build\plugin\basic\GrayScale.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\WORK\EPITA\Projets\Ing1\MyPhotoshop\duplai_g-myphotoshop\PluginSource\build\plugin\basic\GrayScaleV2.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\WORK\EPITA\Projets\Ing1\MyPhotoshop\duplai_g-myphotoshop\PluginSource\build\plugin\basic\HorizontalFlip.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\WORK\EPITA\Projets\Ing1\MyPhotoshop\duplai_g-myphotoshop\PluginSource\build\plugin\basic\Invert.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\WORK\EPITA\Projets\Ing1\MyPhotoshop\duplai_g-myphotoshop\PluginSource\build\plugin\basic\RotateLeft.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\WORK\EPITA\Projets\Ing1\MyPhotoshop\duplai_g-myphotoshop\PluginSource\build\plugin\basic\RotateRight.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\WORK\EPITA\Projets\Ing1\MyPhotoshop\duplai_g-myphotoshop\PluginSource\build\plugin\basic\VerticalFlip.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\WORK\EPITA\Projets\Ing1\MyPhotoshop\duplai_g-myphotoshop\PluginSource\build\plugin\basic\VeryLong.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\WORK\EPITA\Projets\Ing1\MyPhotoshop\duplai_g-myphotoshop\PluginSource\build\plugin\bonus\Blur.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\WORK\EPITA\Projets\Ing1\MyPhotoshop\duplai_g-myphotoshop\PluginSource\build\plugin\bonus\Gradient.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\WORK\EPITA\Projets\Ing1\MyPhotoshop\duplai_g-myphotoshop\PluginSource\build\plugin\bonus\LaplaceFilter.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\WORK\EPITA\Projets\Ing1\MyPhotoshop\duplai_g-myphotoshop\PluginSource\build\plugin\bonus\RandomPoints.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\WORK\EPITA\Projets\Ing1\MyPhotoshop\duplai_g-myphotoshop\PluginSource\build\plugin\bonus\Sepia.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\WORK\EPITA\Projets\Ing1\MyPhotoshop\duplai_g-myphotoshop\PluginSource\build\plugin\bonus\SobelBorders.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entryPoint/Main.java" afterPath="$PROJECT_DIR$/src/entryPoint/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/MainWindow.java" afterPath="$PROJECT_DIR$/src/View/MainWindow.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/IHM/ImagePanel.java" afterPath="$PROJECT_DIR$/src/IHM/ImagePanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/ImageState.java" afterPath="$PROJECT_DIR$/src/Model/ImageState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Project.java" afterPath="$PROJECT_DIR$/src/Model/Project.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="duplai_g-myphotoshop.iws" />
@@ -46,12 +28,79 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ImagePanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/IHM/ImagePanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="107" column="29" selection-start-line="107" selection-start-column="29" selection-end-line="107" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1914#1915#0" expanded="true" />
+                <element signature="e#1958#1959#0" expanded="true" />
+                <element signature="e#2209#2210#0" expanded="true" />
+                <element signature="e#2247#2248#0" expanded="true" />
+                <element signature="e#2315#2316#0" expanded="true" />
+                <element signature="e#2342#2343#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/entryPoint/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26493108">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="29" column="66" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="66" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImageState.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Model/ImageState.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.19295558">
+              <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
+              <folding>
+                <element signature="e#1151#1152#0" expanded="true" />
+                <element signature="e#1180#1181#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Model.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Model.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Layer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/IHM/Layer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Project.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Project.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#6664#6665#0" expanded="true" />
+                <element signature="e#6709#6710#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -124,20 +173,20 @@
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/SepiaV2.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/GrayScaleV2.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/FloydSteinberg.java" />
-        <option value="$PROJECT_DIR$/src/Model/ImageState.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/Sepia.java" />
         <option value="$PROJECT_DIR$/src/View/ChooseFilterWindow.java" />
         <option value="$PROJECT_DIR$/src/IHM/Layer.java" />
         <option value="$PROJECT_DIR$/src/Model/Model.java" />
-        <option value="$PROJECT_DIR$/src/Model/Project.java" />
         <option value="$PROJECT_DIR$/src/View/ProjectPane.java" />
-        <option value="$PROJECT_DIR$/src/IHM/ImagePanel.java" />
         <option value="$PROJECT_DIR$/src/View/Menu.java" />
         <option value="$PROJECT_DIR$/src/Control/Controller.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/Emboss.java" />
         <option value="$PROJECT_DIR$/src/entryPoint/CustomSplashScreen.java" />
         <option value="$PROJECT_DIR$/src/View/MainWindow.java" />
         <option value="$PROJECT_DIR$/src/entryPoint/Main.java" />
+        <option value="$PROJECT_DIR$/src/IHM/ImagePanel.java" />
+        <option value="$PROJECT_DIR$/src/Model/Project.java" />
+        <option value="$PROJECT_DIR$/src/Model/ImageState.java" />
       </list>
     </option>
   </component>
@@ -184,7 +233,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
@@ -361,6 +409,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1020,11 +1069,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="275462000" />
+    <option name="totallyTimeSpent" value="276279000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1037,7 +1086,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2583784" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19739583" sideWeight="0.48216215" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19739583" sideWeight="0.48216215" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1271,14 +1320,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/ImageState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7667683">
-          <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -1349,7 +1390,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3911" column="0" selection-start-line="3911" selection-start-column="0" selection-end-line="3911" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1357,47 +1397,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33231708">
           <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/IHM/Layer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1484#1485#0" expanded="true" />
-            <element signature="e#1514#1515#0" expanded="true" />
-            <element signature="e#1565#1566#0" expanded="true" />
-            <element signature="e#1603#1604#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Model.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5960366">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24847561">
-          <caret line="244" column="5" selection-start-line="244" selection-start-column="5" selection-end-line="244" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1905#1906#0" expanded="true" />
-            <element signature="e#1949#1950#0" expanded="true" />
-            <element signature="e#2312#2313#0" expanded="true" />
-            <element signature="e#2345#2346#0" expanded="true" />
-            <element signature="e#4505#4506#0" expanded="true" />
-            <element signature="e#4543#4544#0" expanded="true" />
-            <element signature="e#6051#6052#0" expanded="true" />
-            <element signature="e#6086#6087#0" expanded="true" />
-            <element signature="e#6482#6483#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1433,11 +1432,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#655#656#0" expanded="false" />
-            <element signature="e#703#704#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1445,11 +1439,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#642#643#0" expanded="false" />
-            <element signature="e#671#672#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1465,17 +1454,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/IHM/ImagePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="193" column="69" selection-start-line="193" selection-start-column="69" selection-end-line="193" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1507,9 +1485,66 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/entryPoint/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26493108">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="66" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="66" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IHM/Layer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IHM/ImagePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="107" column="29" selection-start-line="107" selection-start-column="29" selection-end-line="107" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1914#1915#0" expanded="true" />
+            <element signature="e#1958#1959#0" expanded="true" />
+            <element signature="e#2209#2210#0" expanded="true" />
+            <element signature="e#2247#2248#0" expanded="true" />
+            <element signature="e#2315#2316#0" expanded="true" />
+            <element signature="e#2342#2343#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6664#6665#0" expanded="true" />
+            <element signature="e#6709#6710#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/ImageState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19295558">
+          <caret line="21" column="53" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
+          <folding>
+            <element signature="e#1151#1152#0" expanded="true" />
+            <element signature="e#1180#1181#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
