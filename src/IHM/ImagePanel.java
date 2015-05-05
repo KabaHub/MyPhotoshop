@@ -142,7 +142,7 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
     public void paintComponent(Graphics g)
     {
         super.paintComponent(g);
-//        float z = zoom*zoom;
+//        float z = zoom;
 //        AffineTransform t = new AffineTransform();
 //        float zoomWidth = width * z;
 //        float zoomHeight = height * z;
