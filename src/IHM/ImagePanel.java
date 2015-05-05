@@ -203,14 +203,15 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
     @Override
     public int print(Graphics graphics, PageFormat pageFormat, int pageIndex) throws PrinterException
     {
-        BufferedImage image = layers.get(0).getImage();
         if (pageIndex > 0)
             return NO_SUCH_PAGE;
         Graphics2D g = (Graphics2D) graphics;
         g.translate(pageFormat.getImageableX(), pageFormat.getImageableY());
-//		int x = (int)Math.round((pageFormat.getImageableWidth() - image.getWidth() / 2f));
-//		int y = (int)Math.round((pageFormat.getImageableHeight() - image.getHeight() / 2f));
-        g.drawImage(image, 0, 0, image.getWidth(), image.getHeight(), null);
+        for (Layer l : layers)
+        {
+            BufferedImage image = l.getImage();
+            g.drawImage(image, 0, 0, image.getWidth(), image.getHeight(), null);
+        }
 
         return PAGE_EXISTS;
     }

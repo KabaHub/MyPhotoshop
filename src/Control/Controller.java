@@ -1,5 +1,6 @@
 package Control;
 
+import IHM.Layer;
 import View.ChooseFilterWindow;
 import View.ImageFileFilter;
 import View.MainWindow;
@@ -13,6 +14,7 @@ import javax.print.attribute.PrintRequestAttributeSet;
 import javax.print.attribute.standard.MediaPrintableArea;
 import javax.print.attribute.standard.PrinterResolution;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -39,6 +41,26 @@ public class Controller implements ActionListener
         super();
         this.mainWindow = mainWindow;
         this.model = model;
+
+        ImageFileFilter mypsdFileFilter = new ImageFileFilter("MyPhotoshop (*.myPSD)", ".myPSD");
+        ImageFileFilter pngFileFilter = new ImageFileFilter("PNG (*.png)", ".png");
+        ImageFileFilter jpgFileFilter = new ImageFileFilter("JPEG (*.jpg;*.jpeg)", new String[]{".jpg", ".jpeg"});
+        ImageFileFilter gifFileFilter = new ImageFileFilter("GIF (*.gif)", ".gif");
+        ImageFileFilter bmpFileFilter = new ImageFileFilter("BMP (*.bmp)", ".bmp");
+        projectFileChooser.addChoosableFileFilter(mypsdFileFilter);
+        projectFileChooser.addChoosableFileFilter(pngFileFilter);
+        projectFileChooser.addChoosableFileFilter(jpgFileFilter);
+        projectFileChooser.addChoosableFileFilter(gifFileFilter);
+        projectFileChooser.addChoosableFileFilter(bmpFileFilter);
+        imageFileChooser.addChoosableFileFilter(pngFileFilter);
+        imageFileChooser.addChoosableFileFilter(jpgFileFilter);
+        imageFileChooser.addChoosableFileFilter(gifFileFilter);
+        imageFileChooser.addChoosableFileFilter(bmpFileFilter);
+        exportFileChooser.setAcceptAllFileFilterUsed(false);
+        exportFileChooser.addChoosableFileFilter(pngFileFilter);
+        exportFileChooser.addChoosableFileFilter(jpgFileFilter);
+        exportFileChooser.addChoosableFileFilter(gifFileFilter);
+        exportFileChooser.addChoosableFileFilter(bmpFileFilter);
     }
 
     public void actionPerformed(ActionEvent e)
@@ -50,16 +72,6 @@ public class Controller implements ActionListener
             model.addProject();
         } else if (e.getActionCommand().contentEquals("Open Project"))
         {
-            ImageFileFilter mypsdFileFilter = new ImageFileFilter("MyPhotoshop (*.myPSD)", ".myPSD");
-            ImageFileFilter pngFileFilter = new ImageFileFilter("PNG (*.png)", ".png");
-            ImageFileFilter jpgFileFilter = new ImageFileFilter("JPEG (*.jpg;*.jpeg)", new String[]{".jpg", ".jpeg"});
-            ImageFileFilter gifFileFilter = new ImageFileFilter("GIF (*.gif)", ".gif");
-            ImageFileFilter bmpFileFilter = new ImageFileFilter("BMP (*.bmp)", ".bmp");
-            projectFileChooser.addChoosableFileFilter(mypsdFileFilter);
-            projectFileChooser.addChoosableFileFilter(pngFileFilter);
-            projectFileChooser.addChoosableFileFilter(jpgFileFilter);
-            projectFileChooser.addChoosableFileFilter(gifFileFilter);
-            projectFileChooser.addChoosableFileFilter(bmpFileFilter);
             if (projectFileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION)
             {
                 File f = projectFileChooser.getSelectedFile();
@@ -67,14 +79,6 @@ public class Controller implements ActionListener
             }
         } else if (e.getActionCommand().contentEquals("Import Image"))
         {
-            ImageFileFilter pngFileFilter = new ImageFileFilter("PNG (*.png)", ".png");
-            ImageFileFilter jpgFileFilter = new ImageFileFilter("JPEG (*.jpg;*.jpeg)", new String[]{".jpg", ".jpeg"});
-            ImageFileFilter gifFileFilter = new ImageFileFilter("GIF (*.gif)", ".gif");
-            ImageFileFilter bmpFileFilter = new ImageFileFilter("BMP (*.bmp)", ".bmp");
-            imageFileChooser.addChoosableFileFilter(pngFileFilter);
-            imageFileChooser.addChoosableFileFilter(jpgFileFilter);
-            imageFileChooser.addChoosableFileFilter(gifFileFilter);
-            imageFileChooser.addChoosableFileFilter(bmpFileFilter);
             if (imageFileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION)
             {
                 File f = imageFileChooser.getSelectedFile();
@@ -83,15 +87,7 @@ public class Controller implements ActionListener
         } else if (e.getActionCommand().contentEquals("Export Image"))
         {
             Project p = mainWindow.getCurrentTab().getProject();
-            ImageFileFilter pngFileFilter = new ImageFileFilter("PNG (*.png)", ".png", "PNG");
-            ImageFileFilter jpgFileFilter = new ImageFileFilter("JPEG (*.jpg,*.jpeg)", new String[]{".jpg", ".jpeg"}, "JPG");
-            ImageFileFilter gifFileFilter = new ImageFileFilter("GIF (*.gif)", ".gif", "GIF");
-            ImageFileFilter bmpFileFilter = new ImageFileFilter("BMP (*.bmp)", ".bmp", "BMP");
-            exportFileChooser.setAcceptAllFileFilterUsed(false);
-            exportFileChooser.addChoosableFileFilter(pngFileFilter);
-            exportFileChooser.addChoosableFileFilter(jpgFileFilter);
-            exportFileChooser.addChoosableFileFilter(gifFileFilter);
-            exportFileChooser.addChoosableFileFilter(bmpFileFilter);
+
             boolean satisfiedOfName = false;
             while (!satisfiedOfName)
             {
@@ -100,6 +96,7 @@ public class Controller implements ActionListener
                 {
                     File f = exportFileChooser.getSelectedFile();
                     ImageFileFilter imageFileFilter = ((ImageFileFilter) (exportFileChooser.getFileFilter()));
+                    String formatName = ((ImageFileFilter)exportFileChooser.getFileFilter()).getExtension();
                     if (!f.getName().endsWith(imageFileFilter.getExtension()))
                         f = new File(f.getParentFile(), f.getName() + imageFileFilter.getExtension());
                     boolean ready = true;
@@ -121,11 +118,14 @@ public class Controller implements ActionListener
                     }
                     if (ready)
                     {
-                        System.out.println("Going to Save " + f.getName());
-                        BufferedImage image = p.getImagePanel().getImage();
+                        BufferedImage image = new BufferedImage(p.getImagePanel().getWidth(), p.getImagePanel().getHeight(), BufferedImage.TYPE_INT_ARGB);
+                        Graphics g = image.getGraphics();
+                        for (Layer l : p.getLayers())
+                            g.drawImage(l.getImage(), 0, 0, null);
+                        g.dispose();
                         try
                         {
-                            ImageIO.write(image, imageFileFilter.getFormat(), f);
+                            ImageIO.write(image, formatName, f);
                         } catch (IOException e1)
                         {
                             e1.printStackTrace();
@@ -188,7 +188,6 @@ public class Controller implements ActionListener
             {
                 try
                 {
-
                     printerJob.setJobName(mainWindow.getCurrentTab().getProjectName());
                     double x = mainWindow.getCurrentTab().getProject().getImagePanel().getWidth();
                     double y = mainWindow.getCurrentTab().getProject().getImagePanel().getHeight();
