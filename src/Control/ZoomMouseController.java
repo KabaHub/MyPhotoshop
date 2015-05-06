@@ -24,7 +24,7 @@ public class ZoomMouseController implements MouseWheelListener
     {
         float zoom = Math.max(0, panel.getZoom() - 0.03f * e.getWheelRotation());
         panel.setZoom(zoom);
-        scroll.revalidate();
         panel.repaint();
+        scroll.revalidate();
     }
 }

@@ -30,7 +30,7 @@ public class GrayScale implements IPlugin
         g.drawImage(img, 0, 0, null);
         g.dispose();
 
-        BufferedImage res2 = new BufferedImage(res.getWidth(), res.getHeight(), BufferedImage.TYPE_INT_RGB);
+        BufferedImage res2 = new BufferedImage(res.getWidth(), res.getHeight(), BufferedImage.TYPE_INT_ARGB);
 
         g = res2.getGraphics();
         g.drawImage(res, 0, 0, null);
