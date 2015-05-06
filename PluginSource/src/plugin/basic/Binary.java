@@ -19,19 +19,6 @@ public class Binary implements IPlugin
     @Override
     public BufferedImage perform(BufferedImage img)
     {
-//		BufferedImage res = new BufferedImage(img.getWidth(), img.getHeight(), BufferedImage.TYPE_BYTE_BINARY);
-//
-//		Graphics g = res.getGraphics();
-//		g.drawImage(img, 0, 0, null);
-//		g.dispose();
-//
-//		BufferedImage res2= new BufferedImage(res.getWidth(), res.getHeight(), BufferedImage.TYPE_INT_ARGB);
-//
-//		Graphics g2 = res2.getGraphics();
-//		g2.drawImage(res, 0, 0, null);
-//		g2.dispose();
-//
-//		return res2;
         BufferedImage newImage = new BufferedImage(img.getWidth(), img.getHeight(), BufferedImage.TYPE_INT_ARGB);
         for (int i = 0; i < img.getWidth(); i++)
         {

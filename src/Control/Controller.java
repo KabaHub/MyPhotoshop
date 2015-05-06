@@ -238,6 +238,7 @@ public class Controller implements ActionListener
             System.out.println("--------------------------");
             for (ImageState i : mainWindow.getCurrentTab().getProject().getHistory())
                 System.out.println(i.getAppliedIPlugin());
+            mainWindow.getCurrentTab().getProject().setCurrentState(0);
         } else if (e.getActionCommand().contentEquals("CloseTab"))
         {
             mainWindow.removeFromTabbedPanel(mainWindow.getCurrentTab());

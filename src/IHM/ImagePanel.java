@@ -10,6 +10,7 @@ import java.awt.print.Printable;
 import java.awt.print.PrinterException;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -108,7 +109,8 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
 
     public synchronized void restoreImage(ArrayList<Layer> layers)
     {
-        this.layers = layers;
+        this.layers.clear();
+        this.layers.addAll(layers.stream().map(l -> new Layer(l.getName(), l.getImage())).collect(Collectors.toList()));
     }
 
     public synchronized void setImage(BufferedImage image)
