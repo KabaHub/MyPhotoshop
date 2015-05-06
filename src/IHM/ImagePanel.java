@@ -113,12 +113,16 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
 
     public synchronized void setImage(BufferedImage image)
     {
-        System.out.println(currentLayer);
         layers.get(currentLayer).setImage(image);
-        if (image.getHeight() > this.height)
-            this.height = image.getHeight();
-        if (image.getWidth() > this.width)
-            this.width = image.getWidth();
+        int maxWidth = 0;
+        int maxHeight = 0;
+        for (Layer l : layers)
+        {
+            maxWidth = Math.max(maxWidth, l.getImage().getWidth());
+            maxHeight = Math.max(maxHeight, l.getImage().getHeight());
+        }
+        this.width = maxWidth;
+        this.height = maxHeight;
     }
 
     public void addLayer()
@@ -236,8 +240,8 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
         float zoomHeight = height * zoom;
         t.translate(width / 2 - zoomWidth / 2, height / 2 - zoomHeight / 2);
         t.scale(zoom, zoom);
-        System.out.println("Ex width: " + width + ", new width: " + (int)zoomWidth);
-        System.out.println("Ex height: " + height + ", new height " + (int)zoomHeight);
+        System.out.println("Ex width: " + width + ", new width: " + (int) zoomWidth);
+        System.out.println("Ex height: " + height + ", new height " + (int) zoomHeight);
         width = (int) zoomWidth;
         height = (int) zoomHeight;
         BufferedImage newImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
