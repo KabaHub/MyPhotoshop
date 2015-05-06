@@ -14,11 +14,6 @@ public class HorizontalFlip implements IPlugin
 	@Override
 	public BufferedImage perform(BufferedImage img)
 	{
-//		AffineTransform at = AffineTransform.getScaleInstance(-1, 1);
-//		at.translate(-img.getWidth(), 0);
-//		AffineTransformOp op = new AffineTransformOp(at, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
-//		img = op.filter(img, null);
-
 		BufferedImage newImage = new BufferedImage(img.getWidth(), img.getHeight(), BufferedImage.TYPE_INT_ARGB);
 		for (int i = 0; i < img.getWidth(); i++)
 		{
