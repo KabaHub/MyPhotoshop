@@ -21,7 +21,6 @@ public class GrayScale implements IPlugin
     @Override
     public BufferedImage perform(BufferedImage img)
     {
-//
         BufferedImage newImage = new BufferedImage(img.getHeight(), img.getWidth(), BufferedImage.TYPE_INT_ARGB);
         for (int i = 0; i < img.getWidth(); i++)
         {

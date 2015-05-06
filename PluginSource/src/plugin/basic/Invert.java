@@ -1,32 +1,34 @@
 package plugin.basic;
 
-import java.awt.color.ColorSpace;
-import java.awt.image.*;
-import java.awt.image.BufferedImage;
-import java.awt.image.BufferedImageOp;
-import java.awt.image.ColorConvertOp;
-import java.awt.image.ConvolveOp;
-import java.awt.image.Kernel;
-import java.awt.image.RescaleOp;
-import java.util.Random;
-
 import plugin.IPlugin;
+
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.lang.System;
 
 public class Invert implements IPlugin
 {
-	@Override
-	public BufferedImage perform(BufferedImage img)
-	{
-		RescaleOp op = new RescaleOp(-1.0f, 255f, null);
-		BufferedImage res = op.filter(img, null);
+    @Override
+    public BufferedImage perform(BufferedImage img)
+    {
+        BufferedImage newImage = new BufferedImage(img.getWidth(), img.getHeight(), BufferedImage.TYPE_INT_ARGB);
+        for (int i = 0; i < img.getWidth(); i++)
+        {
+            for (int j = 0; j < img.getHeight(); j++)
+            {
+                Color c = new Color(img.getRGB(i, j), true);
+                Color invertColor = new Color(255 - c.getRed(), 255 - c.getGreen(), 255 - c.getBlue(), c.getAlpha());
+                newImage.setRGB(i, j, invertColor.getRGB());
+            }
+        }
 
-		return res;
-	}
+        return newImage;
+    }
 
-	@Override
-	public String getName()
-	{
-		return "Invert";
-	}
+    @Override
+    public String getName()
+    {
+        return "Invert";
+    }
 
 }
