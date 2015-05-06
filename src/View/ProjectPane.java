@@ -46,8 +46,8 @@ public class ProjectPane extends CustomJPanel
         initInfoPanel();
         jSplitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, imageScrollPane, infoPanel);
         this.add(jSplitPane, BorderLayout.CENTER);
-        infoPanel.setResizeWeight(0.60f);
-        jSplitPane.setResizeWeight(0.80f);
+        infoPanel.setResizeWeight(0.55f);
+        jSplitPane.setResizeWeight(1.00f);
     }
 
     private void initImagePanel()

@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Created by Sarah on 03/05/2015.
+ * Created by Gabriel on 03/05/2015.
  */
 public class CustomJPanel extends JPanel {
     private enum CustomTypes
