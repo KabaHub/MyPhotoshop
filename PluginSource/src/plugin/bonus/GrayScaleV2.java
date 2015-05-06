@@ -21,9 +21,19 @@ public class GrayScaleV2 implements IPlugin
     @Override
     public BufferedImage perform(BufferedImage img)
     {
-		java.awt.image.ColorConvertOp op = new ColorConvertOp(ColorSpace.getInstance(ColorSpace.CS_GRAY), null);
-		BufferedImage res = op.filter(img, null);
-		return res;
+        BufferedImage res = new BufferedImage(img.getWidth(), img.getHeight(), BufferedImage.TYPE_BYTE_GRAY);
+
+        Graphics g = res.getGraphics();
+        g.drawImage(img, 0, 0, null);
+        g.dispose();
+
+        BufferedImage res2 = new BufferedImage(res.getWidth(), res.getHeight(), BufferedImage.TYPE_INT_ARGB);
+
+        g = res2.getGraphics();
+        g.drawImage(res, 0, 0, null);
+        g.dispose();
+
+        return res2;
     }
 
     @Override
