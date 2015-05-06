@@ -16,28 +16,42 @@ import javax.swing.GrayFilter;
 public class Binary implements IPlugin
 {
 
-	@Override
-	public BufferedImage perform(BufferedImage img)
-	{
-		BufferedImage res = new BufferedImage(img.getWidth(), img.getHeight(), BufferedImage.TYPE_BYTE_BINARY);
+    @Override
+    public BufferedImage perform(BufferedImage img)
+    {
+//		BufferedImage res = new BufferedImage(img.getWidth(), img.getHeight(), BufferedImage.TYPE_BYTE_BINARY);
+//
+//		Graphics g = res.getGraphics();
+//		g.drawImage(img, 0, 0, null);
+//		g.dispose();
+//
+//		BufferedImage res2= new BufferedImage(res.getWidth(), res.getHeight(), BufferedImage.TYPE_INT_ARGB);
+//
+//		Graphics g2 = res2.getGraphics();
+//		g2.drawImage(res, 0, 0, null);
+//		g2.dispose();
+//
+//		return res2;
+        BufferedImage newImage = new BufferedImage(img.getWidth(), img.getHeight(), BufferedImage.TYPE_INT_ARGB);
+        for (int i = 0; i < img.getWidth(); i++)
+        {
+            for (int j = 0; j < img.getHeight(); j++)
+            {
+                Color c = new Color(img.getRGB(i, j), true);
+                int grey = (c.getRed() + c.getGreen() + c.getBlue()) / 3;
+                grey = grey >= 128 ? 255 : 0;
+                c = new Color(grey, grey, grey, c.getAlpha());
+                newImage.setRGB(i, j, c.getRGB());
+            }
+        }
 
-		Graphics g = res.getGraphics();
-		g.drawImage(img, 0, 0, null);
-		g.dispose();
+        return newImage;
+    }
 
-		BufferedImage res2= new BufferedImage(res.getWidth(), res.getHeight(), BufferedImage.TYPE_INT_ARGB);
-
-		Graphics g2 = res2.getGraphics();
-		g2.drawImage(res, 0, 0, null);
-		g2.dispose();
-
-		return res2;
-	}
-
-	@Override
-	public String getName()
-	{
-		return "Binary";
-	}
+    @Override
+    public String getName()
+    {
+        return "Binary";
+    }
 
 }
