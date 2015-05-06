@@ -13,26 +13,36 @@ import plugin.IPlugin;
 public class RotateRight implements IPlugin
 {
 
-	@Override
-	public BufferedImage perform(BufferedImage img)
-	{
-		AffineTransform at = new AffineTransform();
-		int w = img.getWidth();
-		int h = img.getHeight();
-		at.translate(h / 2, w / 2);
-		at.rotate(Math.PI / 2);
-		at.translate(-w / 2, -h / 2);
-		AffineTransformOp ato = new AffineTransformOp(at, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
-		BufferedImage res = ato.filter(img, null);
+    @Override
+    public BufferedImage perform(BufferedImage img)
+    {
+//		AffineTransform at = new AffineTransform();
+//		int w = img.getWidth();
+//		int h = img.getHeight();
+//		at.translate(h / 2, w / 2);
+//		at.rotate(Math.PI / 2);
+//		at.translate(-w / 2, -h / 2);
+//		AffineTransformOp ato = new AffineTransformOp(at, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
+//		BufferedImage res = ato.filter(img, null);
 
-		return res;
-	}
+        BufferedImage newImage = new BufferedImage(img.getHeight(), img.getWidth(), BufferedImage.TYPE_INT_ARGB);
+        for (int i = 0; i < img.getWidth(); i++)
+        {
+            for (int j = 0; j < img.getHeight(); j++)
+            {
+                Color c = new Color(img.getRGB(i, j), true);
+                newImage.setRGB(img.getHeight() - j - 1, i, c.getRGB());
+            }
+        }
+
+        return newImage;
+    }
 
 
-	@Override
-	public String getName()
-	{
-		return "Rotate Right (90°)";
-	}
+    @Override
+    public String getName()
+    {
+        return "Rotate Right (90°)";
+    }
 
 }

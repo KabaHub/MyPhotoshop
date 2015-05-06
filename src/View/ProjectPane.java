@@ -57,8 +57,7 @@ public class ProjectPane extends CustomJPanel
         imageScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         imageScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         // CONTROLLERS
-        imageScrollPane.getViewport().setScrollMode(JViewport.SIMPLE_SCROLL_MODE);
-        imagePanel.addMouseWheelListener(new ZoomMouseController(imagePanel, imageScrollPane));
+//        imagePanel.addMouseWheelListener(new ZoomMouseController(imagePanel, imageScrollPane));
     }
 
     private void initInfoPanel()

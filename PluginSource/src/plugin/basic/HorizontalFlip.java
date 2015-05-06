@@ -37,5 +37,4 @@ public class HorizontalFlip implements IPlugin
 	{
 		return "Horizontal Flip";
 	}
-
 }
