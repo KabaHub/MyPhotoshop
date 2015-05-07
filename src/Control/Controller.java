@@ -6,13 +6,10 @@ import View.ImageFileFilter;
 import View.MainWindow;
 import Model.Model;
 import Model.Project;
-import Model.ImageState;
 
 import javax.imageio.ImageIO;
 import javax.print.attribute.HashPrintRequestAttributeSet;
 import javax.print.attribute.PrintRequestAttributeSet;
-import javax.print.attribute.standard.MediaPrintableArea;
-import javax.print.attribute.standard.PrinterResolution;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -232,19 +229,15 @@ public class Controller implements ActionListener
         {
             model.reloadPlugins();
             JOptionPane.showMessageDialog(null, "Plugin Reloaded from plugin/", "Information", JOptionPane.WARNING_MESSAGE);
-        } else if (e.getActionCommand().contentEquals("Test"))
-        {
-            System.out.println("History :");
-            System.out.println("--------------------------");
-            for (ImageState i : mainWindow.getCurrentTab().getProject().getHistory())
-                System.out.println(i.getAppliedIPlugin());
-            mainWindow.getCurrentTab().getProject().setCurrentState(0);
         } else if (e.getActionCommand().contentEquals("CloseTab"))
         {
             mainWindow.removeFromTabbedPanel(mainWindow.getCurrentTab());
         } else if (e.getActionCommand().contentEquals("About"))
         {
             JOptionPane.showMessageDialog(null, "MyPhotoshop by Gabriel DUPLAIX from EPITA. g.duplaix.pro@gmail.com", "About", JOptionPane.PLAIN_MESSAGE);
+        } else if (e.getActionCommand().contentEquals("Test"))
+        {
+            System.out.println("loul");
         } else
             System.out.println(e.getActionCommand() + " not yet Implemented");
     }
