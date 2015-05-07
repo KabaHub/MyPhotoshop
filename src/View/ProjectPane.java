@@ -242,6 +242,17 @@ public class ProjectPane extends CustomJPanel
             {
                 int l = project.getCurrentLayer();
                 project.setLayerVisible(l, !project.getLayerVisible(l));
+            } else if (e.getActionCommand().contentEquals("^"))
+            {
+                project.swapLayerUp(project.getCurrentLayer());
+            } else if (e.getActionCommand().contentEquals("v"))
+            {
+                project.swapLayerDown(project.getCurrentLayer());
+            } else if (e.getActionCommand().contentEquals("X"))
+            {
+                int close = JOptionPane.showConfirmDialog(null, "Are you sure to delete this Layer ?", "Warning", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+                if (close == JOptionPane.OK_OPTION)
+                    project.closeLayer(project.getCurrentLayer());
             }
         }
     }

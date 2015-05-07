@@ -105,7 +105,7 @@ public class Controller implements ActionListener
                         int selectedOption = JOptionPane.showConfirmDialog(null,
                                 "File " + f.getName() + " already exists." + System.getProperty("line.separator")
                                         + "Do you want to overwrite it ?",
-                                "Test",
+                                "Warning",
                                 JOptionPane.YES_NO_CANCEL_OPTION,
                                 JOptionPane.QUESTION_MESSAGE);
                         if (selectedOption == JOptionPane.NO_OPTION)
@@ -153,7 +153,7 @@ public class Controller implements ActionListener
                         int selectedOption = JOptionPane.showConfirmDialog(null,
                                 "File " + f.getName() + " already exists." + System.getProperty("line.separator")
                                         + "Do you want to overwrite it ?",
-                                "Test",
+                                "Warning",
                                 JOptionPane.YES_NO_CANCEL_OPTION,
                                 JOptionPane.QUESTION_MESSAGE);
                         if (selectedOption == JOptionPane.NO_OPTION)

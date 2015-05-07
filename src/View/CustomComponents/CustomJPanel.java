@@ -12,8 +12,8 @@ public class CustomJPanel extends JPanel {
         GREY,
         BLACK
     }
-    public static CustomTypes GREY = CustomTypes.GREY;
-    public static CustomTypes BLACK = CustomTypes.BLACK;
+    public static final CustomTypes GREY = CustomTypes.GREY;
+    public static final CustomTypes BLACK = CustomTypes.BLACK;
 
     public CustomJPanel(CustomTypes customType)
     {

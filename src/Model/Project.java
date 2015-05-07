@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -289,5 +290,35 @@ public class Project extends Observable implements Serializable
         if (lastIndexOf == -1)
             return "";
         return name.substring(lastIndexOf);
+    }
+
+    public void swapLayerUp(int layer)
+    {
+        if (layer >= 0 && layer < getLayers().size() - 1)
+        {
+            Collections.swap(getLayers(), layer, layer + 1);
+            setCurrentLayer(layer + 1);
+        }
+        setChanged();
+        notifyObservers(this);
+    }
+
+    public void swapLayerDown(int layer)
+    {
+        if (layer > 0 && layer < getLayers().size())
+        {
+            Collections.swap(getLayers(), layer, layer - 1);
+            setCurrentLayer(layer - 1);
+        }
+        setChanged();
+        notifyObservers(this);
+    }
+
+    public void closeLayer(int layer)
+    {
+        if (layer >= 0 && layer < getLayers().size())
+            getLayers().remove(layer);
+        setChanged();
+        notifyObservers(this);
     }
 }
