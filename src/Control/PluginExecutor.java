@@ -4,6 +4,7 @@ import Model.Project;
 import View.ChooseFilterWindow;
 import plugin.IPlugin;
 
+import java.awt.*;
 import java.awt.image.BufferedImage;
 
 /**

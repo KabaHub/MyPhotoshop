@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bab6105-4809-42d7-8428-55e452ae4f02" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Control/Controller.java" afterPath="$PROJECT_DIR$/src/Control/Controller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/Menu.java" afterPath="$PROJECT_DIR$/src/View/Menu.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Control/PluginExecutor.java" afterPath="$PROJECT_DIR$/src/Control/PluginExecutor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PluginSource/src/plugin/bonus/Sepia.java" afterPath="$PROJECT_DIR$/PluginSource/src/plugin/bonus/Sepia.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="duplai_g-myphotoshop.iws" />
@@ -31,53 +35,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Layer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/IHM/Layer.java">
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Control/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="52" column="30" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RandomPoints.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PluginSource/src/plugin/bonus/RandomPoints.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="243" column="56" selection-start-line="243" selection-start-column="56" selection-end-line="243" selection-end-column="56" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#507#508#0" expanded="false" />
-                <element signature="e#536#537#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Sepia.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PluginSource/src/plugin/bonus/Sepia.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1026#1027#0" expanded="false" />
-                <element signature="e#1056#1057#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Blur.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PluginSource/src/plugin/bonus/Blur.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="72" column="49" selection-start-line="72" selection-start-column="49" selection-end-line="72" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#2388#2389#0" expanded="false" />
-                <element signature="e#2408#2409#0" expanded="false" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -87,71 +51,18 @@
         <entry file="file://$PROJECT_DIR$/src/View/Menu.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="95" column="4" selection-start-line="95" selection-start-column="4" selection-end-line="95" selection-end-column="4" />
+              <caret line="95" column="13" selection-start-line="95" selection-start-column="13" selection-end-line="95" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProjectPane.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/ProjectPane.java">
+      <file leaf-file-name="Sepia.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/PluginSource/src/plugin/bonus/Sepia.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="252" column="132" selection-start-line="252" selection-start-column="132" selection-end-line="252" selection-end-column="132" />
+            <state vertical-scroll-proportion="0.19379845">
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Control/Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.57984495">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SobelBorders.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PluginSource/src/plugin/bonus/SobelBorders.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="72" column="50" selection-start-line="72" selection-start-column="50" selection-end-line="72" selection-end-column="50" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#2621#2622#0" expanded="false" />
-                <element signature="e#2668#2669#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GrayScaleV2.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PluginSource/src/plugin/bonus/GrayScaleV2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-              <folding>
-                <element signature="e#1025#1026#0" expanded="false" />
-                <element signature="e#1073#1074#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LaplaceFilter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PluginSource/src/plugin/bonus/LaplaceFilter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#655#656#0" expanded="false" />
-                <element signature="e#703#704#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -180,7 +91,6 @@
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/RandomPoints.java" />
         <option value="$PROJECT_DIR$/src/Control/FilterExecutor.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/basic/VeryLong.java" />
-        <option value="$PROJECT_DIR$/src/Control/PluginExecutor.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/Borders.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/Sépia.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/LaplaceFilter.java" />
@@ -193,7 +103,6 @@
         <option value="$PROJECT_DIR$/src/View/ImageFileFilter.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/SepiaV2.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/FloydSteinberg.java" />
-        <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/Sepia.java" />
         <option value="$PROJECT_DIR$/src/View/ChooseFilterWindow.java" />
         <option value="$PROJECT_DIR$/src/IHM/Layer.java" />
         <option value="$PROJECT_DIR$/src/Model/Model.java" />
@@ -213,7 +122,6 @@
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/basic/RotateLeft.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/basic/HorizontalFlip.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/basic/VerticalFlip.java" />
-        <option value="$PROJECT_DIR$/src/Model/Project.java" />
         <option value="$PROJECT_DIR$/src/View/ProjectPane.java" />
         <option value="$PROJECT_DIR$/src/View/CustomComponents/CustomJPanel.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/Convolvetest.java" />
@@ -226,8 +134,11 @@
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/Gradient.java" />
         <option value="$PROJECT_DIR$/src/plugin/Convolvetest.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/SobelBorders.java" />
-        <option value="$PROJECT_DIR$/src/View/Menu.java" />
+        <option value="$PROJECT_DIR$/src/Control/PluginExecutor.java" />
+        <option value="$PROJECT_DIR$/src/Model/Project.java" />
         <option value="$PROJECT_DIR$/src/Control/Controller.java" />
+        <option value="$PROJECT_DIR$/src/View/Menu.java" />
+        <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/Sepia.java" />
       </list>
     </option>
   </component>
@@ -437,24 +348,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ressources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="duplai_g-myphotoshop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="duplai_g-myphotoshop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="PluginSource" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -490,32 +383,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="bonus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="duplai_g-myphotoshop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="duplai_g-myphotoshop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PluginSource" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="basic" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -905,13 +772,7 @@
       <workItem from="1430996506262" duration="92000" />
       <workItem from="1430996643041" duration="80000" />
       <workItem from="1430996752870" duration="2370000" />
-      <workItem from="1430999661267" duration="12896000" />
-    </task>
-    <task id="LOCAL-00034" summary="Floyd-Steinberg Filter !">
-      <created>1430434468302</created>
-      <option name="number" value="00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1430434468302</updated>
+      <workItem from="1430999661267" duration="15240000" />
     </task>
     <task id="LOCAL-00035" summary="Comments suppressed">
       <created>1430434500977</created>
@@ -1201,11 +1062,17 @@
       <option name="project" value="LOCAL" />
       <updated>1431011931268</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="[BUG] Bug with History and Sépia Filter.">
+      <created>1431012968301</created>
+      <option name="number" value="00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1431012968302</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="344247000" />
+    <option name="totallyTimeSpent" value="346591000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -1277,7 +1144,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Functionnal buttons on LayerPanel" />
     <MESSAGE value="Print function !" />
     <MESSAGE value="Print function changed" />
     <MESSAGE value="Emboss filter" />
@@ -1302,7 +1168,8 @@
     <MESSAGE value="Layer options ok." />
     <MESSAGE value="Beginning of THIS FUCK*NG ConvolveOP to RECODE !!§§§§§§§§!!§" />
     <MESSAGE value="Finished to implement ConvolveOp OMFG." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished to implement ConvolveOp OMFG." />
+    <MESSAGE value="[BUG] Bug with History and Sépia Filter." />
+    <option name="LAST_COMMIT_MESSAGE" value="[BUG] Bug with History and Sépia Filter." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1450,17 +1317,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/IHM/ImagePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="125" column="29" selection-start-line="125" selection-start-column="29" selection-end-line="125" selection-end-column="29" />
-          <folding>
-            <element signature="e#2671#2672#0" expanded="false" />
-            <element signature="e#2729#2730#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/entryPoint/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1528,6 +1384,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30493274">
           <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1547,14 +1404,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.5056055">
-          <caret line="298" column="59" selection-start-line="298" selection-start-column="59" selection-end-line="298" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/awt/image/Raster.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1567,14 +1416,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34263566">
           <caret line="1036" column="0" selection-start-line="1036" selection-start-column="0" selection-end-line="1036" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Control/PluginExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6062015">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1654,18 +1495,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PluginSource/src/plugin/bonus/Sepia.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1026#1027#0" expanded="false" />
-            <element signature="e#1056#1057#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PluginSource/src/plugin/bonus/SobelBorders.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1698,14 +1527,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Menu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="95" column="4" selection-start-line="95" selection-start-column="4" selection-end-line="95" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/ProjectPane.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1714,13 +1535,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/IHM/ImagePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.8465116">
+          <caret line="125" column="29" selection-start-line="125" selection-start-column="29" selection-end-line="125" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Control/PluginExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.8604651">
+          <caret line="94" column="34" selection-start-line="94" selection-start-column="34" selection-end-line="94" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Control/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57984495">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="243" column="56" selection-start-line="243" selection-start-column="56" selection-end-line="243" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="95" column="13" selection-start-line="95" selection-start-column="13" selection-end-line="95" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PluginSource/src/plugin/bonus/Sepia.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19379845">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

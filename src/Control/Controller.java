@@ -6,6 +6,7 @@ import View.ImageFileFilter;
 import View.MainWindow;
 import Model.Model;
 import Model.Project;
+import Model.ImageState;
 
 import javax.imageio.ImageIO;
 import javax.print.attribute.HashPrintRequestAttributeSet;
@@ -237,7 +238,10 @@ public class Controller implements ActionListener
             JOptionPane.showMessageDialog(null, "MyPhotoshop by Gabriel DUPLAIX from EPITA. g.duplaix.pro@gmail.com", "About", JOptionPane.PLAIN_MESSAGE);
         } else if (e.getActionCommand().contentEquals("Test"))
         {
-            System.out.println("loul");
+            System.out.println("---- History ----");
+            Project p = mainWindow.getCurrentTab().getProject();
+            for (ImageState i : p.getHistory())
+                System.out.println(i.getAppliedIPlugin());
         } else
             System.out.println(e.getActionCommand() + " not yet Implemented");
     }
