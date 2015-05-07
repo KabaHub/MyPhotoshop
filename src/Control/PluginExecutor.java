@@ -26,7 +26,11 @@ public class PluginExecutor implements Runnable
     @Override
     public void run()
     {
-        BufferedImage result = plugin.perform(image);
+        BufferedImage result = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_INT_ARGB);
+        Graphics g = result.getGraphics();
+        g.drawImage(image, 0, 0, null);
+        g.dispose();
+        result = plugin.perform(result);
         if (result != null)
             project.setImageChanges(result, plugin.getName());
         project.setPluginRunning(false);

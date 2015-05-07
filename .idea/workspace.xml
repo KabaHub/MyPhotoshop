@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bab6105-4809-42d7-8428-55e452ae4f02" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Control/Controller.java" afterPath="$PROJECT_DIR$/src/Control/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/Menu.java" afterPath="$PROJECT_DIR$/src/View/Menu.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Control/PluginExecutor.java" afterPath="$PROJECT_DIR$/src/Control/PluginExecutor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PluginSource/src/plugin/bonus/Sepia.java" afterPath="$PROJECT_DIR$/PluginSource/src/plugin/bonus/Sepia.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -57,12 +55,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Sepia.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Sepia.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PluginSource/src/plugin/bonus/Sepia.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.19379845">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PluginExecutor.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Control/PluginExecutor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.93178296">
+              <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -134,11 +144,11 @@
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/Gradient.java" />
         <option value="$PROJECT_DIR$/src/plugin/Convolvetest.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/SobelBorders.java" />
-        <option value="$PROJECT_DIR$/src/Control/PluginExecutor.java" />
-        <option value="$PROJECT_DIR$/src/Model/Project.java" />
         <option value="$PROJECT_DIR$/src/Control/Controller.java" />
         <option value="$PROJECT_DIR$/src/View/Menu.java" />
+        <option value="$PROJECT_DIR$/src/Model/Project.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/Sepia.java" />
+        <option value="$PROJECT_DIR$/src/Control/PluginExecutor.java" />
       </list>
     </option>
   </component>
@@ -772,13 +782,7 @@
       <workItem from="1430996506262" duration="92000" />
       <workItem from="1430996643041" duration="80000" />
       <workItem from="1430996752870" duration="2370000" />
-      <workItem from="1430999661267" duration="15240000" />
-    </task>
-    <task id="LOCAL-00035" summary="Comments suppressed">
-      <created>1430434500977</created>
-      <option name="number" value="00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1430434500977</updated>
+      <workItem from="1430999661267" duration="15590000" />
     </task>
     <task id="LOCAL-00036" summary="[BUG][SOLVED] Corrected Mega Bug : Serialization loses Observer">
       <created>1430434976771</created>
@@ -1068,11 +1072,17 @@
       <option name="project" value="LOCAL" />
       <updated>1431012968302</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="[BUG][SOLVED] Sépia filter ok, problem was I didn't create a new image.">
+      <created>1431032388853</created>
+      <option name="number" value="00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1431032388853</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="346591000" />
+    <option name="totallyTimeSpent" value="346941000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -1144,7 +1154,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Print function !" />
     <MESSAGE value="Print function changed" />
     <MESSAGE value="Emboss filter" />
     <MESSAGE value="Advanced with Layers" />
@@ -1169,7 +1178,8 @@
     <MESSAGE value="Beginning of THIS FUCK*NG ConvolveOP to RECODE !!§§§§§§§§!!§" />
     <MESSAGE value="Finished to implement ConvolveOp OMFG." />
     <MESSAGE value="[BUG] Bug with History and Sépia Filter." />
-    <option name="LAST_COMMIT_MESSAGE" value="[BUG] Bug with History and Sépia Filter." />
+    <MESSAGE value="[BUG][SOLVED] Sépia filter ok, problem was I didn't create a new image." />
+    <option name="LAST_COMMIT_MESSAGE" value="[BUG][SOLVED] Sépia filter ok, problem was I didn't create a new image." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1543,22 +1553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Control/PluginExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.8604651">
-          <caret line="94" column="34" selection-start-line="94" selection-start-column="34" selection-end-line="94" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Control/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1577,11 +1571,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54573643">
+          <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/PluginSource/src/plugin/bonus/Sepia.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19379845">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Control/PluginExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.93178296">
+          <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

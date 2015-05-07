@@ -16,10 +16,6 @@ public class Sepia implements IPlugin
     @Override
     public BufferedImage perform(BufferedImage img)
     {
-        BufferedImage res = new BufferedImage(img.getWidth(), img.getHeight(), BufferedImage.TYPE_INT_ARGB);
-        Graphics graphics = res.getGraphics();
-        graphics.drawImage(img, 0, 0, null);
-        graphics.dispose();
         for (int i = 0; i < img.getWidth(); i++)
             for (int j = 0; j < img.getHeight(); j++)
             {
@@ -28,9 +24,9 @@ public class Sepia implements IPlugin
                 int g = (int) Math.min(((c.getRed() * 0.340f) + (c.getGreen() * 0.675f) + (c.getBlue() * 0.160f)), 255);
                 int b = (int) Math.min(((c.getRed() * 0.273f) + (c.getGreen() * 0.535f) + (c.getBlue() * 0.132f)), 255);
                 c = new Color(r, g, b);
-                res.setRGB(i, j, c.getRGB());
+                img.setRGB(i, j, c.getRGB());
             }
-        return res;
+        return img;
     }
 
     @Override
