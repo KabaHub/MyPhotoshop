@@ -104,8 +104,8 @@ public class ProjectPane extends CustomJPanel
             infoPanel.setVisible(true);
         updateHistory();
         updateLayers();
-        imageScrollPane.repaint();
-        imageScrollPane.revalidate();
+        imageScrollPane.getViewport().revalidate();
+        imageScrollPane.getViewport().repaint();
     }
 
     protected class HistoButtonListener implements ActionListener

@@ -94,13 +94,13 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
     @Override
     public int getWidth()
     {
-        return width;
+        return (int)(width * zoom);
     }
 
     @Override
     public int getHeight()
     {
-        return height;
+        return (int)(height * zoom);
     }
 
     public BufferedImage getImage()
@@ -180,8 +180,8 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
     public Dimension getPreferredSize()
     {
         Dimension size = super.getPreferredSize();
-        size.width = width;
-        size.height = height;
+        size.width = (int) (width * zoom);
+        size.height = (int) (height * zoom);
         return size;
     }
 
@@ -238,8 +238,7 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
 
     public void setZoom(float zoom)
     {
-        this.zoom += this.zoom * zoom;
-        width += (int) (width * zoom);
-        height += (int) (height * zoom);
+        this.zoom += zoom;
+
     }
 }

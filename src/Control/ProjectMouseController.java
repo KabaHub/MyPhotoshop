@@ -21,8 +21,7 @@ public class ProjectMouseController implements MouseWheelListener
     public void mouseWheelMoved(MouseWheelEvent e)
     {
 //        float zoom = Math.max(0, project.getZoom() - 0.03f * e.getWheelRotation());
-        float zoom = (e.getWheelRotation() < 0) ? 0.03f : -0.03f;
-        System.out.println(zoom);
+        float zoom = (e.getWheelRotation() < 0) ? 0.05f : -0.05f;
         project.setZoom(zoom);
     }
 }
