@@ -1,7 +1,6 @@
 package Control;
 
 import Model.Project;
-import View.ChooseFilterWindow;
 import plugin.IPlugin;
 
 import java.awt.*;
@@ -26,13 +25,21 @@ public class PluginExecutor implements Runnable
     @Override
     public void run()
     {
-        BufferedImage result = new BufferedImage(image.getWidth(), image.getHeight(), image.getType());
-        Graphics g = result.getGraphics();
-        g.drawImage(image, 0, 0, null);
-        g.dispose();
-        result = plugin.perform(result);
-        if (result != null)
-            project.setImageChanges(result, plugin.getName());
-        project.setPluginRunning(false);
+        try
+        {
+            BufferedImage result = new BufferedImage(image.getWidth(), image.getHeight(), image.getType());
+            Graphics g = result.getGraphics();
+            g.drawImage(image, 0, 0, null);
+            g.dispose();
+            Thread.sleep(0);
+            result = plugin.perform(result);
+            if (result != null)
+                project.setImageChanges(result, plugin.getName());
+            project.setPluginRunning(false);
+        }
+        catch (InterruptedException e)
+        {
+            Thread.currentThread().interrupt();
+        }
     }
 }

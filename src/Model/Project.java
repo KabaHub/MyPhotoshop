@@ -143,7 +143,7 @@ public class Project extends Observable implements Serializable
     {
         currentState++;
         history.subList(currentState, history.size()).clear();
-        ImageState imageState = new ImageState(pluginName, imagePanel.getLayers());
+        ImageState imageState = new ImageState(pluginName, imagePanel.getLayers(), getCurrentLayer());
         history.add(imageState);
     }
 
@@ -185,6 +185,7 @@ public class Project extends Observable implements Serializable
         if (isPluginRunning)
         {
             pluginThread.stop();
+//            pluginThread.interrupt();
             isPluginRunning = false;
         }
     }
@@ -262,6 +263,7 @@ public class Project extends Observable implements Serializable
         {
             currentState = newState;
             imagePanel.restoreImage(history.get(currentState).getLayers());
+            setCurrentLayer(history.get(currentState).getCurrentLayer());
             setChanged();
             notifyObservers(this);
         }
@@ -287,7 +289,12 @@ public class Project extends Observable implements Serializable
 
     public void setCurrentLayer(int layer)
     {
-        imagePanel.setCurrentLayer(layer);
+        System.out.println(imagePanel.getLayers().size());
+        System.out.println(layer);
+        if (imagePanel.getLayers().size() > layer)
+            imagePanel.setCurrentLayer(layer);
+        else
+            imagePanel.setCurrentLayer(0);
         setChanged();
         notifyObservers(this);
     }
@@ -359,45 +366,48 @@ public class Project extends Observable implements Serializable
         notifyObservers(this);
     }
 
-    public void drawPoint(Point p, Color color)
+    public void drawPencil()
     {
-        BufferedImage image = imagePanel.getImage();
-        int width = imagePanel.getWidth();
-        int height = imagePanel.getHeight();
-        int realWidth = imagePanel.getImage().getWidth();
-        int realHeight = imagePanel.getImage().getHeight();
-        int posX = p.x * realWidth / width;
-        int posY = p.y * realHeight / height;
-        image.setRGB(posX, posY, color.getRGB());
+        if (isPluginRunning == false && imagePanel.previewPencil.size() > 0)
+        {
+            isPluginRunning = true;
+            BufferedImage image = imagePanel.getImage();
+            if (image != null)
+            {
+                image = new BufferedImage(image.getWidth(), image.getHeight(), image.getType());
+                Graphics2D g = (Graphics2D) image.getGraphics();
+                g.drawImage(imagePanel.getImage(), 0, 0, null);
+                g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                g.setColor(imagePanel.pencilColor);
+                int width = imagePanel.getWidth();
+                int height = imagePanel.getHeight();
+                int realWidth = imagePanel.getImage().getWidth();
+                int realHeight = imagePanel.getImage().getHeight();
+                for (Point p : imagePanel.previewPencil)
+                {
+                    int posX = p.x * realWidth / width;
+                    int posY = p.y * realHeight / height;
+                    g.fillOval(posX - imagePanel.pencilSize / 2, posY - imagePanel.pencilSize / 2, imagePanel.pencilSize, imagePanel.pencilSize);
+                }
+                g.dispose();
+                setImageChanges(image, "Pencil Tool");
+            }
+            isPluginRunning = false;
+        }
         setChanged();
         notifyObservers(this);
     }
 
-    public void drawPencil(ArrayList<Point> points, int pencilSize, Color color)
+    public void addToPencilPreview(Point p)
     {
-        if (isPluginRunning == false)
-        {
-            isPluginRunning = true;
-            BufferedImage image = imagePanel.getImage();
-            image = new BufferedImage(image.getWidth(), image.getHeight(), image.getType());
-            Graphics2D g = (Graphics2D) image.getGraphics();
-            g.drawImage(imagePanel.getImage(), 0, 0, null);
-            g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-            g.setColor(color);
-            int width = imagePanel.getWidth();
-            int height = imagePanel.getHeight();
-            int realWidth = imagePanel.getImage().getWidth();
-            int realHeight = imagePanel.getImage().getHeight();
-            for (Point p : points)
-            {
-                int posX = p.x * realWidth / width;
-                int posY = p.y * realHeight / height;
-                g.fillOval(posX - pencilSize / 2, posY - pencilSize / 2, pencilSize, pencilSize);
-            }
-            g.dispose();
-            setImageChanges(image, "Pencil Tool");
-            isPluginRunning = false;
-        }
+        imagePanel.previewPencil.add(p);
+        setChanged();
+        notifyObservers(this);
+    }
+
+    public void clearPencilPreview()
+    {
+        imagePanel.previewPencil.clear();
         setChanged();
         notifyObservers(this);
     }

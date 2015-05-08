@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bab6105-4809-42d7-8428-55e452ae4f02" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Model.java" afterPath="$PROJECT_DIR$/src/Model/Model.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/IHM/ImagePanel.java" afterPath="$PROJECT_DIR$/src/IHM/ImagePanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/ImageState.java" afterPath="$PROJECT_DIR$/src/Model/ImageState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/Menu.java" afterPath="$PROJECT_DIR$/src/View/Menu.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Control/PluginExecutor.java" afterPath="$PROJECT_DIR$/src/Control/PluginExecutor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Project.java" afterPath="$PROJECT_DIR$/src/Model/Project.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Control/ProjectMouseController.java" afterPath="$PROJECT_DIR$/src/Control/ProjectMouseController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PluginSource/src/plugin/basic/VeryLong.java" afterPath="$PROJECT_DIR$/PluginSource/src/plugin/basic/VeryLong.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="duplai_g-myphotoshop.iws" />
@@ -34,44 +38,62 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ProjectMouseController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProjectMouseController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Control/ProjectMouseController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5426357">
-              <caret line="60" column="22" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#886#887#0" expanded="true" />
-                <element signature="e#926#927#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Project.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Project.java">
+      <file leaf-file-name="ProjectPane.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/ProjectPane.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="397" column="47" selection-start-line="397" selection-start-column="47" selection-end-line="397" selection-end-column="47" />
-              <folding />
+              <caret line="120" column="49" selection-start-line="120" selection-start-column="49" selection-end-line="120" selection-end-column="49" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4129#4130#0" expanded="true" />
+                <element signature="e#4190#4191#0" expanded="true" />
+                <element signature="e#5825#5826#0" expanded="true" />
+                <element signature="e#5887#5888#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Model.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Model.java">
+      <file leaf-file-name="Project.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Model/Project.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="115" column="26" selection-start-line="115" selection-start-column="26" selection-end-line="115" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.30852714">
+              <caret line="145" column="100" selection-start-line="145" selection-start-column="100" selection-end-line="145" selection-end-column="100" />
               <folding>
-                <element signature="e#2600#2601#0" expanded="true" />
-                <element signature="e#2630#2631#0" expanded="true" />
-                <element signature="e#2681#2682#0" expanded="true" />
-                <element signature="e#2712#2713#0" expanded="true" />
-                <element signature="e#2998#2999#0" expanded="true" />
-                <element signature="e#3032#3033#0" expanded="true" />
-                <element signature="e#3070#3071#0" expanded="true" />
-                <element signature="e#3103#3104#0" expanded="true" />
+                <element signature="e#2837#2838#0" expanded="true" />
+                <element signature="e#2881#2882#0" expanded="true" />
+                <element signature="e#2929#2930#0" expanded="true" />
+                <element signature="e#2980#2981#0" expanded="true" />
+                <element signature="e#3525#3526#0" expanded="true" />
+                <element signature="e#3558#3559#0" expanded="true" />
+                <element signature="e#4387#4388#0" expanded="true" />
+                <element signature="e#4439#4440#0" expanded="true" />
+                <element signature="e#5899#5900#0" expanded="true" />
+                <element signature="e#5937#5938#0" expanded="true" />
+                <element signature="e#6234#6235#0" expanded="true" />
+                <element signature="e#6268#6269#0" expanded="true" />
+                <element signature="e#7445#7446#0" expanded="true" />
+                <element signature="e#7480#7481#0" expanded="true" />
+                <element signature="e#7910#7911#0" expanded="true" />
+                <element signature="e#7955#7956#0" expanded="true" />
+                <element signature="e#8168#8169#0" expanded="true" />
+                <element signature="e#8219#8220#0" expanded="true" />
+                <element signature="e#8920#8921#0" expanded="true" />
+                <element signature="e#8977#8978#0" expanded="true" />
+                <element signature="e#10034#10035#0" expanded="true" />
+                <element signature="e#10077#10078#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -99,7 +121,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Control/FilterExecutor.java" />
-        <option value="$PROJECT_DIR$/PluginSource/src/plugin/basic/VeryLong.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/Borders.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/Sépia.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/LaplaceFilter.java" />
@@ -135,20 +156,21 @@
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/Gradient.java" />
         <option value="$PROJECT_DIR$/src/plugin/Convolvetest.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/SobelBorders.java" />
-        <option value="$PROJECT_DIR$/src/View/Menu.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/Sepia.java" />
         <option value="$PROJECT_DIR$/src/Control/Controller.java" />
         <option value="$PROJECT_DIR$/src/Control/ZoomMouseController.java" />
         <option value="$PROJECT_DIR$/src/IHM/Layer.java" />
         <option value="$PROJECT_DIR$/src/View/MainWindow.java" />
-        <option value="$PROJECT_DIR$/src/View/ProjectPane.java" />
-        <option value="$PROJECT_DIR$/src/IHM/ImagePanel.java" />
-        <option value="$PROJECT_DIR$/src/Model/ImageState.java" />
-        <option value="$PROJECT_DIR$/src/Control/PluginExecutor.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/FloydSteinberg.java" />
         <option value="$PROJECT_DIR$/src/Model/Model.java" />
-        <option value="$PROJECT_DIR$/src/Model/Project.java" />
+        <option value="$PROJECT_DIR$/src/Control/PluginExecutor.java" />
+        <option value="$PROJECT_DIR$/PluginSource/src/plugin/basic/VeryLong.java" />
+        <option value="$PROJECT_DIR$/src/View/Menu.java" />
+        <option value="$PROJECT_DIR$/src/View/ProjectPane.java" />
+        <option value="$PROJECT_DIR$/src/IHM/ImagePanel.java" />
         <option value="$PROJECT_DIR$/src/Control/ProjectMouseController.java" />
+        <option value="$PROJECT_DIR$/src/Model/ImageState.java" />
+        <option value="$PROJECT_DIR$/src/Model/Project.java" />
       </list>
     </option>
   </component>
@@ -391,6 +413,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="bonus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="duplai_g-myphotoshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="duplai_g-myphotoshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PluginSource" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basic" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -817,13 +865,7 @@
       <workItem from="1430996752870" duration="2370000" />
       <workItem from="1430999661267" duration="15837000" />
       <workItem from="1431040056954" duration="1841000" />
-      <workItem from="1431078865987" duration="24907000" />
-    </task>
-    <task id="LOCAL-00044" summary="Error message if no plugins">
-      <created>1430649608691</created>
-      <option name="number" value="00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1430649608691</updated>
+      <workItem from="1431078865987" duration="31180000" />
     </task>
     <task id="LOCAL-00045" summary="Functionnal history !">
       <created>1430659569417</created>
@@ -1113,11 +1155,17 @@
       <option name="project" value="LOCAL" />
       <updated>1431101857125</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="Very, VERY basic drawing.">
+      <created>1431109819752</created>
+      <option name="number" value="00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1431109819752</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="373936000" />
+    <option name="totallyTimeSpent" value="380209000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -1189,7 +1237,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[BUG] Zoom Prototype" />
     <MESSAGE value="Zoom Fragment" />
     <MESSAGE value="Changed Horizontal flip because of NEWS" />
     <MESSAGE value="[BUG] Changed rotations and flip because of NEWS ; problem with size." />
@@ -1214,7 +1261,8 @@
     <MESSAGE value="[BUG][Problem with certain filters in certain orders !!!!" />
     <MESSAGE value="Black point on click, COUNTING ZOOM!" />
     <MESSAGE value="[BUG][SOLVED] Bad TypeColor for Floyd Steingberg solved !" />
-    <option name="LAST_COMMIT_MESSAGE" value="[BUG][SOLVED] Bad TypeColor for Floyd Steingberg solved !" />
+    <MESSAGE value="Very, VERY basic drawing." />
+    <option name="LAST_COMMIT_MESSAGE" value="Very, VERY basic drawing." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1227,21 +1275,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/PluginSource/src/plugin/bonus/FloydSteinberg.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/io/ObjectStreamClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="620" column="0" selection-start-line="620" selection-start-column="0" selection-end-line="620" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/javax/swing/JMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3323077">
@@ -1376,13 +1409,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PluginSource/src/plugin/basic/VeryLong.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/entryPoint/CustomSplashScreen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30493274">
@@ -1474,16 +1500,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/Menu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="95" column="13" selection-start-line="95" selection-start-column="13" selection-end-line="95" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PluginSource/src/plugin/basic/AllGreen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41928253">
@@ -1539,33 +1555,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/ImageState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="61" selection-start-line="34" selection-start-column="61" selection-end-line="34" selection-end-column="61" />
-          <folding>
-            <element signature="e#1359#1360#0" expanded="true" />
-            <element signature="e#1424#1425#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Control/PluginExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PluginSource/src/plugin/bonus/FloydSteinberg.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="106" selection-start-line="19" selection-start-column="106" selection-end-line="19" selection-end-column="106" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PluginSource/src/plugin/bonus/Sepia.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1574,9 +1563,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Model.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/lang/Thread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="744" column="0" selection-start-line="744" selection-start-column="0" selection-end-line="744" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PluginSource/src/plugin/basic/VeryLong.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5271318">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PluginSource/src/plugin/bonus/FloydSteinberg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.026356589">
+          <caret line="19" column="106" selection-start-line="19" selection-start-column="106" selection-end-line="19" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Control/PluginExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_45/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="652" column="0" selection-start-line="652" selection-start-column="0" selection-end-line="652" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.86356586">
           <caret line="115" column="26" selection-start-line="115" selection-start-column="26" selection-end-line="115" selection-end-column="26" />
           <folding>
             <element signature="e#2600#2601#0" expanded="true" />
@@ -1591,42 +1630,89 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Control/ProjectMouseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/IHM/ImagePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.924031">
-          <caret line="241" column="0" selection-start-line="241" selection-start-column="0" selection-end-line="241" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.65891474">
+          <caret line="172" column="12" selection-start-line="172" selection-start-column="12" selection-end-line="172" selection-end-column="12" />
           <folding>
-            <element signature="e#6087#6088#0" expanded="true" />
+            <element signature="e#2536#2537#0" expanded="true" />
+            <element signature="e#2589#2590#0" expanded="true" />
+            <element signature="e#2839#2840#0" expanded="true" />
+            <element signature="e#2882#2883#0" expanded="true" />
+            <element signature="e#2925#2926#0" expanded="true" />
+            <element signature="e#2983#2984#0" expanded="true" />
+            <element signature="e#3909#3910#0" expanded="true" />
+            <element signature="e#3944#3945#0" expanded="true" />
+            <element signature="e#4001#4002#0" expanded="true" />
+            <element signature="e#4049#4050#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/ProjectPane.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.7410853">
-          <caret line="107" column="37" selection-start-line="107" selection-start-column="37" selection-end-line="107" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="120" column="49" selection-start-line="120" selection-start-column="49" selection-end-line="120" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4129#4130#0" expanded="true" />
+            <element signature="e#4190#4191#0" expanded="true" />
+            <element signature="e#5825#5826#0" expanded="true" />
+            <element signature="e#5887#5888#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/ImageState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.94418603">
+          <caret line="55" column="28" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
+          <folding>
+            <element signature="e#1356#1357#0" expanded="true" />
+            <element signature="e#1409#1410#0" expanded="true" />
+            <element signature="e#1562#1563#0" expanded="true" />
+            <element signature="e#1597#1598#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Project.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="397" column="47" selection-start-line="397" selection-start-column="47" selection-end-line="397" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Control/ProjectMouseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5426357">
-          <caret line="60" column="22" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.30852714">
+          <caret line="145" column="100" selection-start-line="145" selection-start-column="100" selection-end-line="145" selection-end-column="100" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#886#887#0" expanded="true" />
-            <element signature="e#926#927#0" expanded="true" />
+            <element signature="e#2837#2838#0" expanded="true" />
+            <element signature="e#2881#2882#0" expanded="true" />
+            <element signature="e#2929#2930#0" expanded="true" />
+            <element signature="e#2980#2981#0" expanded="true" />
+            <element signature="e#3525#3526#0" expanded="true" />
+            <element signature="e#3558#3559#0" expanded="true" />
+            <element signature="e#4387#4388#0" expanded="true" />
+            <element signature="e#4439#4440#0" expanded="true" />
+            <element signature="e#5899#5900#0" expanded="true" />
+            <element signature="e#5937#5938#0" expanded="true" />
+            <element signature="e#6234#6235#0" expanded="true" />
+            <element signature="e#6268#6269#0" expanded="true" />
+            <element signature="e#7445#7446#0" expanded="true" />
+            <element signature="e#7480#7481#0" expanded="true" />
+            <element signature="e#7910#7911#0" expanded="true" />
+            <element signature="e#7955#7956#0" expanded="true" />
+            <element signature="e#8168#8169#0" expanded="true" />
+            <element signature="e#8219#8220#0" expanded="true" />
+            <element signature="e#8920#8921#0" expanded="true" />
+            <element signature="e#8977#8978#0" expanded="true" />
+            <element signature="e#10034#10035#0" expanded="true" />
+            <element signature="e#10077#10078#0" expanded="true" />
           </folding>
         </state>
       </provider>

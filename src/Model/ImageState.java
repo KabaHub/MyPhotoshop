@@ -20,9 +20,10 @@ public class ImageState implements Serializable
 {
     private String appliedIPlugin;
     private ArrayList<Layer> layers = new ArrayList<>();
-    Date date;
+    private Date date;
+    private int currentLayer;
 
-    public ImageState(String appliedIPlugin, ArrayList<Layer> layers)
+    public ImageState(String appliedIPlugin, ArrayList<Layer> layers, int currentLayer)
     {
         this.appliedIPlugin = appliedIPlugin;
         for (Layer l : layers)
@@ -37,6 +38,7 @@ public class ImageState implements Serializable
 //        this.layers.addAll(layers.stream().map(l -> new Layer(l.getName(), l.getImage())).collect(Collectors.toList()));
         date = Calendar.getInstance().getTime();
         prepareToSerialization();
+        this.currentLayer = currentLayer;
     }
 
     public void buildImage()
@@ -49,6 +51,10 @@ public class ImageState implements Serializable
         layers.forEach(IHM.Layer::prepareToSerialization);
     }
 
+    public int getCurrentLayer()
+    {
+        return currentLayer;
+    }
     public ArrayList<Layer> getLayers()
     {
         return layers;

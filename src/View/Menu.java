@@ -92,9 +92,9 @@ public class Menu extends JMenuBar
         about.addActionListener(controller);
         help.add(about);
         add(help);
-
-        testitem.addActionListener(controller);
-        test.add(testitem);
-        add(test);
+//
+//        testitem.addActionListener(controller);
+//        test.add(testitem);
+//        add(test);
     }
 }

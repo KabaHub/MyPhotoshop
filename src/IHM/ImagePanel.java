@@ -5,6 +5,7 @@ import View.CustomComponents.CustomJPanel;
 
 import java.awt.*;
 import java.awt.geom.AffineTransform;
+import java.awt.image.AreaAveragingScaleFilter;
 import java.awt.image.BufferedImage;
 import java.awt.print.PageFormat;
 import java.awt.print.Printable;
@@ -31,6 +32,10 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
     private int currentLayer = 0;
     private ArrayList<Layer> layers = new ArrayList<>();
     private float zoom = 1f;
+
+    public ArrayList<Point> previewPencil = new ArrayList<>();
+    public int pencilSize = 1;
+    public Color pencilColor = Color.BLACK;
 
     /**
      * Create the ImagePanel
@@ -151,9 +156,22 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
         g2d.scale(zoom, zoom);
+        int i = 0;
         for (Layer l : layers)
         {
-            g2d.drawImage(l.getImage(), 0, 0, null);
+            if  (l.isVisible())
+            {
+                g2d.drawImage(l.getImage(), 0, 0, null);
+                if (i == currentLayer)
+                    for (Point p : previewPencil)
+                    {
+                        g2d.setColor(pencilColor);
+                        int posX = p.x * l.getImage().getWidth() / width;
+                        int posY = p.y * l.getImage().getHeight() / height;
+                        g2d.fillOval(posX - pencilSize / 2, posY - pencilSize / 2, pencilSize, pencilSize);
+                    }
+            }
+            i++;
         }
 //        layers.stream().filter(Layer::isVisible).forEach(l -> g.drawImage(l.getImage(), 0, 0, null));
     }

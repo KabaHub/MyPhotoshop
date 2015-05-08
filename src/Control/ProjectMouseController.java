@@ -22,23 +22,31 @@ public class ProjectMouseController extends MouseAdapter
         super();
         this.project = project;
         this.model = model;
+        mouseDragged(null);
     }
 
     @Override
     public void mouseWheelMoved(MouseWheelEvent e)
     {
-        if (e.isControlDown())
+        if (e != null)
         {
+            if (e.isControlDown())
+            {
 //        float zoom = Math.max(0, project.getZoom() - 0.03f * e.getWheelRotation());
-            float zoom = (e.getWheelRotation() < 0) ? 0.05f : -0.05f;
-            project.setZoom(zoom);
+                float zoom = (e.getWheelRotation() < 0) ? 0.05f : -0.05f;
+                project.setZoom(zoom);
+            }
         }
     }
 
     @Override
     public void mouseDragged(MouseEvent e)
     {
-        points.add(e.getPoint());
+        if (e != null)
+        {
+            points.add(e.getPoint());
+            project.addToPencilPreview(e.getPoint());
+        }
     }
 
     @Override
@@ -55,10 +63,12 @@ public class ProjectMouseController extends MouseAdapter
     @Override
     public void mouseReleased(MouseEvent e)
     {
-        int pencilSize = model.getPencilSize();
-        Color color = model.getChosenColor();
-        project.drawPencil(points, pencilSize, color);
+        project.getImagePanel().pencilSize = model.getPencilSize();
+        project.getImagePanel().pencilColor = model.getChosenColor();
+
+        project.drawPencil();
         points.clear();
+        project.clearPencilPreview();
     }
 
     @Override
