@@ -239,6 +239,5 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
     public void setZoom(float zoom)
     {
         this.zoom += zoom;
-
     }
 }

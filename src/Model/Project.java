@@ -7,6 +7,7 @@ import IHM.Layer;
 import plugin.IPlugin;
 
 import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -34,18 +35,19 @@ public class Project extends Observable implements Serializable
 
     public Project(Observer o, Model model)
     {
-        projectMouseController = new ProjectMouseController(this);
+        projectMouseController = new ProjectMouseController(this, model);
         addObserver(o);
         projectName = getNewProjectName(model.getProjects(), "New Project");
         BufferedImage newImage = new BufferedImage(320, 180, BufferedImage.TYPE_INT_ARGB);
         imagePanel = new ImagePanel(newImage, projectName);
         imagePanel.addMouseWheelListener(projectMouseController);
+        imagePanel.addMouseListener(projectMouseController);
         addToHistory("Original", imagePanel);
     }
 
     public Project(Observer o, Model model, File file)
     {
-        projectMouseController = new ProjectMouseController(this);
+        projectMouseController = new ProjectMouseController(this, model);
         addObserver(o);
         projectName = file.getName();
         int n = projectName.lastIndexOf('.');
@@ -54,16 +56,18 @@ public class Project extends Observable implements Serializable
         projectName = getNewProjectName(model.getProjects(), projectName);
         imagePanel = new ImagePanel(file);
         imagePanel.addMouseWheelListener(projectMouseController);
+        imagePanel.addMouseListener(projectMouseController);
         addToHistory("Original", imagePanel);
     }
 
     public Project(Observer o, Model model, BufferedImage bufferedImage, String name)
     {
-        projectMouseController = new ProjectMouseController(this);
+        projectMouseController = new ProjectMouseController(this, model);
         addObserver(o);
         projectName = getNewProjectName(model.getProjects(), name);
         imagePanel = new ImagePanel(bufferedImage, name);
         imagePanel.addMouseWheelListener(projectMouseController);
+        imagePanel.addMouseListener(projectMouseController);
         addToHistory("Original", imagePanel);
     }
 
@@ -80,10 +84,11 @@ public class Project extends Observable implements Serializable
     // Observer required when deserialized
     public void buildProject(Observer o, Model model)
     {
-        projectMouseController = new ProjectMouseController(this);
+        projectMouseController = new ProjectMouseController(this, model);
         addObserver(o);
         imagePanel.buildImage();
         imagePanel.addMouseWheelListener(projectMouseController);
+        imagePanel.addMouseListener(projectMouseController);
         for (ImageState i : history)
             i.buildImage();
     }
@@ -341,6 +346,21 @@ public class Project extends Observable implements Serializable
     public void setZoom(float zoom)
     {
         imagePanel.setZoom(zoom);
+        setChanged();
+        notifyObservers(this);
+    }
+
+    public void drawPoint(Point p, Color color)
+    {
+        BufferedImage image = imagePanel.getImage();
+        int width = imagePanel.getWidth();
+        int height = imagePanel.getHeight();
+        int realWidth = imagePanel.getImage().getWidth();
+        int realHeight = imagePanel.getImage().getHeight();
+        int posX = p.x * realWidth / width;
+        int posY = p.y * realHeight / height;
+        image.setRGB(posX, posY, color.getRGB());
+        imagePanel.setImage(image);
         setChanged();
         notifyObservers(this);
     }

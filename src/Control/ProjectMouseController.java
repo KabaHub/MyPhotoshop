@@ -1,6 +1,7 @@
 package Control;
 
 import Model.Project;
+import Model.Model;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,10 +13,13 @@ import java.awt.event.*;
 public class ProjectMouseController extends MouseAdapter
 {
     Project project;
+    Model model;
 
-    public ProjectMouseController(Project project)
+    public ProjectMouseController(Project project, Model model)
     {
+        super();
         this.project = project;
+        this.model = model;
     }
 
     @Override
@@ -30,11 +34,40 @@ public class ProjectMouseController extends MouseAdapter
     }
 
     @Override
-    public void mousePressed(MouseEvent e)
+    public void mouseClicked(MouseEvent e)
     {
+        System.out.println("Mouse Clicked");
         if (SwingUtilities.isLeftMouseButton(e))
         {
+            Color chosenColor = model.getChosenColor();
             Point p = e.getPoint();
+            System.out.println(p.x + ", " + p.y);
+            project.drawPoint(p, chosenColor);
         }
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e)
+    {
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e)
+    {
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e)
+    {
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e)
+    {
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent e)
+    {
     }
 }

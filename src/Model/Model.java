@@ -4,6 +4,7 @@ import plugin.IPlugin;
 import plugin.PluginClassLoader;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.*;
@@ -17,6 +18,8 @@ public class Model extends Observable
     private ArrayList<Project> projects = new ArrayList<>();
     private PluginClassLoader pluginClassLoader = new PluginClassLoader();
     private Hashtable<String, IPlugin> filters = new Hashtable<>();
+
+    private Color chosenColor = Color.BLACK;
 
     public Model(Observer o)
     {
@@ -100,5 +103,10 @@ public class Model extends Observable
         if (lastIndexOf == -1)
             return "";
         return name.substring(lastIndexOf);
+    }
+
+    public Color getChosenColor()
+    {
+        return chosenColor;
     }
 }
