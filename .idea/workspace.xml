@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bab6105-4809-42d7-8428-55e452ae4f02" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/IHM/ImagePanel.java" afterPath="$PROJECT_DIR$/src/IHM/ImagePanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Model.java" afterPath="$PROJECT_DIR$/src/Model/Model.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Control/ProjectMouseController.java" afterPath="$PROJECT_DIR$/src/Control/ProjectMouseController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="duplai_g-myphotoshop.iws" />
@@ -59,8 +56,8 @@
       <file leaf-file-name="ImagePanel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/IHM/ImagePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.75503874">
-              <caret line="179" column="0" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.5317829">
+              <caret line="173" column="61" selection-start-line="173" selection-start-column="61" selection-end-line="173" selection-end-column="61" />
               <folding>
                 <element signature="e#2536#2537#0" expanded="true" />
                 <element signature="e#2589#2590#0" expanded="true" />
@@ -860,13 +857,7 @@
       <workItem from="1430996752870" duration="2370000" />
       <workItem from="1430999661267" duration="15837000" />
       <workItem from="1431040056954" duration="1841000" />
-      <workItem from="1431078865987" duration="34886000" />
-    </task>
-    <task id="LOCAL-00046" summary="Added Error gestion for Opening of ex-format projects">
-      <created>1430663914294</created>
-      <option name="number" value="00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1430663914294</updated>
+      <workItem from="1431078865987" duration="35574000" />
     </task>
     <task id="LOCAL-00047" summary="[BUG][SOLVED] Added Error gestion for Opening of ex-format projects">
       <created>1430663937217</created>
@@ -1156,15 +1147,21 @@
       <option name="project" value="LOCAL" />
       <updated>1431116066658</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="Corrected Zoom problems.">
+      <created>1431119766345</created>
+      <option name="number" value="00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1431119766346</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="383915000" />
+    <option name="totallyTimeSpent" value="384603000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1232,7 +1229,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Changed Horizontal flip because of NEWS" />
     <MESSAGE value="[BUG] Changed rotations and flip because of NEWS ; problem with size." />
     <MESSAGE value="[BUG][SOLVED] Size proble with multiple images solved." />
     <MESSAGE value="Changed GreyScale." />
@@ -1257,7 +1253,8 @@
     <MESSAGE value="[BUG][SOLVED] Bad TypeColor for Floyd Steingberg solved !" />
     <MESSAGE value="Very, VERY basic drawing." />
     <MESSAGE value="Solved a large variety of bugs." />
-    <option name="LAST_COMMIT_MESSAGE" value="Solved a large variety of bugs." />
+    <MESSAGE value="Corrected Zoom problems." />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrected Zoom problems." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1666,8 +1663,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/IHM/ImagePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75503874">
-          <caret line="179" column="0" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5317829">
+          <caret line="173" column="61" selection-start-line="173" selection-start-column="61" selection-end-line="173" selection-end-column="61" />
           <folding>
             <element signature="e#2536#2537#0" expanded="true" />
             <element signature="e#2589#2590#0" expanded="true" />
