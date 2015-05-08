@@ -4,6 +4,7 @@ package Model;
 import IHM.Layer;
 
 import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.lang.reflect.Array;
@@ -24,7 +25,16 @@ public class ImageState implements Serializable
     public ImageState(String appliedIPlugin, ArrayList<Layer> layers)
     {
         this.appliedIPlugin = appliedIPlugin;
-        this.layers.addAll(layers.stream().map(l -> new Layer(l.getName(), l.getImage())).collect(Collectors.toList()));
+        for (Layer l : layers)
+        {
+            BufferedImage exImage = l.getImage();
+            BufferedImage newImage = new BufferedImage(exImage.getWidth(), exImage.getHeight(), exImage.getType());
+            Graphics g = newImage.getGraphics();
+            g.drawImage(exImage, 0, 0, null);
+            g.dispose();
+            this.layers.add(new Layer(l.getName(), newImage));
+        }
+//        this.layers.addAll(layers.stream().map(l -> new Layer(l.getName(), l.getImage())).collect(Collectors.toList()));
         date = Calendar.getInstance().getTime();
         prepareToSerialization();
     }

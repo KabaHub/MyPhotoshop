@@ -17,7 +17,7 @@ public class FloydSteinberg implements IPlugin
     @Override
     public BufferedImage perform(BufferedImage img)
     {
-        BufferedImage res = new BufferedImage(img.getWidth(), img.getHeight(), img.getType());
+        BufferedImage res = new BufferedImage(img.getWidth(), img.getHeight(), BufferedImage.TYPE_3BYTE_BGR);
         int w = img.getWidth();
         int h = img.getHeight();
 

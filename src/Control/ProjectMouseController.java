@@ -36,24 +36,24 @@ public class ProjectMouseController extends MouseAdapter
     @Override
     public void mouseClicked(MouseEvent e)
     {
-        System.out.println("Mouse Clicked");
-        if (SwingUtilities.isLeftMouseButton(e))
-        {
-            Color chosenColor = model.getChosenColor();
-            Point p = e.getPoint();
-            System.out.println(p.x + ", " + p.y);
-            project.drawPoint(p, chosenColor);
-        }
     }
 
     @Override
     public void mousePressed(MouseEvent e)
     {
+        if (SwingUtilities.isLeftMouseButton(e))
+        {
+            Color chosenColor = model.getChosenColor();
+            Point p = e.getPoint();
+            project.drawPoint(p, chosenColor);
+        }
     }
 
     @Override
     public void mouseReleased(MouseEvent e)
     {
+        if (SwingUtilities.isLeftMouseButton(e))
+            project.save("Pencil Tool");
     }
 
     @Override

@@ -130,6 +130,11 @@ public class Project extends Observable implements Serializable
         notifyObservers(this);
     }
 
+    public void save(String pluginName)
+    {
+        addToHistory(pluginName, imagePanel);
+    }
+
     private void addToHistory(String pluginName, ImagePanel imagePanel)
     {
         currentState++;
