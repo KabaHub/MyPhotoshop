@@ -3,17 +3,19 @@ package Control;
 import Model.Project;
 import Model.Model;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 /**
  * Created by Gabriel on 05/05/2015.
  */
 public class ProjectMouseController extends MouseAdapter
 {
-    Project project;
-    Model model;
+    private Project project;
+    private Model model;
+
+    private ArrayList<Point> points = new ArrayList<>();
 
     public ProjectMouseController(Project project, Model model)
     {
@@ -34,6 +36,12 @@ public class ProjectMouseController extends MouseAdapter
     }
 
     @Override
+    public void mouseDragged(MouseEvent e)
+    {
+        points.add(e.getPoint());
+    }
+
+    @Override
     public void mouseClicked(MouseEvent e)
     {
     }
@@ -41,19 +49,16 @@ public class ProjectMouseController extends MouseAdapter
     @Override
     public void mousePressed(MouseEvent e)
     {
-        if (SwingUtilities.isLeftMouseButton(e))
-        {
-            Color chosenColor = model.getChosenColor();
-            Point p = e.getPoint();
-            project.drawPoint(p, chosenColor);
-        }
+
     }
 
     @Override
     public void mouseReleased(MouseEvent e)
     {
-        if (SwingUtilities.isLeftMouseButton(e))
-            project.save("Pencil Tool");
+        int pencilSize = model.getPencilSize();
+        Color color = model.getChosenColor();
+        project.drawPencil(points, pencilSize, color);
+        points.clear();
     }
 
     @Override

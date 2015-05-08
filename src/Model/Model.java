@@ -19,6 +19,7 @@ public class Model extends Observable
     private PluginClassLoader pluginClassLoader = new PluginClassLoader();
     private Hashtable<String, IPlugin> filters = new Hashtable<>();
 
+    private int pencilSize = 8;
     private Color chosenColor = Color.BLACK;
 
     public Model(Observer o)
@@ -108,5 +109,10 @@ public class Model extends Observable
     public Color getChosenColor()
     {
         return chosenColor;
+    }
+
+    public int getPencilSize()
+    {
+        return pencilSize;
     }
 }
