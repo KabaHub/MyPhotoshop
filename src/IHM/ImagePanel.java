@@ -1,5 +1,6 @@
 package IHM;
 
+import Control.ProjectMouseController;
 import View.CustomComponents.CustomJPanel;
 
 import java.awt.*;
@@ -148,7 +149,13 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
     public void paintComponent(Graphics g)
     {
         super.paintComponent(g);
-        layers.stream().filter(Layer::isVisible).forEach(l -> g.drawImage(l.getImage(), 0, 0, null));
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.scale(zoom, zoom);
+        for (Layer l : layers)
+        {
+            g2d.drawImage(l.getImage(), 0, 0, null);
+        }
+//        layers.stream().filter(Layer::isVisible).forEach(l -> g.drawImage(l.getImage(), 0, 0, null));
     }
 
     @Deprecated
@@ -231,27 +238,8 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
 
     public void setZoom(float zoom)
     {
-        this.zoom = zoom;
-//        zoom();
-    }
-
-    private void zoom()
-    {
-        AffineTransform t = new AffineTransform();
-        float zoomWidth = width * zoom;
-        float zoomHeight = height * zoom;
-        t.translate(width / 2 - zoomWidth / 2, height / 2 - zoomHeight / 2);
-        t.scale(zoom, zoom);
-        System.out.println("Ex width: " + width + ", new width: " + (int) zoomWidth);
-        System.out.println("Ex height: " + height + ", new height " + (int) zoomHeight);
-        width = (int) zoomWidth;
-        height = (int) zoomHeight;
-        BufferedImage newImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
-        Graphics2D g2d = (Graphics2D) newImage.getGraphics();
-        g2d.setTransform(t);
-        for (Layer l : layers)
-            g2d.drawImage(l.getImage(), 0, 0, null);
-        g2d.dispose();
-        setImage(newImage);
+        this.zoom += this.zoom * zoom;
+        width += (int) (width * zoom);
+        height += (int) (height * zoom);
     }
 }

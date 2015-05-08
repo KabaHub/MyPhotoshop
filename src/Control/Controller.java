@@ -85,48 +85,50 @@ public class Controller implements ActionListener
         } else if (e.getActionCommand().contentEquals("Export Image"))
         {
             Project p = mainWindow.getCurrentTab().getProject();
-
-            boolean satisfiedOfName = false;
-            while (!satisfiedOfName)
+            if (p != null)
             {
-                satisfiedOfName = true;
-                if (exportFileChooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION)
+                boolean satisfiedOfName = false;
+                while (!satisfiedOfName)
                 {
-                    File f = exportFileChooser.getSelectedFile();
-                    ImageFileFilter imageFileFilter = ((ImageFileFilter) (exportFileChooser.getFileFilter()));
-                    String formatName = ((ImageFileFilter)exportFileChooser.getFileFilter()).getExtension();
-                    if (!f.getName().endsWith(imageFileFilter.getExtension()))
-                        f = new File(f.getParentFile(), f.getName() + imageFileFilter.getExtension());
-                    boolean ready = true;
-                    if (f.exists())
+                    satisfiedOfName = true;
+                    if (exportFileChooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION)
                     {
-                        int selectedOption = JOptionPane.showConfirmDialog(null,
-                                "File " + f.getName() + " already exists." + System.getProperty("line.separator")
-                                        + "Do you want to overwrite it ?",
-                                "Warning",
-                                JOptionPane.YES_NO_CANCEL_OPTION,
-                                JOptionPane.QUESTION_MESSAGE);
-                        if (selectedOption == JOptionPane.NO_OPTION)
+                        File f = exportFileChooser.getSelectedFile();
+                        ImageFileFilter imageFileFilter = ((ImageFileFilter) (exportFileChooser.getFileFilter()));
+                        String formatName = ((ImageFileFilter) exportFileChooser.getFileFilter()).getExtension();
+                        if (!f.getName().endsWith(imageFileFilter.getExtension()))
+                            f = new File(f.getParentFile(), f.getName() + imageFileFilter.getExtension());
+                        boolean ready = true;
+                        if (f.exists())
                         {
-                            ready = false;
-                            satisfiedOfName = false;
+                            int selectedOption = JOptionPane.showConfirmDialog(null,
+                                    "File " + f.getName() + " already exists." + System.getProperty("line.separator")
+                                            + "Do you want to overwrite it ?",
+                                    "Warning",
+                                    JOptionPane.YES_NO_CANCEL_OPTION,
+                                    JOptionPane.QUESTION_MESSAGE);
+                            if (selectedOption == JOptionPane.NO_OPTION)
+                            {
+                                ready = false;
+                                satisfiedOfName = false;
+                            }
+                            if (selectedOption == JOptionPane.CANCEL_OPTION)
+                                ready = false;
                         }
-                        if (selectedOption == JOptionPane.CANCEL_OPTION)
-                            ready = false;
-                    }
-                    if (ready)
-                    {
-                        BufferedImage image = new BufferedImage(p.getImagePanel().getWidth(), p.getImagePanel().getHeight(), BufferedImage.TYPE_INT_ARGB);
-                        Graphics g = image.getGraphics();
-                        for (Layer l : p.getLayers())
-                            g.drawImage(l.getImage(), 0, 0, null);
-                        g.dispose();
-                        try
+                        if (ready)
                         {
-                            ImageIO.write(image, formatName, f);
-                        } catch (IOException e1)
-                        {
-                            e1.printStackTrace();
+                            BufferedImage image = new BufferedImage(p.getImagePanel().getWidth(), p.getImagePanel().getHeight(), BufferedImage.TYPE_INT_ARGB);
+                            Graphics g = image.getGraphics();
+                            for (Layer l : p.getLayers())
+                                g.drawImage(l.getImage(), 0, 0, null);
+                            g.dispose();
+                            try
+                            {
+                                ImageIO.write(image, formatName, f);
+                            } catch (IOException e1)
+                            {
+                                e1.printStackTrace();
+                            }
                         }
                     }
                 }
@@ -142,43 +144,47 @@ public class Controller implements ActionListener
                 if (saveFileChooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION)
                 {
                     Project p = mainWindow.getCurrentTab().getProject();
-                    File f = saveFileChooser.getSelectedFile();
-                    if (!f.getName().endsWith(".myPSD"))
-                        f = new File(f.getParentFile(), f.getName() + ".myPSD");
-                    boolean ready = true;
-                    if (f.exists())
+                    if (p != null)
                     {
-                        int selectedOption = JOptionPane.showConfirmDialog(null,
-                                "File " + f.getName() + " already exists." + System.getProperty("line.separator")
-                                        + "Do you want to overwrite it ?",
-                                "Warning",
-                                JOptionPane.YES_NO_CANCEL_OPTION,
-                                JOptionPane.QUESTION_MESSAGE);
-                        if (selectedOption == JOptionPane.NO_OPTION)
+                        File f = saveFileChooser.getSelectedFile();
+                        if (!f.getName().endsWith(".myPSD"))
+                            f = new File(f.getParentFile(), f.getName() + ".myPSD");
+                        boolean ready = true;
+                        if (f.exists())
                         {
-                            ready = false;
-                            satisfiedOfName = false;
+                            int selectedOption = JOptionPane.showConfirmDialog(null,
+                                    "File " + f.getName() + " already exists." + System.getProperty("line.separator")
+                                            + "Do you want to overwrite it ?",
+                                    "Warning",
+                                    JOptionPane.YES_NO_CANCEL_OPTION,
+                                    JOptionPane.QUESTION_MESSAGE);
+                            if (selectedOption == JOptionPane.NO_OPTION)
+                            {
+                                ready = false;
+                                satisfiedOfName = false;
+                            }
+                            if (selectedOption == JOptionPane.CANCEL_OPTION)
+                                ready = false;
                         }
-                        if (selectedOption == JOptionPane.CANCEL_OPTION)
-                            ready = false;
-                    }
-                    if (ready)
-                    {
-                        try
+                        if (ready)
                         {
-                            p.prepareToSerialization();
-                            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(f));
-                            oos.writeObject(p);
-                        } catch (IOException e1)
-                        {
-                            e1.printStackTrace();
+                            try
+                            {
+                                p.prepareToSerialization();
+                                ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(f));
+                                oos.writeObject(p);
+                            } catch (IOException e1)
+                            {
+                                e1.printStackTrace();
+                            }
                         }
                     }
                 }
             }
         } else if (e.getActionCommand().contentEquals("Close Project"))
         {
-            mainWindow.removeFromTabbedPanel(mainWindow.getCurrentTab());
+            if (mainWindow.getCurrentTab() != null)
+                mainWindow.removeFromTabbedPanel(mainWindow.getCurrentTab());
         } else if (e.getActionCommand().contentEquals("Print"))
         {
             PrinterJob printerJob = PrinterJob.getPrinterJob();
@@ -220,7 +226,7 @@ public class Controller implements ActionListener
                 mainWindow.getCurrentTab().setInfoPanelVisibility(true);
         } else if (e.getActionCommand().contentEquals("Apply Filter"))
         {
-            if (!model.getFilters().isEmpty())
+            if (!model.getFilters().isEmpty() && mainWindow.getCurrentTab().getProject() != null)
                 new ChooseFilterWindow(model.getFilters(), mainWindow.getCurrentTab().getProject());
             else
             {

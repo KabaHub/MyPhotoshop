@@ -1,13 +1,10 @@
 package View;
 
-import Control.ZoomMouseController;
 import IHM.ImagePanel;
 import IHM.Layer;
 import Model.ImageState;
 import Model.Project;
 import View.CustomComponents.CustomJPanel;
-import com.sun.jmx.snmp.agent.SnmpUserDataFactory;
-import org.omg.PortableInterceptor.SUCCESSFUL;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -56,9 +53,6 @@ public class ProjectPane extends CustomJPanel
         imageScrollPane = new JScrollPane(imagePanel);
         imageScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         imageScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-
-        // CONTROLLERS
-//        imagePanel.addMouseWheelListener(new ZoomMouseController(imagePanel, imageScrollPane));
     }
 
     private void initInfoPanel()
@@ -104,12 +98,14 @@ public class ProjectPane extends CustomJPanel
         return infoPanel;
     }
 
-    public void updateInfoPanel()
+    public void update()
     {
         if (project.getHistory().size() > 1)
             infoPanel.setVisible(true);
         updateHistory();
         updateLayers();
+        imageScrollPane.repaint();
+        imageScrollPane.revalidate();
     }
 
     protected class HistoButtonListener implements ActionListener

@@ -102,7 +102,7 @@ public class MainWindow extends JFrame implements Observer
                 {
                     newProject = false;
                     // Update History
-                    pp.updateInfoPanel();
+                    pp.update();
                     repaint();
                 }
             }
@@ -120,7 +120,7 @@ public class MainWindow extends JFrame implements Observer
                 this.addToTabbedPanel(project.getProjectName(), projectPanel);
                 // Set view to the right Tab
                 jTabbedPane.setSelectedComponent(projectPanel);
-                projectPanel.updateInfoPanel();
+                projectPanel.update();
             }
         }
     }

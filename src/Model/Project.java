@@ -1,6 +1,7 @@
 package Model;
 
 import Control.PluginExecutor;
+import Control.ProjectMouseController;
 import IHM.ImagePanel;
 import IHM.Layer;
 import plugin.IPlugin;
@@ -29,17 +30,22 @@ public class Project extends Observable implements Serializable
     private transient Thread pluginThread;
     private boolean isPluginRunning = false;
 
+    private ProjectMouseController projectMouseController;
+
     public Project(Observer o, Model model)
     {
+        projectMouseController = new ProjectMouseController(this);
         addObserver(o);
         projectName = getNewProjectName(model.getProjects(), "New Project");
         BufferedImage newImage = new BufferedImage(320, 180, BufferedImage.TYPE_INT_ARGB);
         imagePanel = new ImagePanel(newImage, projectName);
+        imagePanel.addMouseWheelListener(projectMouseController);
         addToHistory("Original", imagePanel);
     }
 
     public Project(Observer o, Model model, File file)
     {
+        projectMouseController = new ProjectMouseController(this);
         addObserver(o);
         projectName = file.getName();
         int n = projectName.lastIndexOf('.');
@@ -47,14 +53,17 @@ public class Project extends Observable implements Serializable
             projectName = projectName.substring(0, n);
         projectName = getNewProjectName(model.getProjects(), projectName);
         imagePanel = new ImagePanel(file);
+        imagePanel.addMouseWheelListener(projectMouseController);
         addToHistory("Original", imagePanel);
     }
 
     public Project(Observer o, Model model, BufferedImage bufferedImage, String name)
     {
+        projectMouseController = new ProjectMouseController(this);
         addObserver(o);
         projectName = getNewProjectName(model.getProjects(), name);
         imagePanel = new ImagePanel(bufferedImage, name);
+        imagePanel.addMouseWheelListener(projectMouseController);
         addToHistory("Original", imagePanel);
     }
 
@@ -71,8 +80,10 @@ public class Project extends Observable implements Serializable
     // Observer required when deserialized
     public void buildProject(Observer o)
     {
+        projectMouseController = new ProjectMouseController(this);
         addObserver(o);
         imagePanel.buildImage();
+        imagePanel.addMouseWheelListener(projectMouseController);
         for (ImageState i : history)
             i.buildImage();
     }
@@ -318,6 +329,18 @@ public class Project extends Observable implements Serializable
     {
         if (layer >= 0 && layer < getLayers().size())
             getLayers().remove(layer);
+        setChanged();
+        notifyObservers(this);
+    }
+
+    public float getZoom()
+    {
+        return imagePanel.getZoom();
+    }
+
+    public void setZoom(float zoom)
+    {
+        imagePanel.setZoom(zoom);
         setChanged();
         notifyObservers(this);
     }
