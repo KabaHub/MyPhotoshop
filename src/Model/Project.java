@@ -78,7 +78,7 @@ public class Project extends Observable implements Serializable
     }
 
     // Observer required when deserialized
-    public void buildProject(Observer o)
+    public void buildProject(Observer o, Model model)
     {
         projectMouseController = new ProjectMouseController(this);
         addObserver(o);

@@ -49,7 +49,7 @@ public class Model extends Observable
                 String fileName = file.getName().substring(0, file.getName().lastIndexOf('.'));
                 p.setProjectName(Project.getNewProjectName(projects, fileName));
                 projects.add(p);
-                p.buildProject(o);
+                p.buildProject(o, this);
                 setChanged();
                 notifyObservers(p);
             } catch (ClassNotFoundException | IOException e)
