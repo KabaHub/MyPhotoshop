@@ -99,13 +99,13 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
     @Override
     public int getWidth()
     {
-        return (int)(width * zoom);
+        return (int) (width * zoom);
     }
 
     @Override
     public int getHeight()
     {
-        return (int)(height * zoom);
+        return (int) (height * zoom);
     }
 
     public BufferedImage getImage()
@@ -155,21 +155,32 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
     {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
+        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.scale(zoom, zoom);
         int i = 0;
         for (Layer l : layers)
         {
-            if  (l.isVisible())
+            if (l.isVisible())
             {
                 g2d.drawImage(l.getImage(), 0, 0, null);
                 if (i == currentLayer)
-                    for (Point p : previewPencil)
+                {
+                    // if tool == pencil
+                    if (true)
                     {
                         g2d.setColor(pencilColor);
-                        int posX = p.x * l.getImage().getWidth() / width;
-                        int posY = p.y * l.getImage().getHeight() / height;
-                        g2d.fillOval(posX - pencilSize / 2, posY - pencilSize / 2, pencilSize, pencilSize);
+                        int width = getWidth();
+                        int height = getHeight();
+                        int realWidth = getImage().getWidth();
+                        int realHeight = getImage().getHeight();
+                        for (Point p : previewPencil)
+                        {
+                            int posX = p.x * realWidth / width;
+                            int posY = p.y * realHeight / height;
+                            g2d.fillOval(posX - pencilSize / 2, posY - pencilSize / 2, pencilSize, pencilSize);
+                        }
                     }
+                }
             }
             i++;
         }
