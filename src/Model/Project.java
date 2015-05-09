@@ -91,7 +91,7 @@ public class Project extends Observable implements Serializable
         imagePanel.prepareToSerialization();
     }
 
-    // Observer required when deserialized
+    // Observer and Model required when deserialized
     public void buildProject(Observer o, Model model)
     {
         projectMouseController = new ProjectMouseController(this, model);

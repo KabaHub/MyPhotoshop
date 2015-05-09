@@ -131,6 +131,15 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
         }
         this.width = maxWidth;
         this.height = maxHeight;
+        // Bad Perf
+        for (Layer l : layers)
+        {
+            BufferedImage newI = new BufferedImage(this.width, this.height, l.getImage().getType());
+            Graphics g = newI.getGraphics();
+            g.drawImage(l.getImage(), 0, 0, null);
+            g.dispose();
+            l.setImage(newI);
+        }
     }
 
     public void addLayer()
