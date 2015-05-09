@@ -1,7 +1,10 @@
 package View.CustomComponents;
 
+import Model.Model;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.plaf.BorderUIResource;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,102 +17,138 @@ import java.io.IOException;
  */
 public class ToolButton extends JButton
 {
-	private enum ToolType
-	{
-		MOVE_LAYER_TOOL,
-		PENCIL_TOOL,
-		ERASER_TOOL,
-		EYEDROPPER_TOOL,
-		SELECT_SIZE_TOOL,
-		SELECT_COLOR_TOOL
-	}
+    private enum ToolType
+    {
+        MOVE_LAYER_TOOL,
+        PENCIL_TOOL,
+        ERASER_TOOL,
+        EYEDROPPER_TOOL,
+        SELECT_SIZE_TOOL,
+        SELECT_COLOR_TOOL
+    }
 
-	public static final ToolType MOVE_LAYER_TOOL = ToolType.MOVE_LAYER_TOOL;
-	public static final ToolType PENCIL_TOOL = ToolType.PENCIL_TOOL;
-	public static final ToolType ERASER_TOOL = ToolType.ERASER_TOOL;
-	public static final ToolType EYEDROPPER_TOOL = ToolType.EYEDROPPER_TOOL;
-	public static final ToolType SELECT_SIZE_TOOL = ToolType.SELECT_SIZE_TOOL;
-	public static final ToolType SELECT_COLOR_TOOL = ToolType.SELECT_COLOR_TOOL;
+    public static final ToolType MOVE_LAYER_TOOL = ToolType.MOVE_LAYER_TOOL;
+    public static final ToolType PENCIL_TOOL = ToolType.PENCIL_TOOL;
+    public static final ToolType ERASER_TOOL = ToolType.ERASER_TOOL;
+    public static final ToolType EYEDROPPER_TOOL = ToolType.EYEDROPPER_TOOL;
+    public static final ToolType SELECT_SIZE_TOOL = ToolType.SELECT_SIZE_TOOL;
+    public static final ToolType SELECT_COLOR_TOOL = ToolType.SELECT_COLOR_TOOL;
 
-	private static final long serialVersionUID = 9193692576666062267L;
+    private static final long serialVersionUID = 9193692576666062267L;
 
-	private BufferedImage img;
-	private String iconFileName;
-	private ToolType toolType;
+    private BufferedImage img;
 
-	public ToolButton(ToolType toolType){
-		super();
-		this.toolType = toolType;
-		setMaximumSize(new Dimension(20, 20));
-        setPreferredSize(new Dimension(20, 20));
-        setSize(new Dimension(20, 20));
+    private Model model;
+    private ToolType toolType;
 
-		switch (toolType)
-		{
-			case MOVE_LAYER_TOOL:
-			{
-				setToolTipText("Move Layer");
-				iconFileName = "asset/move.png";
-			}
-			case PENCIL_TOOL:
-			{
-				setToolTipText("Pencil Tool");
-			}
-			case ERASER_TOOL:
-			{
-				setToolTipText("Eraser Tool");
-			}
-			case EYEDROPPER_TOOL:
-			{
-				setToolTipText("EyeDropper Tool");
-			}
-			case SELECT_SIZE_TOOL:
-			{
-				setToolTipText("Select Size of Pencil");
-			}
-			case SELECT_COLOR_TOOL:
-			{
-				setToolTipText("Select Color");
-			}
-		}
-		addActionListener(new ToolButtonActionListener());
+    public static ToolButton getNewButton(Model model, ToolType toolType)
+    {
+        String iconFileName = getIconFileName(toolType);
+        return new ToolButton(model, toolType, iconFileName);
+    }
 
-        setBackground(new Color(0,0,0,0));
-		setFocusable(false);
-//		setContentAreaFilled(false);
-//		setBorderPainted(false);
-		setRolloverEnabled(true);
-		setCursor(new Cursor(Cursor.HAND_CURSOR));
-		
-		try{
-			img = ImageIO.read(new File(iconFileName));
-		} catch (IOException e) {
-			System.err.println(e.getMessage());
-		}
-        
-	}
-	
-	@Override
-	public void paintComponent(Graphics g) {
-		Graphics2D g2d = (Graphics2D) g.create();
-		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
-				RenderingHints.VALUE_ANTIALIAS_ON);
-		g2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,
-				RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
-		if (toolType == MOVE_LAYER_TOOL)
-			g2d.drawImage(img, 2, 4, this);
-		else
-			g2d.drawImage(img, 0, 0, this);
-		g2d.dispose();
-		super.paintComponent(g);
-	}
+    private ToolButton(Model model, ToolType toolType, String iconFileName)
+    {
+        super(new ImageIcon(iconFileName));
+        this.model = model;
+        this.toolType = toolType;
 
-	private class ToolButtonActionListener implements ActionListener
-	{
-		@Override
-		public void actionPerformed(ActionEvent e)
-		{
+        switch (toolType)
+        {
+            case MOVE_LAYER_TOOL:
+                setToolTipText("Move Layer");
+                break;
+            case PENCIL_TOOL:
+                setToolTipText("Pencil Tool");
+                break;
+            case ERASER_TOOL:
+                setToolTipText("Eraser Tool");
+                break;
+            case EYEDROPPER_TOOL:
+                setToolTipText("EyeDropper Tool");
+                break;
+            case SELECT_SIZE_TOOL:
+                setToolTipText("Select Size of Pencil");
+                break;
+            case SELECT_COLOR_TOOL:
+                setToolTipText("Select Color");
+                break;
+        }
 
-		}
-	}
+        addActionListener(new ToolButtonActionListener());
+
+        setBackground(new Color(80, 80, 80));
+//        setFocusable(false);
+//        setBorder(BorderFactory.createLineBorder(new Color(80, 80, 80)));
+        setCursor(new Cursor(Cursor.HAND_CURSOR));
+
+        try
+        {
+            img = ImageIO.read(new File(iconFileName));
+        } catch (IOException e)
+        {
+            System.err.println(e.getMessage());
+        }
+
+    }
+
+    private static String getIconFileName(ToolType toolType)
+    {
+        String iconFileName = null;
+        switch (toolType)
+        {
+            case MOVE_LAYER_TOOL:
+                iconFileName = "asset/move.png";
+                break;
+            case PENCIL_TOOL:
+                iconFileName = "asset/pencil-icon.png";
+                break;
+            case ERASER_TOOL:
+                iconFileName = "asset/Eraser-icon.png";
+                break;
+            case EYEDROPPER_TOOL:
+                iconFileName = "asset/eyedropper.png";
+                break;
+            case SELECT_SIZE_TOOL:
+                break;
+            case SELECT_COLOR_TOOL:
+                break;
+        }
+        return iconFileName;
+    }
+
+    private class ToolButtonActionListener implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            switch (toolType)
+            {
+                case MOVE_LAYER_TOOL:
+                {
+                    break;
+                }
+                case PENCIL_TOOL:
+                {
+                    break;
+                }
+                case ERASER_TOOL:
+                {
+                    break;
+                }
+                case EYEDROPPER_TOOL:
+                {
+                    break;
+                }
+                case SELECT_SIZE_TOOL:
+                {
+                    break;
+                }
+                case SELECT_COLOR_TOOL:
+                {
+                    break;
+                }
+            }
+        }
+    }
 }

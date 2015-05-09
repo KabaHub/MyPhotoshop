@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0bab6105-4809-42d7-8428-55e452ae4f02" name="Default" comment="Clarify Code.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/asset/move.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TODO" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/View/CustomComponents/ToolButton.java" />
+    <list default="true" id="0bab6105-4809-42d7-8428-55e452ae4f02" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/MainWindow.java" afterPath="$PROJECT_DIR$/src/View/MainWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Model.java" afterPath="$PROJECT_DIR$/src/Model/Model.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Project.java" afterPath="$PROJECT_DIR$/src/Model/Project.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/CustomComponents/ToolButton.java" afterPath="$PROJECT_DIR$/src/View/CustomComponents/ToolButton.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\WORK\EPITA\Projets\Ing1\MyPhotoshop\duplai_g-myphotoshop\src\View\CloseButton.java" afterPath="$PROJECT_DIR$/src/View/CustomComponents/CloseButton.java" />
     </list>
     <ignored path="duplai_g-myphotoshop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,11 +47,11 @@
         <entry file="file://$PROJECT_DIR$/src/View/MainWindow.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="57" column="45" selection-start-line="57" selection-start-column="45" selection-end-line="57" selection-end-column="45" />
+              <caret line="57" column="32" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2837#2838#0" expanded="true" />
-                <element signature="e#2917#2918#0" expanded="true" />
+                <element signature="e#3463#3464#0" expanded="true" />
+                <element signature="e#3543#3544#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -65,18 +60,8 @@
       <file leaf-file-name="ToolButton.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/View/CustomComponents/ToolButton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.81860465">
-              <caret line="80" column="28" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TODO" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TODO">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.33023256">
+              <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -151,9 +136,9 @@
         <option value="$PROJECT_DIR$/src/Model/Project.java" />
         <option value="$PROJECT_DIR$/src/Model/Model.java" />
         <option value="$PROJECT_DIR$/src/View/CustomComponents/CustomJPanel.java" />
+        <option value="$PROJECT_DIR$/TODO" />
         <option value="$PROJECT_DIR$/src/View/MainWindow.java" />
         <option value="$PROJECT_DIR$/src/View/CustomComponents/ToolButton.java" />
-        <option value="$PROJECT_DIR$/TODO" />
       </list>
     </option>
   </component>
@@ -800,13 +785,7 @@
       <workItem from="1431040056954" duration="1841000" />
       <workItem from="1431078865987" duration="35605000" />
       <workItem from="1431156346795" duration="15553000" />
-      <workItem from="1431191132243" duration="6843000" />
-    </task>
-    <task id="LOCAL-00055" summary="Created Layer Class, changed model&#10;">
-      <created>1430752525357</created>
-      <option name="number" value="00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1430752525357</updated>
+      <workItem from="1431191132243" duration="11041000" />
     </task>
     <task id="LOCAL-00056" summary="Updated LayerPanel">
       <created>1430762645941</created>
@@ -1096,11 +1075,17 @@
       <option name="project" value="LOCAL" />
       <updated>1431191029060</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="Beginning of ToolBox.">
+      <created>1431198257530</created>
+      <option name="number" value="00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1431198257531</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="407030000" />
+    <option name="totallyTimeSpent" value="411228000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -1172,7 +1157,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Layer options ok." />
     <MESSAGE value="Beginning of THIS FUCK*NG ConvolveOP to RECODE !!§§§§§§§§!!§" />
     <MESSAGE value="Finished to implement ConvolveOp OMFG." />
     <MESSAGE value="[BUG] Bug with History and Sépia Filter." />
@@ -1197,7 +1181,8 @@
     <MESSAGE value="Ressources non authorised. lol." />
     <MESSAGE value="Ressources went to asset dir." />
     <MESSAGE value="Clarify Code." />
-    <option name="LAST_COMMIT_MESSAGE" value="Clarify Code." />
+    <MESSAGE value="Beginning of ToolBox." />
+    <option name="LAST_COMMIT_MESSAGE" value="Beginning of ToolBox." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1587,18 +1572,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/MainWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="45" selection-start-line="57" selection-start-column="45" selection-end-line="57" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2837#2838#0" expanded="true" />
-            <element signature="e#2917#2918#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TODO">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1607,10 +1580,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="57" column="32" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3463#3464#0" expanded="true" />
+            <element signature="e#3543#3544#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/CustomComponents/ToolButton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.81860465">
-          <caret line="80" column="28" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.33023256">
+          <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
           <folding />
         </state>
       </provider>

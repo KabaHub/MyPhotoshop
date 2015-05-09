@@ -6,6 +6,7 @@ import View.CustomComponents.CloseButton;
 import View.CustomComponents.CustomJPanel;
 import View.CustomComponents.ToolButton;
 import entryPoint.CustomSplashScreen;
+import javafx.scene.control.ToolBar;
 
 import javax.swing.*;
 import java.awt.*;
@@ -52,10 +53,23 @@ public class MainWindow extends JFrame implements Observer
     private void initToolBox()
     {
         toolBox.setPreferredSize(new Dimension(32, 32));
-//        toolBox.setLayout(new BoxLayout(toolBox, BoxLayout.PAGE_AXIS));
-        ToolButton moveLayerButton = new ToolButton(ToolButton.MOVE_LAYER_TOOL);
+        toolBox.setBackground(new Color(80, 80, 80));
+        toolBox.setFloatable(false);
+        toolBox.setRollover(true);
+
+        toolBox.addSeparator(new Dimension(30,30));
+        ToolButton moveLayerButton = ToolButton.getNewButton(model, ToolButton.MOVE_LAYER_TOOL);
         toolBox.add(moveLayerButton);
-        toolBox.add(new JToolBar.Separator());
+        toolBox.addSeparator();
+        ToolButton pencilButton = ToolButton.getNewButton(model, ToolButton.PENCIL_TOOL);
+        toolBox.add(pencilButton);
+        toolBox.addSeparator();
+        ToolButton eraserButton = ToolButton.getNewButton(model, ToolButton.ERASER_TOOL);
+        toolBox.add(eraserButton);
+        toolBox.addSeparator();
+        ToolButton eyeDropperButton = ToolButton.getNewButton(model, ToolButton.EYEDROPPER_TOOL);
+        toolBox.add(eyeDropperButton);
+        toolBox.addSeparator();
     }
 
     public JTabbedPane getJTabbedPane()
