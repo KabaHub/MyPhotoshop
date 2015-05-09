@@ -109,7 +109,6 @@ public class MainWindow extends JFrame implements Observer
             // New Project (Just Opened)
             if (newProject)
             {
-//                sizeOption.showMessageDialog(this, "le message", "le titre", JOptionPane.QUESTION_MESSAGE);
                 ProjectPane projectPanel = new ProjectPane(project);
 //                if (project.isHistoryEmpty())
 //                    projectPanel.getInfoPanel().setVisible(false);

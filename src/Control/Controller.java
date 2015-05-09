@@ -117,8 +117,6 @@ public class Controller implements ActionListener
                         }
                         if (ready)
                         {
-                            System.out.println("Ready Bitches");
-                            System.out.println("Printing in " + f.getAbsolutePath() + " in format " + formatName);
                             BufferedImage image = new BufferedImage(p.getImagePanel().getWidth(), p.getImagePanel().getHeight(), BufferedImage.TYPE_INT_ARGB);
                             Graphics g = image.getGraphics();
                             for (Layer l : p.getLayers())
