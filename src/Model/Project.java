@@ -8,6 +8,7 @@ import plugin.IPlugin;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -31,7 +32,7 @@ public class Project extends Observable implements Serializable
     private transient Thread pluginThread;
     private boolean isPluginRunning = false;
 
-    private ProjectMouseController projectMouseController;
+    private transient ProjectMouseController projectMouseController;
 
     public Project(Observer o, Model model)
     {
@@ -81,6 +82,12 @@ public class Project extends Observable implements Serializable
 
     public void prepareToSerialization()
     {
+        for (MouseListener ml : imagePanel.getMouseListeners())
+            imagePanel.removeMouseListener(ml);
+        for (MouseWheelListener mwl : imagePanel.getMouseWheelListeners())
+            imagePanel.removeMouseWheelListener(mwl);
+        for (MouseMotionListener mml : imagePanel.getMouseMotionListeners())
+            imagePanel.removeMouseMotionListener(mml);
         imagePanel.prepareToSerialization();
     }
 
@@ -368,7 +375,7 @@ public class Project extends Observable implements Serializable
 
     public void drawPencil()
     {
-        if (isPluginRunning == false && imagePanel.previewPencil.size() > 0)
+        if (!isPluginRunning && imagePanel.previewPencil.size() > 0)
         {
             isPluginRunning = true;
             BufferedImage image = imagePanel.getImage();

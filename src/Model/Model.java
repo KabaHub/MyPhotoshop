@@ -19,7 +19,7 @@ public class Model extends Observable
     private PluginClassLoader pluginClassLoader = new PluginClassLoader();
     private Hashtable<String, IPlugin> filters = new Hashtable<>();
 
-    private int pencilSize = 18;
+    private int pencilSize = 40;
     private Color chosenColor = Color.BLACK;
 
     public Model(Observer o)

@@ -5,6 +5,7 @@ import Model.Model;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -14,8 +15,6 @@ public class ProjectMouseController extends MouseAdapter
 {
     private Project project;
     private Model model;
-
-    private ArrayList<Point> points = new ArrayList<>();
 
     public ProjectMouseController(Project project, Model model)
     {
@@ -45,7 +44,6 @@ public class ProjectMouseController extends MouseAdapter
             project.getImagePanel().pencilSize = model.getPencilSize();
             project.getImagePanel().pencilColor = model.getChosenColor();
         }
-        points.add(e.getPoint());
         project.addToPencilPreview(e.getPoint());
     }
 
@@ -56,7 +54,6 @@ public class ProjectMouseController extends MouseAdapter
         project.getImagePanel().pencilColor = model.getChosenColor();
 
         project.drawPencil();
-        points.clear();
         project.clearPencilPreview();
     }
 }
