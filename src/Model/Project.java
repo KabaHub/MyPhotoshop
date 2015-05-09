@@ -296,8 +296,6 @@ public class Project extends Observable implements Serializable
 
     public void setCurrentLayer(int layer)
     {
-        System.out.println(imagePanel.getLayers().size());
-        System.out.println(layer);
         if (imagePanel.getLayers().size() > layer)
             imagePanel.setCurrentLayer(layer);
         else
