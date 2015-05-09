@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0bab6105-4809-42d7-8428-55e452ae4f02" name="Default" comment="">
+    <list default="true" id="0bab6105-4809-42d7-8428-55e452ae4f02" name="Default" comment="B">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/asset/eraser-icon-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/asset/eraser-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/asset/eyedropper-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/asset/eyedropper.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/asset/move-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/asset/pencil-icon-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/asset/pencil-icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asset/move.png" afterPath="$PROJECT_DIR$/asset/move.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entryPoint/Main.java" afterPath="$PROJECT_DIR$/src/entryPoint/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/MainWindow.java" afterPath="$PROJECT_DIR$/src/View/MainWindow.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/CustomComponents/ToolButton.java" afterPath="$PROJECT_DIR$/src/View/CustomComponents/ToolButton.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -47,21 +56,31 @@
         <entry file="file://$PROJECT_DIR$/src/View/MainWindow.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="57" column="32" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
+              <caret line="70" column="113" selection-start-line="70" selection-start-column="113" selection-end-line="70" selection-end-column="113" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3463#3464#0" expanded="true" />
-                <element signature="e#3543#3544#0" expanded="true" />
+                <element signature="e#3609#3610#0" expanded="true" />
+                <element signature="e#3689#3690#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ToolButton.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ToolButton.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/CustomComponents/ToolButton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33023256">
-              <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/entryPoint/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.4744186">
+              <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -102,7 +121,6 @@
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/basic/GrayScale.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/basic/Binary.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/TestConvolv.java" />
-        <option value="$PROJECT_DIR$/src/entryPoint/Main.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/bonus/TestBlur.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/basic/RotateRight.java" />
         <option value="$PROJECT_DIR$/PluginSource/src/plugin/basic/RotateLeft.java" />
@@ -139,6 +157,7 @@
         <option value="$PROJECT_DIR$/TODO" />
         <option value="$PROJECT_DIR$/src/View/MainWindow.java" />
         <option value="$PROJECT_DIR$/src/View/CustomComponents/ToolButton.java" />
+        <option value="$PROJECT_DIR$/src/entryPoint/Main.java" />
       </list>
     </option>
   </component>
@@ -785,13 +804,7 @@
       <workItem from="1431040056954" duration="1841000" />
       <workItem from="1431078865987" duration="35605000" />
       <workItem from="1431156346795" duration="15553000" />
-      <workItem from="1431191132243" duration="11041000" />
-    </task>
-    <task id="LOCAL-00056" summary="Updated LayerPanel">
-      <created>1430762645941</created>
-      <option name="number" value="00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1430762645942</updated>
+      <workItem from="1431191132243" duration="13272000" />
     </task>
     <task id="LOCAL-00057" summary="Layer Panel ok&#10;">
       <created>1430769290795</created>
@@ -1081,11 +1094,17 @@
       <option name="project" value="LOCAL" />
       <updated>1431198257531</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="Totally Redesigned ToolBar.">
+      <created>1431203600153</created>
+      <option name="number" value="00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1431203600153</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="411228000" />
+    <option name="totallyTimeSpent" value="413459000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -1157,7 +1176,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Beginning of THIS FUCK*NG ConvolveOP to RECODE !!§§§§§§§§!!§" />
     <MESSAGE value="Finished to implement ConvolveOp OMFG." />
     <MESSAGE value="[BUG] Bug with History and Sépia Filter." />
     <MESSAGE value="[BUG][SOLVED] Sépia filter ok, problem was I didn't create a new image." />
@@ -1182,7 +1200,8 @@
     <MESSAGE value="Ressources went to asset dir." />
     <MESSAGE value="Clarify Code." />
     <MESSAGE value="Beginning of ToolBox." />
-    <option name="LAST_COMMIT_MESSAGE" value="Beginning of ToolBox." />
+    <MESSAGE value="Totally Redesigned ToolBar." />
+    <option name="LAST_COMMIT_MESSAGE" value="Totally Redesigned ToolBar." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1469,14 +1488,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entryPoint/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/IHM/ImagePanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1583,19 +1594,27 @@
     <entry file="file://$PROJECT_DIR$/src/View/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="32" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
+          <caret line="70" column="113" selection-start-line="70" selection-start-column="113" selection-end-line="70" selection-end-column="113" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3463#3464#0" expanded="true" />
-            <element signature="e#3543#3544#0" expanded="true" />
+            <element signature="e#3609#3610#0" expanded="true" />
+            <element signature="e#3689#3690#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/CustomComponents/ToolButton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33023256">
-          <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entryPoint/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4744186">
+          <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
           <folding />
         </state>
       </provider>

@@ -3,10 +3,8 @@ package View;
 import Control.Controller;
 import Model.*;
 import View.CustomComponents.CloseButton;
-import View.CustomComponents.CustomJPanel;
 import View.CustomComponents.ToolButton;
 import entryPoint.CustomSplashScreen;
-import javafx.scene.control.ToolBar;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,6 +19,8 @@ public class MainWindow extends JFrame implements Observer
 {
     private Menu menu;
     private Model model = new Model(this);
+    // If the LookAndFeel is White.
+    private boolean whiteLookAndFeel;
     private Controller controller = new Controller(this, model);
     private JTabbedPane jTabbedPane = new JTabbedPane();
 
@@ -29,8 +29,9 @@ public class MainWindow extends JFrame implements Observer
 
     private String language = "en";
 
-    public MainWindow(CustomSplashScreen splashScreenToDispose)
+    public MainWindow(CustomSplashScreen splashScreenToDispose, boolean whiteLookAndFeel)
     {
+        this.whiteLookAndFeel = whiteLookAndFeel;
         setTitle("MyPhotoshop");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setSize(1200, 900);
@@ -54,20 +55,20 @@ public class MainWindow extends JFrame implements Observer
     {
         toolBox.setPreferredSize(new Dimension(32, 32));
         toolBox.setBackground(new Color(80, 80, 80));
-        toolBox.setFloatable(false);
+//        toolBox.setFloatable(false);
         toolBox.setRollover(true);
 
-        toolBox.addSeparator(new Dimension(30,30));
-        ToolButton moveLayerButton = ToolButton.getNewButton(model, ToolButton.MOVE_LAYER_TOOL);
+//        toolBox.addSeparator(new Dimension(30,30));
+        ToolButton moveLayerButton = ToolButton.getNewButton(model, ToolButton.MOVE_LAYER_TOOL, whiteLookAndFeel);
         toolBox.add(moveLayerButton);
         toolBox.addSeparator();
-        ToolButton pencilButton = ToolButton.getNewButton(model, ToolButton.PENCIL_TOOL);
+        ToolButton pencilButton = ToolButton.getNewButton(model, ToolButton.PENCIL_TOOL, whiteLookAndFeel);
         toolBox.add(pencilButton);
         toolBox.addSeparator();
-        ToolButton eraserButton = ToolButton.getNewButton(model, ToolButton.ERASER_TOOL);
+        ToolButton eraserButton = ToolButton.getNewButton(model, ToolButton.ERASER_TOOL, whiteLookAndFeel);
         toolBox.add(eraserButton);
         toolBox.addSeparator();
-        ToolButton eyeDropperButton = ToolButton.getNewButton(model, ToolButton.EYEDROPPER_TOOL);
+        ToolButton eyeDropperButton = ToolButton.getNewButton(model, ToolButton.EYEDROPPER_TOOL, whiteLookAndFeel);
         toolBox.add(eyeDropperButton);
         toolBox.addSeparator();
     }

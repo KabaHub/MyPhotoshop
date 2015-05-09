@@ -41,13 +41,13 @@ public class ToolButton extends JButton
     private Model model;
     private ToolType toolType;
 
-    public static ToolButton getNewButton(Model model, ToolType toolType)
+    public static ToolButton getNewButton(Model model, ToolType toolType, boolean isLookAndFeelWhite)
     {
-        String iconFileName = getIconFileName(toolType);
-        return new ToolButton(model, toolType, iconFileName);
+        String iconFileName = getIconFileName(toolType, isLookAndFeelWhite);
+        return new ToolButton(model, toolType, iconFileName, isLookAndFeelWhite);
     }
 
-    private ToolButton(Model model, ToolType toolType, String iconFileName)
+    private ToolButton(Model model, ToolType toolType, String iconFileName, boolean isLookAndFeelWhite)
     {
         super(new ImageIcon(iconFileName));
         this.model = model;
@@ -79,7 +79,6 @@ public class ToolButton extends JButton
 
         setBackground(new Color(80, 80, 80));
 //        setFocusable(false);
-//        setBorder(BorderFactory.createLineBorder(new Color(80, 80, 80)));
         setCursor(new Cursor(Cursor.HAND_CURSOR));
 
         try
@@ -92,23 +91,43 @@ public class ToolButton extends JButton
 
     }
 
-    private static String getIconFileName(ToolType toolType)
+    private static String getIconFileName(ToolType toolType, boolean isLookAndFeelWhite)
     {
         String iconFileName = null;
         switch (toolType)
         {
             case MOVE_LAYER_TOOL:
-                iconFileName = "asset/move.png";
+            {
+                if (isLookAndFeelWhite)
+                    iconFileName = "asset/move.png";
+                else
+                    iconFileName = "asset/move-white.png";
                 break;
+            }
             case PENCIL_TOOL:
-                iconFileName = "asset/pencil-icon.png";
+            {
+                if (isLookAndFeelWhite)
+                    iconFileName = "asset/pencil-icon.png";
+                else
+                    iconFileName = "asset/pencil-icon-white.png";
                 break;
+            }
             case ERASER_TOOL:
-                iconFileName = "asset/Eraser-icon.png";
+            {
+                if (isLookAndFeelWhite)
+                    iconFileName = "asset/eraser-icon.png";
+                else
+                    iconFileName = "asset/eraser-icon-white.png";
                 break;
+            }
             case EYEDROPPER_TOOL:
-                iconFileName = "asset/eyedropper.png";
+            {
+                if (isLookAndFeelWhite)
+                    iconFileName = "asset/eyedropper.png";
+                else
+                    iconFileName = "asset/eyedropper-white.png";
                 break;
+            }
             case SELECT_SIZE_TOOL:
                 break;
             case SELECT_COLOR_TOOL:

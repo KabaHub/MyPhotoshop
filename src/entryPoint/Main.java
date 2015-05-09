@@ -11,6 +11,7 @@ public class Main
 {
     public static void main(String[] args)
     {
+        Boolean whiteLookAndFeel = false;
         CustomSplashScreen customSplashScreen = new CustomSplashScreen();
         String nimbusName = "javax.swing.plaf.nimbus.NimbusLookAndFeel";
         for (UIManager.LookAndFeelInfo l : UIManager.getInstalledLookAndFeels())
@@ -20,6 +21,7 @@ public class Main
                 try
                 {
                     UIManager.setLookAndFeel(nimbusName);
+                    whiteLookAndFeel = true;
                 } catch (ClassNotFoundException | InstantiationException | UnsupportedLookAndFeelException | IllegalAccessException e)
                 {
                     e.printStackTrace();
@@ -27,6 +29,6 @@ public class Main
             }
         }
 //        MetalLookAndFeel.setCurrentTheme(new OceanTheme());
-        MainWindow mainWindow = new MainWindow(customSplashScreen);
+        MainWindow mainWindow = new MainWindow(customSplashScreen, whiteLookAndFeel);
     }
 }
