@@ -389,11 +389,15 @@ public class Project extends Observable implements Serializable
                 int height = imagePanel.getHeight();
                 int realWidth = imagePanel.getImage().getWidth();
                 int realHeight = imagePanel.getImage().getHeight();
+                BasicStroke line = new BasicStroke(imagePanel.pencilSize);
+                g.setStroke(line);
                 for (Point p : imagePanel.previewPencil)
                 {
                     int posX = p.x * realWidth / width;
                     int posY = p.y * realHeight / height;
+
                     g.fillOval(posX - imagePanel.pencilSize / 2, posY - imagePanel.pencilSize / 2, imagePanel.pencilSize, imagePanel.pencilSize);
+//                    g.drawLine(posX - imagePanel.pencilSize / 2, posY - imagePanel.pencilSize / 2, imagePanel.pencilSize, imagePanel.pencilSize);
                 }
                 g.dispose();
                 setImageChanges(image, "Pencil Tool");

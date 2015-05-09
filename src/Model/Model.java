@@ -22,6 +22,7 @@ public class Model extends Observable
     private ToolType currentTool = ToolType.NONE;
     private boolean antialializing = false;
     private int pencilSize = 40;
+    private String pencilType = "Circle";
     private Color chosenColor = Color.BLACK;
 
     public Model(Observer o)
@@ -112,6 +113,11 @@ public class Model extends Observable
         return pencilSize;
     }
 
+    public void setPencilSize(int pencilSize)
+    {
+        this.pencilSize = pencilSize;
+    }
+
     public void setCurrentTool(ToolType tool)
     {
         this.currentTool = tool;
@@ -131,5 +137,15 @@ public class Model extends Observable
     public Color getChosenColor()
     {
         return chosenColor;
+    }
+
+    public String getPencilType()
+    {
+        return pencilType;
+    }
+
+    public void setPencilType(String pencilType)
+    {
+        this.pencilType = pencilType;
     }
 }
