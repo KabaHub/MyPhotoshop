@@ -359,6 +359,7 @@ public class Project extends Observable implements Serializable
         notifyObservers(this);
     }
 
+    @Deprecated
     public float getZoom()
     {
         return imagePanel.getZoom();

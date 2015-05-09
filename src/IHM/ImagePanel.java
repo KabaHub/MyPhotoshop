@@ -145,8 +145,7 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
     public void addLayer()
     {
         BufferedImage newImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
-        layers.add(new Layer("Layer " + layers.size(), newImage));
-        currentLayer++;
+        layers.add(++currentLayer , new Layer("Layer " + layers.size(), newImage));
     }
 
     public int getCurrentLayer()
