@@ -19,6 +19,8 @@ public class Model extends Observable
     private PluginClassLoader pluginClassLoader = new PluginClassLoader();
     private Hashtable<String, IPlugin> filters = new Hashtable<>();
 
+    private ToolType currentTool = ToolType.NONE;
+    private boolean antialializing = false;
     private int pencilSize = 40;
     private Color chosenColor = Color.BLACK;
 
@@ -105,13 +107,29 @@ public class Model extends Observable
         return name.substring(lastIndexOf);
     }
 
-    public Color getChosenColor()
-    {
-        return chosenColor;
-    }
-
     public int getPencilSize()
     {
         return pencilSize;
+    }
+
+    public void setCurrentTool(ToolType tool)
+    {
+        this.currentTool = tool;
+        antialializing = currentTool != ToolType.PENCIL_TOOL;
+    }
+
+    public ToolType getCurrentTool()
+    {
+        return currentTool;
+    }
+
+    public void setChosenColor(Color color)
+    {
+        this.chosenColor = color;
+    }
+
+    public Color getChosenColor()
+    {
+        return chosenColor;
     }
 }

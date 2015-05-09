@@ -1,10 +1,10 @@
 package View.CustomComponents;
 
 import Model.Model;
+import Model.ToolType;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.plaf.BorderUIResource;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,22 +17,11 @@ import java.io.IOException;
  */
 public class ToolButton extends JButton
 {
-    private enum ToolType
-    {
-        MOVE_LAYER_TOOL,
-        PENCIL_TOOL,
-        ERASER_TOOL,
-        EYEDROPPER_TOOL,
-        SELECT_SIZE_TOOL,
-        SELECT_COLOR_TOOL
-    }
-
     public static final ToolType MOVE_LAYER_TOOL = ToolType.MOVE_LAYER_TOOL;
     public static final ToolType PENCIL_TOOL = ToolType.PENCIL_TOOL;
+    public static final ToolType BRUSH_TOOL = ToolType.BRUSH_TOOL;
     public static final ToolType ERASER_TOOL = ToolType.ERASER_TOOL;
     public static final ToolType EYEDROPPER_TOOL = ToolType.EYEDROPPER_TOOL;
-    public static final ToolType SELECT_SIZE_TOOL = ToolType.SELECT_SIZE_TOOL;
-    public static final ToolType SELECT_COLOR_TOOL = ToolType.SELECT_COLOR_TOOL;
 
     private static final long serialVersionUID = 9193692576666062267L;
 
@@ -61,17 +50,14 @@ public class ToolButton extends JButton
             case PENCIL_TOOL:
                 setToolTipText("Pencil Tool");
                 break;
+            case BRUSH_TOOL:
+                setToolTipText("Brush Tool");
+                break;
             case ERASER_TOOL:
                 setToolTipText("Eraser Tool");
                 break;
             case EYEDROPPER_TOOL:
                 setToolTipText("EyeDropper Tool");
-                break;
-            case SELECT_SIZE_TOOL:
-                setToolTipText("Select Size of Pencil");
-                break;
-            case SELECT_COLOR_TOOL:
-                setToolTipText("Select Color");
                 break;
         }
 
@@ -112,6 +98,14 @@ public class ToolButton extends JButton
                     iconFileName = "asset/pencil-icon-white.png";
                 break;
             }
+            case BRUSH_TOOL:
+            {
+                if (isLookAndFeelWhite)
+                    iconFileName = "asset/brush.png";
+                else
+                    iconFileName = "asset/brush-white.png";
+                break;
+            }
             case ERASER_TOOL:
             {
                 if (isLookAndFeelWhite)
@@ -128,10 +122,6 @@ public class ToolButton extends JButton
                     iconFileName = "asset/eyedropper-white.png";
                 break;
             }
-            case SELECT_SIZE_TOOL:
-                break;
-            case SELECT_COLOR_TOOL:
-                break;
         }
         return iconFileName;
     }
@@ -143,30 +133,9 @@ public class ToolButton extends JButton
         {
             switch (toolType)
             {
-                case MOVE_LAYER_TOOL:
-                {
+                default:
+                    model.setCurrentTool(toolType);
                     break;
-                }
-                case PENCIL_TOOL:
-                {
-                    break;
-                }
-                case ERASER_TOOL:
-                {
-                    break;
-                }
-                case EYEDROPPER_TOOL:
-                {
-                    break;
-                }
-                case SELECT_SIZE_TOOL:
-                {
-                    break;
-                }
-                case SELECT_COLOR_TOOL:
-                {
-                    break;
-                }
             }
         }
     }

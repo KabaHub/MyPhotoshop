@@ -2,12 +2,14 @@ package View;
 
 import Control.Controller;
 import Model.*;
+import View.CustomComponents.ChooseColorButton;
 import View.CustomComponents.CloseButton;
 import View.CustomComponents.ToolButton;
 import entryPoint.CustomSplashScreen;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.Observable;
 import java.util.Observer;
@@ -65,11 +67,18 @@ public class MainWindow extends JFrame implements Observer
         ToolButton pencilButton = ToolButton.getNewButton(model, ToolButton.PENCIL_TOOL, whiteLookAndFeel);
         toolBox.add(pencilButton);
         toolBox.addSeparator();
+        ToolButton brushButton = ToolButton.getNewButton(model, ToolButton.BRUSH_TOOL, whiteLookAndFeel);
+        toolBox.add(brushButton);
+        toolBox.addSeparator();
         ToolButton eraserButton = ToolButton.getNewButton(model, ToolButton.ERASER_TOOL, whiteLookAndFeel);
         toolBox.add(eraserButton);
         toolBox.addSeparator();
         ToolButton eyeDropperButton = ToolButton.getNewButton(model, ToolButton.EYEDROPPER_TOOL, whiteLookAndFeel);
         toolBox.add(eyeDropperButton);
+        toolBox.addSeparator();
+        toolBox.addSeparator();
+        ChooseColorButton chooseColorButton = new ChooseColorButton(model);
+        toolBox.add(chooseColorButton);
         toolBox.addSeparator();
     }
 
@@ -109,7 +118,7 @@ public class MainWindow extends JFrame implements Observer
 
     public void test()
     {
-        model.addProject(new File("ressources/images/Black_kyurem.jpg"));
+        model.addProject(new File("test/images/Black_kyurem.jpg"));
     }
 
     @Override

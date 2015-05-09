@@ -244,10 +244,7 @@ public class Controller implements ActionListener
             JOptionPane.showMessageDialog(null, "MyPhotoshop by Gabriel DUPLAIX from EPITA. g.duplaix.pro@gmail.com", "About", JOptionPane.PLAIN_MESSAGE);
         } else if (e.getActionCommand().contentEquals("Test"))
         {
-            System.out.println("---- History ----");
-            Project p = mainWindow.getCurrentTab().getProject();
-            for (ImageState i : p.getHistory())
-                System.out.println(i.getAppliedIPlugin());
+
         } else
             System.out.println(e.getActionCommand() + " not yet Implemented");
     }
