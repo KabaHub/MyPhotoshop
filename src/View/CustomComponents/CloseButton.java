@@ -1,4 +1,4 @@
-package View;
+package View.CustomComponents;
 
 import java.awt.Color;
 import java.awt.Cursor;

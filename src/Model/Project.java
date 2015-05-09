@@ -39,7 +39,7 @@ public class Project extends Observable implements Serializable
         projectMouseController = new ProjectMouseController(this, model);
         addObserver(o);
         projectName = getNewProjectName(model.getProjects(), "New Project");
-        BufferedImage newImage = new BufferedImage(320, 180, BufferedImage.TYPE_INT_ARGB);
+        BufferedImage newImage = new BufferedImage(800, 600, BufferedImage.TYPE_INT_ARGB);
         imagePanel = new ImagePanel(newImage, projectName);
         imagePanel.addMouseWheelListener(projectMouseController);
         imagePanel.addMouseListener(projectMouseController);

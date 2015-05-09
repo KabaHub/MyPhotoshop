@@ -30,7 +30,6 @@ public class Model extends Observable
         filters = pluginClassLoader.getClasses();
     }
 
-
     public Project addProject()
     {
         Project p = new Project(o, this);
