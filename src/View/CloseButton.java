@@ -14,16 +14,17 @@ import javax.imageio.ImageIO;
 import javax.swing.ButtonModel;
 import javax.swing.JButton;
 
+/**
+ * Created by Gabriel on 01/05/2015.
+ */
 public class CloseButton extends JButton {
 
 	private static final long serialVersionUID = 9193692576666061167L;
 	
 	BufferedImage img;
-	
 	BufferedImage imgHover;
 	
 	public CloseButton(){
-		//super(new ImageIcon("ressources/images/close-icon.png"));
 		super();
 		setMaximumSize(new Dimension(17, 12));
         setPreferredSize(new Dimension(17, 12));
@@ -31,7 +32,6 @@ public class CloseButton extends JButton {
         setToolTipText("Close this Project");
         
         setBackground(new Color(0,0,0,0));
-		//setForeground(Color.LIGHT_GRAY);
 		setFocusable(false);
 		setContentAreaFilled(false);
 		setBorderPainted(false);
@@ -39,8 +39,8 @@ public class CloseButton extends JButton {
 		setCursor(new Cursor(Cursor.HAND_CURSOR));
 		
 		try{
-			img = ImageIO.read(new File("ressources/images/close-icon.png"));
-			imgHover = ImageIO.read(new File("ressources/images/close-icon-hover.png"));
+			img = ImageIO.read(new File("asset/close-icon.png"));
+			imgHover = ImageIO.read(new File("asset/close-icon-hover.png"));
 		} catch (IOException e) {
 			System.err.println(e.getMessage());
 		}
@@ -57,34 +57,10 @@ public class CloseButton extends JButton {
 
 		ButtonModel model = getModel();
 		
-		g2d.drawImage(img, 5, 3, this); //TODO exceptions
+		g2d.drawImage(img, 5, 3, this);
 
-		if (!model.isEnabled()) {
-//			setForeground(Color.LIGHT_GRAY);
-		} else {
-//			setForeground(Color.BLACK);
-			if (model.isRollover()) {
-//				setForeground(Color.GRAY);
-			} else {
-//				setForeground(Color.BLACK);
-
-			}
-		}
-
-		if (model.isPressed()) {
-//			g2d.setPaint(Color.RED);
-//			g2d.fillRect(0, 0, getWidth(), getHeight());
-//			setForeground(Color.WHITE);
-		} else {
-//			g2d.setPaint(Color.BLUE);
-//			g2d.fillRect(0, 0, getWidth(), getHeight());
-//			setForeground(Color.GREEN);
-		}
-
-		if (model.isRollover()) {
-//			setForeground(Color.YELLOW);
+		if (model.isRollover())
 			g2d.drawImage(imgHover, 5, 3, this);
-		}
 
 		g2d.dispose();
 		super.paintComponent(g);
