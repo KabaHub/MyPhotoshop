@@ -40,11 +40,11 @@ public class Controller implements ActionListener
         this.mainWindow = mainWindow;
         this.model = model;
 
-        ImageFileFilter mypsdFileFilter = new ImageFileFilter("MyPhotoshop (*.myPSD)", ".myPSD");
-        ImageFileFilter pngFileFilter = new ImageFileFilter("PNG (*.png)", ".png");
-        ImageFileFilter jpgFileFilter = new ImageFileFilter("JPEG (*.jpg;*.jpeg)", new String[]{".jpg", ".jpeg"});
-        ImageFileFilter gifFileFilter = new ImageFileFilter("GIF (*.gif)", ".gif");
-        ImageFileFilter bmpFileFilter = new ImageFileFilter("BMP (*.bmp)", ".bmp");
+        ImageFileFilter mypsdFileFilter = new ImageFileFilter("MyPhotoshop (*.myPSD)", ".myPSD", "myPSD");
+        ImageFileFilter pngFileFilter = new ImageFileFilter("PNG (*.png)", ".png", "PNG");
+        ImageFileFilter jpgFileFilter = new ImageFileFilter("JPEG (*.jpg;*.jpeg)", new String[]{".jpg", ".jpeg"}, "JPG");
+        ImageFileFilter gifFileFilter = new ImageFileFilter("GIF (*.gif)", ".gif", "GIF");
+        ImageFileFilter bmpFileFilter = new ImageFileFilter("BMP (*.bmp)", ".bmp", "BMP");
         projectFileChooser.addChoosableFileFilter(mypsdFileFilter);
         projectFileChooser.addChoosableFileFilter(pngFileFilter);
         projectFileChooser.addChoosableFileFilter(jpgFileFilter);
@@ -95,7 +95,7 @@ public class Controller implements ActionListener
                     {
                         File f = exportFileChooser.getSelectedFile();
                         ImageFileFilter imageFileFilter = ((ImageFileFilter) (exportFileChooser.getFileFilter()));
-                        String formatName = ((ImageFileFilter) exportFileChooser.getFileFilter()).getExtension();
+                        String formatName = ((ImageFileFilter) exportFileChooser.getFileFilter()).getFormat();
                         if (!f.getName().endsWith(imageFileFilter.getExtension()))
                             f = new File(f.getParentFile(), f.getName() + imageFileFilter.getExtension());
                         boolean ready = true;
@@ -117,6 +117,8 @@ public class Controller implements ActionListener
                         }
                         if (ready)
                         {
+                            System.out.println("Ready Bitches");
+                            System.out.println("Printing in " + f.getAbsolutePath() + " in format " + formatName);
                             BufferedImage image = new BufferedImage(p.getImagePanel().getWidth(), p.getImagePanel().getHeight(), BufferedImage.TYPE_INT_ARGB);
                             Graphics g = image.getGraphics();
                             for (Layer l : p.getLayers())
