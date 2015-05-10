@@ -7,6 +7,7 @@ import IHM.Layer;
 import plugin.IPlugin;
 
 import javax.imageio.ImageIO;
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
@@ -353,10 +354,18 @@ public class Project extends Observable implements Serializable
 
     public void closeLayer(int layer)
     {
-        if (layer >= 0 && layer < getLayers().size())
-            getLayers().remove(layer);
-        setChanged();
-        notifyObservers(this);
+        if (getLayers().size() == 1)
+        {
+            JOptionPane.showMessageDialog(null, "Cannot Close last Layer!", "Error", JOptionPane.ERROR_MESSAGE);
+        } else
+        {
+            if (layer >= 0 && layer < getLayers().size())
+                getLayers().remove(layer);
+            if (getCurrentLayer() >= getLayers().size())
+                setCurrentLayer(getLayers().size() - 1);
+            setChanged();
+            notifyObservers(this);
+        }
     }
 
     @Deprecated
@@ -439,7 +448,6 @@ public class Project extends Observable implements Serializable
                     {
                         int posX = p.x * realWidth / width;
                         int posY = p.y * realHeight / height;
-//                            g2d.clearRect(posX - pencilSize / 2, posY - pencilSize / 2, pencilSize, pencilSize);
                         g.fillRect(posX - imagePanel.pencilSize / 2, posY - imagePanel.pencilSize / 2, imagePanel.pencilSize, imagePanel.pencilSize);
                     }
                 }

@@ -36,6 +36,8 @@ public class Model extends Observable
     {
         JTextField widthField = new JTextField(5);
         JTextField heightField = new JTextField(5);
+        widthField.setText("800");
+        heightField.setText("600");
         JPanel sizePanel = new JPanel();
         sizePanel.add(new JLabel("Width"));
         sizePanel.add(widthField);
