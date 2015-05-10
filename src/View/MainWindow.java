@@ -57,7 +57,6 @@ public class MainWindow extends JFrame implements Observer
         toolBox.setRollover(true);
         toolBox.setMinimumSize(new Dimension(40, 40));
         toolBox.setPreferredSize(new Dimension(35, 35));
-        toolBox.setBorderPainted(false);
 
 //        toolBox.addSeparator(new Dimension(30,30));
         ToolButton moveLayerButton = ToolButton.getNewButton(model, ToolButton.MOVE_LAYER_TOOL, whiteLookAndFeel);
