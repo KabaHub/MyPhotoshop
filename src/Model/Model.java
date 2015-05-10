@@ -178,10 +178,4 @@ public class Model extends Observable
         setChanged();
         notifyObservers(color);
     }
-
-    public void forceUpdate(Object obj)
-    {
-        setChanged();
-        notifyObservers(obj);
-    }
 }

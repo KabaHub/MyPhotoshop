@@ -6,6 +6,7 @@ import Model.ToolType;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 /**
  * Created by Gabriel on 05/05/2015.
@@ -14,6 +15,8 @@ public class ProjectMouseController extends MouseAdapter
 {
     private Project project;
     private Model model;
+
+    private ArrayList<Point> movePoints = new ArrayList<>();
 
     public ProjectMouseController(Project project, Model model)
     {
@@ -38,21 +41,34 @@ public class ProjectMouseController extends MouseAdapter
     @Override
     public void mouseDragged(MouseEvent e)
     {
-        if (project.getImagePanel().previewPencil.isEmpty())
+        if (model.getCurrentTool() == ToolType.MOVE_LAYER_TOOL)
         {
-            project.getImagePanel().toolType = model.getCurrentTool() != ToolType.NONE ? model.getCurrentTool() : ToolType.BRUSH_TOOL;
-            project.getImagePanel().pencilSize = model.getPencilSize();
-            project.getImagePanel().pencilType = model.getPencilType();
-            project.getImagePanel().pencilColor = model.getChosenColor();
+            movePoints.add(e.getPoint());
+            project.getImagePanel().moveCurrentLayer(movePoints);
+        } else
+        {
+            if (project.getImagePanel().previewPencil.isEmpty())
+            {
+                project.getImagePanel().toolType = model.getCurrentTool() != ToolType.NONE ? model.getCurrentTool() : ToolType.BRUSH_TOOL;
+                project.getImagePanel().pencilSize = model.getPencilSize();
+                project.getImagePanel().pencilType = model.getPencilType();
+                project.getImagePanel().pencilColor = model.getChosenColor();
+            }
+            project.addToPencilPreview(e.getPoint());
         }
-        project.addToPencilPreview(e.getPoint());
     }
 
     @Override
     public void mouseReleased(MouseEvent e)
     {
-        project.drawPencil();
-        project.clearPencilPreview();
+        if (model.getCurrentTool() == ToolType.MOVE_LAYER_TOOL)
+        {
+            movePoints.clear();
+        } else
+        {
+            project.drawPencil();
+            project.clearPencilPreview();
+        }
     }
 
     @Override

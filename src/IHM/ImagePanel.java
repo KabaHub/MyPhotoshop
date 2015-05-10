@@ -304,4 +304,21 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
     {
         return new Color(layers.get(currentLayer).getImage().getRGB(p.x, p.y));
     }
+
+    public void moveCurrentLayer(ArrayList<Point> points)
+    {
+        if (points.size() > 1)
+        {
+            int mW = points.get(points.size() - 1).x - points.get(0).x;
+            int mH = points.get(points.size() - 1).y - points.get(0).y;
+            BufferedImage img = layers.get(currentLayer).getImage();
+            BufferedImage newImg = new BufferedImage(img.getWidth(), img.getHeight(), BufferedImage.TYPE_4BYTE_ABGR);
+            Graphics g = newImg.getGraphics();
+            g.drawImage(img, mW, mH, null);
+            g.dispose();
+            setImage(newImg);
+            this.repaint();
+            points.clear();
+        }
+    }
 }
