@@ -1,4 +1,33 @@
-myPhotoShop
+### Welcome in MyPhotoshop
 
-We give you this tarball to help you begin your project. You are free to modify
-everything except the IPlugin interface.
+MyPhotoshop is very intuitive and easy to use. You are free to explore
+its functionalities !
+You can load and save project from 5 format :
+
+mYPSD : Native MyPhotoshop format
+PNG (transparency)
+GIF (loose information)
+BMP
+JPG
+
+You can also apply filters, and maybe code your own plugins !
+Example of provided filters:
+
+AllGreen
+Binary
+GrayScale
+Horizontal Flip
+Invert
+Rotate Left
+Rotate Right
+Vertical Flip
+Blur
+Emboss
+FloydSteingBerg
+GrayScale V2
+Laplacian
+RandomPoints
+Sépia
+SobelBorders
+
+Enjoy !
