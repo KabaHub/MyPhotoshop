@@ -20,7 +20,7 @@ public class Model extends Observable
     private Hashtable<String, IPlugin> filters = new Hashtable<>();
 
     private ToolType currentTool = ToolType.NONE;
-    private int pencilSize = 40;
+    private int pencilSize = 12;
     private String pencilType = "Circle";
     private Color chosenColor = Color.BLACK;
 

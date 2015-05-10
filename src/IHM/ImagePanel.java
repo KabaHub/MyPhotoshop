@@ -36,7 +36,7 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
 
     public ArrayList<Point> previewPencil = new ArrayList<>();
     public ToolType toolType = ToolType.BRUSH_TOOL;
-    public int pencilSize = 8;
+    public int pencilSize = 12;
     public String pencilType = "Circle";
     public Color pencilColor = Color.BLACK;
 
@@ -186,6 +186,8 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
                         int realWidth = getImage().getWidth();
                         int realHeight = getImage().getHeight();
                         BasicStroke line = new BasicStroke(pencilSize, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND);
+                        if (pencilType == "Square")
+                            line = new BasicStroke(pencilSize, BasicStroke.CAP_SQUARE, BasicStroke.JOIN_MITER);
                         g2d.setStroke(line);
                         for (int j = 0; j < previewPencil.size() - 1; j++)
                         {
@@ -203,7 +205,7 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
                         int height = getHeight();
                         int realWidth = getImage().getWidth();
                         int realHeight = getImage().getHeight();
-                        g2d.setColor(Color.WHITE);
+                        g2d.setColor(new Color(80, 80, 80));
                         for (Point p : previewPencil)
                         {
                             int posX = p.x * realWidth / width;

@@ -7,6 +7,7 @@ import View.MainWindow;
 import Model.Model;
 import Model.Project;
 import Model.ImageState;
+import entryPoint.CustomSplashScreen;
 
 import javax.imageio.ImageIO;
 import javax.print.attribute.HashPrintRequestAttributeSet;
@@ -241,7 +242,8 @@ public class Controller implements ActionListener
             mainWindow.removeFromTabbedPanel(mainWindow.getCurrentTab());
         } else if (e.getActionCommand().contentEquals("About"))
         {
-            JOptionPane.showMessageDialog(null, "MyPhotoshop by Gabriel DUPLAIX from EPITA. g.duplaix.pro@gmail.com", "About", JOptionPane.PLAIN_MESSAGE);
+//            JOptionPane.showMessageDialog(null, "MyPhotoshop by Gabriel DUPLAIX from EPITA. g.duplaix.pro@gmail.com", "About", JOptionPane.PLAIN_MESSAGE);
+            CustomSplashScreen customSplashScreen = new CustomSplashScreen(false);
         } else if (e.getActionCommand().contentEquals("Test"))
         {
 

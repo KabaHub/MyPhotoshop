@@ -15,7 +15,7 @@ public class ChoosePencilSizeButton extends JButton
     private static final long serialVersionUID = 9193692576666062267L;
 
     private Model model;
-    private int brushSize = 8;
+    private int brushSize = 12;
     private ChoosePencilSizeButton thisOne = this;
 
     public ChoosePencilSizeButton(Model model)

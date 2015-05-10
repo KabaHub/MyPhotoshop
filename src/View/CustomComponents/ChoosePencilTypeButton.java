@@ -43,14 +43,17 @@ public class ChoosePencilTypeButton extends JButton
         g2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,
                 RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 
-        switch (pencilType)
+        if (pencilType != null)
         {
-            case "Circle":
-                g.fillOval(0, 0, 16, 16);
-                break;
-            case "Square":
-                g.fillRect(0, 0, 16, 16);
-                break;
+            switch (pencilType)
+            {
+                case "Circle":
+                    g.fillOval(0, 0, 16, 16);
+                    break;
+                case "Square":
+                    g.fillRect(0, 0, 16, 16);
+                    break;
+            }
         }
 
         g2d.dispose();
@@ -64,8 +67,9 @@ public class ChoosePencilTypeButton extends JButton
         {
             String[] availableTypes = {"Circle", "Square"};
             pencilType = (String) JOptionPane.showInputDialog(thisOne, "Choose a brush size", "Brush Size Chooser", JOptionPane.QUESTION_MESSAGE, null, availableTypes, null);
+            if (pencilType != null)
+                model.setPencilType(pencilType);
             repaint();
-            model.setPencilType(pencilType);
         }
     }
 }

@@ -12,7 +12,7 @@ public class Main
     public static void main(String[] args)
     {
         Boolean whiteLookAndFeel = false;
-        CustomSplashScreen customSplashScreen = new CustomSplashScreen();
+        CustomSplashScreen customSplashScreen = new CustomSplashScreen(true);
         String nimbusName = "javax.swing.plaf.nimbus.NimbusLookAndFeel";
         for (UIManager.LookAndFeelInfo l : UIManager.getInstalledLookAndFeels())
         {

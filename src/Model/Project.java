@@ -397,7 +397,7 @@ public class Project extends Observable implements Serializable
             Graphics2D g = (Graphics2D) image.getGraphics();
             g.setBackground(new Color(80, 80, 80));
             if (!(toolType == ToolType.ERASER_TOOL && imagePanel.getCurrentLayer() != 0))
-            g.drawImage(imagePanel.getImage(), 0, 0, null);
+                g.drawImage(imagePanel.getImage(), 0, 0, null);
 
             if (toolType == ToolType.BRUSH_TOOL)
                 g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
@@ -409,6 +409,8 @@ public class Project extends Observable implements Serializable
                 int realWidth = imagePanel.getImage().getWidth();
                 int realHeight = imagePanel.getImage().getHeight();
                 BasicStroke line = new BasicStroke(imagePanel.pencilSize, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND);
+                if (imagePanel.pencilType == "Square")
+                    line = new BasicStroke(imagePanel.pencilSize, BasicStroke.CAP_SQUARE, BasicStroke.JOIN_MITER);
                 g.setStroke(line);
                 ArrayList<Point> previewPencil = imagePanel.previewPencil;
                 for (int j = 0; j < previewPencil.size() - 1; j++)
@@ -426,8 +428,7 @@ public class Project extends Observable implements Serializable
                 if (getCurrentLayer() != 0)
                 {
                     g.drawImage(erasedImage, 0, 0, null);
-                }
-                else
+                } else
                 {
                     int width = imagePanel.getWidth();
                     int height = imagePanel.getHeight();

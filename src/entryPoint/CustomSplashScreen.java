@@ -15,10 +15,12 @@ import java.io.IOException;
  */
 public class CustomSplashScreen extends JFrame
 {
-    public CustomSplashScreen()
+    public CustomSplashScreen(boolean splash)
     {
         super();
         setSize(474, 474);
+        if (!splash)
+            setSize(490, 520);
         getContentPane().add(new ImagePanel(new File("asset/splashscreen.png")));
 //        try
 //        {
@@ -29,7 +31,10 @@ public class CustomSplashScreen extends JFrame
 //            e.printStackTrace();
 //        }
         setLocationRelativeTo(null);
-        setUndecorated(true);
+        if (splash)
+        {
+            setUndecorated(true);
+        }
         setVisible(true);
     }
 }
