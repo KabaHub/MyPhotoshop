@@ -65,5 +65,4 @@ public class CloseButton extends JButton {
 		g2d.dispose();
 		super.paintComponent(g);
 	}
-
 }

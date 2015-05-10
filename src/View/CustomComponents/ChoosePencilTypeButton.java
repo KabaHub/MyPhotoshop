@@ -1,38 +1,31 @@
 package View.CustomComponents;
 
 import Model.Model;
-import Model.ToolType;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 
 /**
  * Created by Gabriel on 01/05/2015.
  */
-public class ChooseColorButton extends JButton
+public class ChoosePencilTypeButton extends JButton
 {
     private static final long serialVersionUID = 9193692576666062267L;
 
     private Model model;
-    private Color color = Color.BLACK;
+    private String pencilType = "Circle";
+    private ChoosePencilTypeButton thisOne = this;
 
-    public ChooseColorButton(Model model)
+    public ChoosePencilTypeButton(Model model)
     {
         super();
         this.model = model;
 
-        setMaximumSize(new Dimension(24, 24));
-        setPreferredSize(new Dimension(24, 24));
-        setSize(new Dimension(24, 24));
-        setSize(24, 24);
+        setMaximumSize(new Dimension(16, 16));
+        setPreferredSize(new Dimension(16, 16));
+        setSize(new Dimension(16, 16));
 
         addActionListener(new ChooseColorActionListener());
 
@@ -49,8 +42,15 @@ public class ChooseColorButton extends JButton
         g2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,
                 RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 
-        g2d.setColor(color);
-        g2d.fillRect(0, 0, 24, 24);
+        switch (pencilType)
+        {
+            case "Circle":
+                g.fillOval(0, 0, 16, 16);
+                break;
+            case "Square":
+                g.fillRect(0, 0, 16, 16);
+                break;
+        }
 
         g2d.dispose();
         super.paintComponent(g);
@@ -61,10 +61,10 @@ public class ChooseColorButton extends JButton
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            color = JColorChooser.showDialog(null, "Choose Color", Color.BLACK);
-            color = color != null ? color : Color.BLACK;
+            String[] availableTypes = {"Circle", "Square"};
+            pencilType = (String) JOptionPane.showInputDialog(thisOne, "Choose a brush size", "Brush Size Chooser", JOptionPane.QUESTION_MESSAGE, null, availableTypes, null);
             repaint();
-            model.setChosenColor(color);
+            model.setPencilType(pencilType);
         }
     }
 }

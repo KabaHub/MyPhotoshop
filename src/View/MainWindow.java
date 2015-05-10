@@ -2,10 +2,7 @@ package View;
 
 import Control.Controller;
 import Model.*;
-import View.CustomComponents.ChooseColorButton;
-import View.CustomComponents.ChoosePencilSizeButton;
-import View.CustomComponents.CloseButton;
-import View.CustomComponents.ToolButton;
+import View.CustomComponents.*;
 import entryPoint.CustomSplashScreen;
 
 import javax.swing.*;
@@ -83,6 +80,9 @@ public class MainWindow extends JFrame implements Observer
         toolBox.addSeparator();
         ChoosePencilSizeButton choosePencilSizeButton = new ChoosePencilSizeButton(model);
         toolBox.add(choosePencilSizeButton);
+        toolBox.addSeparator();
+        ChoosePencilTypeButton choosePencilTypeButton = new ChoosePencilTypeButton(model);
+        toolBox.add(choosePencilTypeButton);
     }
 
     public JTabbedPane getJTabbedPane()
