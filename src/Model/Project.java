@@ -182,9 +182,13 @@ public class Project extends Observable implements Serializable
         if (!isPluginRunning)
         {
             isPluginRunning = true;
-            PluginExecutor pluginExecutor = new PluginExecutor(this, imagePanel.getImage(), plugin);
-            pluginThread = new Thread(pluginExecutor);
-            pluginThread.start();
+            BufferedImage img = imagePanel.getImage();
+            if (img != null)
+            {
+                PluginExecutor pluginExecutor = new PluginExecutor(this, img, plugin);
+                pluginThread = new Thread(pluginExecutor);
+                pluginThread.start();
+            }
         }
     }
 

@@ -304,7 +304,9 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
 
     public Color getPixelColor(Point p)
     {
-        return new Color(layers.get(currentLayer).getImage().getRGB(p.x, p.y));
+        int posX = getImage().getWidth()  * p.x / getWidth();
+        int posY = getImage().getHeight() * p.y / getHeight();
+        return new Color(layers.get(currentLayer).getImage().getRGB(posX, posY));
     }
 
     public void moveCurrentLayer(ArrayList<Point> points)
