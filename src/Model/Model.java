@@ -34,11 +34,37 @@ public class Model extends Observable
 
     public Project addProject()
     {
-        Project p = new Project(o, this);
-        projects.add(p);
-        setChanged();
-        notifyObservers(p);
-        return p;
+        JTextField widthField = new JTextField(5);
+        JTextField heightField = new JTextField(5);
+        JPanel sizePanel = new JPanel();
+        sizePanel.add(new JLabel("Width"));
+        sizePanel.add(widthField);
+        sizePanel.add(Box.createVerticalStrut(15));
+        sizePanel.add(new JLabel("Height"));
+        sizePanel.add(heightField);
+        int result = JOptionPane.showConfirmDialog(null, sizePanel, "Enter Size of the New Project", JOptionPane.OK_CANCEL_OPTION);
+        if (result == JOptionPane.OK_OPTION)
+        {
+            try
+            {
+                int width = Integer.parseInt(widthField.getText());
+                int height = Integer.parseInt(heightField.getText());
+                if (width < 1 || width > 5000 || height < 1 || height > 5000)
+                    JOptionPane.showMessageDialog(null, width + ", " + height + " are not valid sizes", "Error", JOptionPane.ERROR_MESSAGE);
+                else
+                {
+                    Project p = new Project(o, this, width, height);
+                    projects.add(p);
+                    setChanged();
+                    notifyObservers(p);
+                    return p;
+                }
+            } catch (java.lang.NumberFormatException e)
+            {
+                JOptionPane.showMessageDialog(null, "Please enter valid sizes", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        return null;
     }
 
     public Project addProject(File file)

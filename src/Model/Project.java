@@ -34,12 +34,12 @@ public class Project extends Observable implements Serializable
 
     private transient ProjectMouseController projectMouseController;
 
-    public Project(Observer o, Model model)
+    public Project(Observer o, Model model, int width, int height)
     {
         projectMouseController = new ProjectMouseController(this, model);
         addObserver(o);
         projectName = getNewProjectName(model.getProjects(), "New Project");
-        BufferedImage newImage = new BufferedImage(800, 600, BufferedImage.TYPE_INT_ARGB);
+        BufferedImage newImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
         imagePanel = new ImagePanel(newImage, projectName);
         imagePanel.addMouseWheelListener(projectMouseController);
         imagePanel.addMouseListener(projectMouseController);

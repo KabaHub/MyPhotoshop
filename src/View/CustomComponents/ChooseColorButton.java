@@ -29,10 +29,10 @@ public class ChooseColorButton extends JButton
         super();
         this.model = model;
 
-        setMaximumSize(new Dimension(24, 24));
-        setPreferredSize(new Dimension(24, 24));
-        setSize(new Dimension(24, 24));
-        setSize(24, 24);
+        setMaximumSize(new Dimension(20, 20));
+        setPreferredSize(new Dimension(20, 20));
+        setSize(new Dimension(20, 20));
+        setSize(20, 20);
         setToolTipText("Choose Color");
 
         addActionListener(new ChooseColorActionListener());
@@ -56,7 +56,7 @@ public class ChooseColorButton extends JButton
                 RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 
         g2d.setColor(color);
-        g2d.fillRect(0, 0, 24, 24);
+        g2d.fillRect(0, 0, 20, 20);
 
         g2d.dispose();
         super.paintComponent(g);
