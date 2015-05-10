@@ -17,15 +17,17 @@ public class ChoosePencilTypeButton extends JButton
     private Model model;
     private String pencilType = "Circle";
     private ChoosePencilTypeButton thisOne = this;
+    private boolean isWhite;
 
-    public ChoosePencilTypeButton(Model model)
+    public ChoosePencilTypeButton(Model model, boolean isWhite)
     {
         super();
         this.model = model;
+        this.isWhite = isWhite;
 
-        setMaximumSize(new Dimension(16, 16));
-        setPreferredSize(new Dimension(16, 16));
-        setSize(new Dimension(16, 16));
+        setMaximumSize(new Dimension(20, 20));
+        setPreferredSize(new Dimension(20, 20));
+        setSize(new Dimension(20, 20));
         setToolTipText("Choose Pencil Shape");
 
         addActionListener(new ChooseColorActionListener());
@@ -42,6 +44,9 @@ public class ChoosePencilTypeButton extends JButton
                 RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,
                 RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+
+        if (isWhite)
+            g.setColor(Color.WHITE);
 
         if (pencilType != null)
         {

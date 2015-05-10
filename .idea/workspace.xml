@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bab6105-4809-42d7-8428-55e452ae4f02" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/CustomComponents/ChooseColorButton.java" afterPath="$PROJECT_DIR$/src/View/CustomComponents/ChooseColorButton.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/CustomComponents/ChoosePencilSizeButton.java" afterPath="$PROJECT_DIR$/src/View/CustomComponents/ChoosePencilSizeButton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entryPoint/Main.java" afterPath="$PROJECT_DIR$/src/entryPoint/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/CustomComponents/ChoosePencilTypeButton.java" afterPath="$PROJECT_DIR$/src/View/CustomComponents/ChoosePencilTypeButton.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/MainWindow.java" afterPath="$PROJECT_DIR$/src/View/MainWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TODO" afterPath="$PROJECT_DIR$/TODO" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\WORK\EPITA\Projets\Ing1\MyPhotoshop\duplai_g-myphotoshop\test\images\Artorias.jpg" afterPath="$PROJECT_DIR$/tests/images/Artorias.jpg" />
-      <change type="MOVED" beforePath="D:\WORK\EPITA\Projets\Ing1\MyPhotoshop\duplai_g-myphotoshop\test\images\Black_kyurem.jpg" afterPath="$PROJECT_DIR$/tests/images/Black_kyurem.jpg" />
-      <change type="MOVED" beforePath="D:\WORK\EPITA\Projets\Ing1\MyPhotoshop\duplai_g-myphotoshop\test\images\DarkKnight.jpg" afterPath="$PROJECT_DIR$/tests/images/DarkKnight.jpg" />
-      <change type="MOVED" beforePath="D:\WORK\EPITA\Projets\Ing1\MyPhotoshop\duplai_g-myphotoshop\test\images\lena.jpg" afterPath="$PROJECT_DIR$/tests/images/lena.jpg" />
-      <change type="MOVED" beforePath="D:\WORK\EPITA\Projets\Ing1\MyPhotoshop\duplai_g-myphotoshop\test\images\test.png" afterPath="$PROJECT_DIR$/tests/images/test.png" />
     </list>
     <ignored path="duplai_g-myphotoshop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,10 +45,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lena.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/images/lena.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
+      <file leaf-file-name="MainWindow.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/MainWindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="81" column="106" selection-start-line="81" selection-start-column="106" selection-end-line="81" selection-end-column="106" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
@@ -80,8 +80,8 @@
       <file leaf-file-name="ChoosePencilSizeButton.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/View/CustomComponents/ChoosePencilSizeButton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.68372095">
-              <caret line="40" column="181" selection-start-line="40" selection-start-column="181" selection-end-line="40" selection-end-column="181" />
+            <state vertical-scroll-proportion="0.18294574">
+              <caret line="33" column="48" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -147,17 +147,17 @@
         <option value="$PROJECT_DIR$/src/Model/ToolType.java" />
         <option value="$PROJECT_DIR$/src/View/CustomComponents/ToolButton.java" />
         <option value="$PROJECT_DIR$/src/View/CustomComponents/CloseButton.java" />
-        <option value="$PROJECT_DIR$/src/View/CustomComponents/ChooseColorButton.java" />
-        <option value="$PROJECT_DIR$/src/View/CustomComponents/ChoosePencilTypeButton.java" />
         <option value="$PROJECT_DIR$/src/Model/Model.java" />
         <option value="$PROJECT_DIR$/src/IHM/ImagePanel.java" />
         <option value="$PROJECT_DIR$/src/Model/Project.java" />
         <option value="$PROJECT_DIR$/src/Control/ProjectMouseController.java" />
         <option value="$PROJECT_DIR$/src/Control/Controller.java" />
         <option value="$PROJECT_DIR$/src/entryPoint/CustomSplashScreen.java" />
-        <option value="$PROJECT_DIR$/src/View/MainWindow.java" />
         <option value="$PROJECT_DIR$/TODO" />
         <option value="$PROJECT_DIR$/src/entryPoint/Main.java" />
+        <option value="$PROJECT_DIR$/src/View/CustomComponents/ChooseColorButton.java" />
+        <option value="$PROJECT_DIR$/src/View/CustomComponents/ChoosePencilTypeButton.java" />
+        <option value="$PROJECT_DIR$/src/View/MainWindow.java" />
         <option value="$PROJECT_DIR$/src/View/CustomComponents/ChoosePencilSizeButton.java" />
       </list>
     </option>
@@ -894,13 +894,7 @@
       <workItem from="1431040056954" duration="1841000" />
       <workItem from="1431078865987" duration="35605000" />
       <workItem from="1431156346795" duration="15553000" />
-      <workItem from="1431191132243" duration="40817000" />
-    </task>
-    <task id="LOCAL-00068" summary="[BUG] Zoom Prototype">
-      <created>1430857451039</created>
-      <option name="number" value="00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1430857451039</updated>
+      <workItem from="1431191132243" duration="41779000" />
     </task>
     <task id="LOCAL-00069" summary="Zoom Fragment">
       <created>1430861574916</created>
@@ -1190,11 +1184,17 @@
       <option name="project" value="LOCAL" />
       <updated>1431235447129</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="[BUG] LookAndFeel and deserialization...">
+      <created>1431236455731</created>
+      <option name="number" value="00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1431236455731</updated>
+    </task>
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="441004000" />
+    <option name="totallyTimeSpent" value="441966000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -1266,7 +1266,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Very, VERY basic drawing." />
     <MESSAGE value="Solved a large variety of bugs." />
     <MESSAGE value="Corrected Zoom problems." />
     <MESSAGE value="[BUG] Bad Size for imported images ! Easy to correct." />
@@ -1291,7 +1290,8 @@
     <MESSAGE value="Basic Layer Moving." />
     <MESSAGE value="Full of Minor Changes." />
     <MESSAGE value="Minor Changes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor Changes." />
+    <MESSAGE value="[BUG] LookAndFeel and deserialization..." />
+    <option name="LAST_COMMIT_MESSAGE" value="[BUG] LookAndFeel and deserialization..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1588,22 +1588,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/CustomComponents/ChooseColorButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/CustomComponents/ChoosePencilTypeButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76434106">
-          <caret line="70" column="38" selection-start-line="70" selection-start-column="38" selection-end-line="70" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/CustomComponents/CloseButton.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5271318">
@@ -1661,19 +1645,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entryPoint/CustomSplashScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/images/lena.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/ProjectPane.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.63100773">
@@ -1681,24 +1652,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/MainWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9751938">
-          <caret line="48" column="8" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TODO">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1710,10 +1663,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/images/lena.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TODO">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entryPoint/CustomSplashScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/CustomComponents/ChooseColorButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/CustomComponents/ChoosePencilTypeButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31627908">
+          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="81" column="106" selection-start-line="81" selection-start-column="106" selection-end-line="81" selection-end-column="106" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/CustomComponents/ChoosePencilSizeButton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68372095">
-          <caret line="40" column="181" selection-start-line="40" selection-start-column="181" selection-end-line="40" selection-end-column="181" />
+        <state vertical-scroll-proportion="0.18294574">
+          <caret line="33" column="48" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="48" />
           <folding />
         </state>
       </provider>

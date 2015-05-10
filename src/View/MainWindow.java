@@ -55,6 +55,9 @@ public class MainWindow extends JFrame implements Observer
         toolBox.setBackground(new Color(80, 80, 80));
 //        toolBox.setFloatable(false);
         toolBox.setRollover(true);
+        toolBox.setMinimumSize(new Dimension(40, 40));
+        toolBox.setPreferredSize(new Dimension(35, 35));
+        toolBox.setBorderPainted(false);
 
 //        toolBox.addSeparator(new Dimension(30,30));
         ToolButton moveLayerButton = ToolButton.getNewButton(model, ToolButton.MOVE_LAYER_TOOL, whiteLookAndFeel);
@@ -76,10 +79,10 @@ public class MainWindow extends JFrame implements Observer
         chooseColorButton = new ChooseColorButton(model);
         toolBox.add(chooseColorButton);
         toolBox.addSeparator();
-        ChoosePencilSizeButton choosePencilSizeButton = new ChoosePencilSizeButton(model);
+        ChoosePencilSizeButton choosePencilSizeButton = new ChoosePencilSizeButton(model, whiteLookAndFeel);
         toolBox.add(choosePencilSizeButton);
         toolBox.addSeparator();
-        ChoosePencilTypeButton choosePencilTypeButton = new ChoosePencilTypeButton(model);
+        ChoosePencilTypeButton choosePencilTypeButton = new ChoosePencilTypeButton(model, whiteLookAndFeel);
         toolBox.add(choosePencilTypeButton);
     }
 

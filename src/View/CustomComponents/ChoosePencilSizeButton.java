@@ -17,11 +17,22 @@ public class ChoosePencilSizeButton extends JButton
     private Model model;
     private int brushSize = 12;
     private ChoosePencilSizeButton thisOne = this;
+    private boolean isWhite;
 
-    public ChoosePencilSizeButton(Model model)
+    public ChoosePencilSizeButton(Model model, boolean isWhite)
     {
         super("12");
         this.model = model;
+        this.isWhite = isWhite;
+
+        setFont(new Font(Font.SANS_SERIF, Font.LAYOUT_LEFT_TO_RIGHT, 10));
+        if (!isWhite)
+            setForeground(Color.WHITE);
+
+        setMinimumSize(new Dimension(25, 25));
+        setMaximumSize(new Dimension(25, 25));
+        setPreferredSize(new Dimension(25, 25));
+        setSize(new Dimension(25, 25));
 
         setToolTipText("Chose Brush Size");
         addActionListener(new ChooseColorActionListener());
@@ -40,6 +51,7 @@ public class ChoosePencilSizeButton extends JButton
                 availableSizes[i] = i + 1;
             brushSize = (int) JOptionPane.showInputDialog(thisOne, "Choose a brush size", "Brush Size Chooser", JOptionPane.QUESTION_MESSAGE, null, availableSizes, availableSizes[0]);
             setText(String.valueOf(brushSize));
+
             model.setPencilSize(brushSize);
         }
     }
