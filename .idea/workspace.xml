@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0bab6105-4809-42d7-8428-55e452ae4f02" name="Default" comment="Basic Layer Moving.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/CustomComponents/ChoosePencilSizeButton.java" afterPath="$PROJECT_DIR$/src/View/CustomComponents/ChoosePencilSizeButton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/CustomComponents/ChoosePencilTypeButton.java" afterPath="$PROJECT_DIR$/src/View/CustomComponents/ChoosePencilTypeButton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Control/Controller.java" afterPath="$PROJECT_DIR$/src/Control/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entryPoint/CustomSplashScreen.java" afterPath="$PROJECT_DIR$/src/entryPoint/CustomSplashScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/IHM/ImagePanel.java" afterPath="$PROJECT_DIR$/src/IHM/ImagePanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entryPoint/Main.java" afterPath="$PROJECT_DIR$/src/entryPoint/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Model.java" afterPath="$PROJECT_DIR$/src/Model/Model.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Project.java" afterPath="$PROJECT_DIR$/src/Model/Project.java" />
+    <list default="true" id="0bab6105-4809-42d7-8428-55e452ae4f02" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="duplai_g-myphotoshop.iws" />
@@ -890,13 +882,7 @@
       <workItem from="1431040056954" duration="1841000" />
       <workItem from="1431078865987" duration="35605000" />
       <workItem from="1431156346795" duration="15553000" />
-      <workItem from="1431191132243" duration="39802000" />
-    </task>
-    <task id="LOCAL-00066" summary="[BUG][SOLVED] Strange null pointer when export">
-      <created>1430842096580</created>
-      <option name="number" value="00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1430842096580</updated>
+      <workItem from="1431191132243" duration="39826000" />
     </task>
     <task id="LOCAL-00067" summary="Changed Layers">
       <created>1430843798023</created>
@@ -1186,11 +1172,17 @@
       <option name="project" value="LOCAL" />
       <updated>1431233276893</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="Full of Minor Changes.">
+      <created>1431235430066</created>
+      <option name="number" value="00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1431235430066</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="439989000" />
+    <option name="totallyTimeSpent" value="440013000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -1262,7 +1254,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Black point on click, COUNTING ZOOM!" />
     <MESSAGE value="[BUG][SOLVED] Bad TypeColor for Floyd Steingberg solved !" />
     <MESSAGE value="Very, VERY basic drawing." />
     <MESSAGE value="Solved a large variety of bugs." />
@@ -1287,7 +1278,8 @@
     <MESSAGE value="Eyedropper Tool Works." />
     <MESSAGE value="Ask size for new projects." />
     <MESSAGE value="Basic Layer Moving." />
-    <option name="LAST_COMMIT_MESSAGE" value="Basic Layer Moving." />
+    <MESSAGE value="Full of Minor Changes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Full of Minor Changes." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
