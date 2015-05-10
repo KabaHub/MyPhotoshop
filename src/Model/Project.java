@@ -401,8 +401,12 @@ public class Project extends Observable implements Serializable
                     {
                         erasedImage.setRGB(i, j, imagePanel.getLayers().get(imagePanel.getCurrentLayer()).getImage().getRGB(i, j));
                         for (Point p : imagePanel.previewPencil)
-                            if (i > p.x - imagePanel.pencilSize / 2 && i < p.x + imagePanel.pencilSize / 2 && j > p.y - imagePanel.pencilSize / 2 && j < p.y + imagePanel.pencilSize / 2)
+                        {
+                            int posX = p.x * imagePanel.getImage().getWidth() / imagePanel.getWidth();
+                            int posY = p.y * imagePanel.getImage().getHeight() / imagePanel.getHeight();
+                            if (i > posX - imagePanel.pencilSize / 2 && i < posX + imagePanel.pencilSize / 2 && j > posY - imagePanel.pencilSize / 2 && j < posY + imagePanel.pencilSize / 2)
                                 erasedImage.setRGB(i, j, new Color(255, 0, 0, 0).getRGB());
+                        }
                     }
             }
 
