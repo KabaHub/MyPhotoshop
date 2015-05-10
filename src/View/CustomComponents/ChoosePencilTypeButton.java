@@ -26,6 +26,7 @@ public class ChoosePencilTypeButton extends JButton
         setMaximumSize(new Dimension(16, 16));
         setPreferredSize(new Dimension(16, 16));
         setSize(new Dimension(16, 16));
+        setToolTipText("Choose Pencil Shape");
 
         addActionListener(new ChooseColorActionListener());
 

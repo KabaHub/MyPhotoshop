@@ -120,7 +120,6 @@ public class Model extends Observable
     public void setCurrentTool(ToolType tool)
     {
         this.currentTool = tool;
-        System.out.println("Tool Majjed: " + tool);
     }
 
     public ToolType getCurrentTool()

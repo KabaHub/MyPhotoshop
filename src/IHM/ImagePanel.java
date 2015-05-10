@@ -166,6 +166,7 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
     {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
+        g2d.setBackground(new Color(80, 80, 80));
         g2d.scale(zoom, zoom);
         int i = 0;
         for (Layer l : layers)
@@ -184,7 +185,7 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
                         int height = getHeight();
                         int realWidth = getImage().getWidth();
                         int realHeight = getImage().getHeight();
-                        BasicStroke line = new BasicStroke(pencilSize, BasicStroke.JOIN_ROUND, BasicStroke.CAP_ROUND);
+                        BasicStroke line = new BasicStroke(pencilSize, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND);
                         g2d.setStroke(line);
                         for (int j = 0; j < previewPencil.size() - 1; j++)
                         {
@@ -196,12 +197,24 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
                             int nextPosY = next.y * realHeight / height;
                             g2d.drawLine(posX, posY, nextPosX, nextPosY);
                         }
+                    } else if (toolType == ToolType.ERASER_TOOL)
+                    {
+                        int width = getWidth();
+                        int height = getHeight();
+                        int realWidth = getImage().getWidth();
+                        int realHeight = getImage().getHeight();
+                        g2d.setColor(Color.WHITE);
+                        for (Point p : previewPencil)
+                        {
+                            int posX = p.x * realWidth / width;
+                            int posY = p.y * realHeight / height;
+                            g2d.fillRect(posX - pencilSize / 2, posY - pencilSize / 2, pencilSize, pencilSize);
+                        }
                     }
                 }
+                i++;
             }
-            i++;
         }
-//        layers.stream().filter(Layer::isVisible).forEach(l -> g.drawImage(l.getImage(), 0, 0, null));
     }
 
     @Deprecated

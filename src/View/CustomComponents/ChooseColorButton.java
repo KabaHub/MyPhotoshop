@@ -33,6 +33,7 @@ public class ChooseColorButton extends JButton
         setPreferredSize(new Dimension(24, 24));
         setSize(new Dimension(24, 24));
         setSize(24, 24);
+        setToolTipText("Choose Color");
 
         addActionListener(new ChooseColorActionListener());
 
