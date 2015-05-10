@@ -2,6 +2,7 @@ package Control;
 
 import Model.Project;
 import Model.Model;
+import Model.ToolType;
 
 import java.awt.event.*;
 
@@ -38,7 +39,9 @@ public class ProjectMouseController extends MouseAdapter
     {
         if (project.getImagePanel().previewPencil.isEmpty())
         {
+            project.getImagePanel().toolType = model.getCurrentTool() != ToolType.NONE ? model.getCurrentTool() : ToolType.BRUSH_TOOL;
             project.getImagePanel().pencilSize = model.getPencilSize();
+            project.getImagePanel().pencilType = model.getPencilType();
             project.getImagePanel().pencilColor = model.getChosenColor();
         }
         project.addToPencilPreview(e.getPoint());
@@ -47,9 +50,6 @@ public class ProjectMouseController extends MouseAdapter
     @Override
     public void mouseReleased(MouseEvent e)
     {
-        project.getImagePanel().pencilSize = model.getPencilSize();
-        project.getImagePanel().pencilColor = model.getChosenColor();
-
         project.drawPencil();
         project.clearPencilPreview();
     }

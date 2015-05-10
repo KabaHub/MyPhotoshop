@@ -20,7 +20,6 @@ public class Model extends Observable
     private Hashtable<String, IPlugin> filters = new Hashtable<>();
 
     private ToolType currentTool = ToolType.NONE;
-    private boolean antialializing = false;
     private int pencilSize = 40;
     private String pencilType = "Circle";
     private Color chosenColor = Color.BLACK;
@@ -121,7 +120,7 @@ public class Model extends Observable
     public void setCurrentTool(ToolType tool)
     {
         this.currentTool = tool;
-        antialializing = currentTool != ToolType.PENCIL_TOOL;
+        System.out.println("Tool Majjed: " + tool);
     }
 
     public ToolType getCurrentTool()

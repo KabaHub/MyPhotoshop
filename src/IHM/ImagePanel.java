@@ -1,6 +1,7 @@
 package IHM;
 
 import Control.ProjectMouseController;
+import Model.ToolType;
 import View.CustomComponents.CustomJPanel;
 
 import java.awt.*;
@@ -34,7 +35,9 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
     private float zoom = 1f;
 
     public ArrayList<Point> previewPencil = new ArrayList<>();
-    public int pencilSize = 1;
+    public ToolType toolType = ToolType.BRUSH_TOOL;
+    public int pencilSize = 8;
+    public String pencilType = "Circle";
     public Color pencilColor = Color.BLACK;
 
     /**
@@ -145,7 +148,7 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
     public void addLayer()
     {
         BufferedImage newImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
-        layers.add(++currentLayer , new Layer("Layer " + layers.size(), newImage));
+        layers.add(++currentLayer, new Layer("Layer " + layers.size(), newImage));
     }
 
     public int getCurrentLayer()
@@ -163,7 +166,6 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
     {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
-        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.scale(zoom, zoom);
         int i = 0;
         for (Layer l : layers)
@@ -173,19 +175,26 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
                 g2d.drawImage(l.getImage(), 0, 0, null);
                 if (i == currentLayer)
                 {
-                    // if tool == pencil
-                    if (true)
+                    if (toolType == ToolType.BRUSH_TOOL)
+                        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                    if (toolType == ToolType.PENCIL_TOOL || toolType == ToolType.BRUSH_TOOL)
                     {
                         g2d.setColor(pencilColor);
                         int width = getWidth();
                         int height = getHeight();
                         int realWidth = getImage().getWidth();
                         int realHeight = getImage().getHeight();
-                        for (Point p : previewPencil)
+                        BasicStroke line = new BasicStroke(pencilSize, BasicStroke.JOIN_ROUND, BasicStroke.CAP_ROUND);
+                        g2d.setStroke(line);
+                        for (int j = 0; j < previewPencil.size() - 1; j++)
                         {
+                            Point p = previewPencil.get(j);
+                            Point next = previewPencil.get(j + 1);
                             int posX = p.x * realWidth / width;
                             int posY = p.y * realHeight / height;
-                            g2d.fillOval(posX - pencilSize / 2, posY - pencilSize / 2, pencilSize, pencilSize);
+                            int nextPosX = next.x * realWidth / width;
+                            int nextPosY = next.y * realHeight / height;
+                            g2d.drawLine(posX, posY, nextPosX, nextPosY);
                         }
                     }
                 }
