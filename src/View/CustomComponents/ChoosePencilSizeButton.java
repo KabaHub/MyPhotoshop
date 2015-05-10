@@ -49,9 +49,10 @@ public class ChoosePencilSizeButton extends JButton
             Integer[] availableSizes = new Integer[152];
             for (int i = 0; i < 152; i++)
                 availableSizes[i] = i + 1;
-            brushSize = (int) JOptionPane.showInputDialog(thisOne, "Choose a brush size", "Brush Size Chooser", JOptionPane.QUESTION_MESSAGE, null, availableSizes, availableSizes[0]);
+            Object o = JOptionPane.showInputDialog(thisOne, "Choose a brush size", "Brush Size Chooser", JOptionPane.YES_OPTION, null, availableSizes, availableSizes[0]);
+            if (o != null)
+                brushSize = (int) o;
             setText(String.valueOf(brushSize));
-
             model.setPencilSize(brushSize);
         }
     }

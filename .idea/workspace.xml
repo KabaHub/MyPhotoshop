@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bab6105-4809-42d7-8428-55e452ae4f02" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/CustomComponents/ChooseColorButton.java" afterPath="$PROJECT_DIR$/src/View/CustomComponents/ChooseColorButton.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/CustomComponents/ChoosePencilSizeButton.java" afterPath="$PROJECT_DIR$/src/View/CustomComponents/ChoosePencilSizeButton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/CustomComponents/ChoosePencilTypeButton.java" afterPath="$PROJECT_DIR$/src/View/CustomComponents/ChoosePencilTypeButton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/MainWindow.java" afterPath="$PROJECT_DIR$/src/View/MainWindow.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="duplai_g-myphotoshop.iws" />
@@ -80,8 +77,8 @@
       <file leaf-file-name="ChoosePencilSizeButton.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/View/CustomComponents/ChoosePencilSizeButton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.18294574">
-              <caret line="33" column="48" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.7627907">
+              <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -894,13 +891,7 @@
       <workItem from="1431040056954" duration="1841000" />
       <workItem from="1431078865987" duration="35605000" />
       <workItem from="1431156346795" duration="15553000" />
-      <workItem from="1431191132243" duration="41779000" />
-    </task>
-    <task id="LOCAL-00069" summary="Zoom Fragment">
-      <created>1430861574916</created>
-      <option name="number" value="00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1430861574916</updated>
+      <workItem from="1431191132243" duration="42053000" />
     </task>
     <task id="LOCAL-00070" summary="Changed Horizontal flip because of NEWS">
       <created>1430914535527</created>
@@ -1190,11 +1181,17 @@
       <option name="project" value="LOCAL" />
       <updated>1431236455731</updated>
     </task>
-    <option name="localTasksCounter" value="118" />
+    <task id="LOCAL-00118" summary="Better Basic LookAndFeel.">
+      <created>1431237409561</created>
+      <option name="number" value="00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1431237409561</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="441966000" />
+    <option name="totallyTimeSpent" value="442240000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -1266,7 +1263,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Solved a large variety of bugs." />
     <MESSAGE value="Corrected Zoom problems." />
     <MESSAGE value="[BUG] Bad Size for imported images ! Easy to correct." />
     <MESSAGE value="Solved Serialization Issues." />
@@ -1291,7 +1287,8 @@
     <MESSAGE value="Full of Minor Changes." />
     <MESSAGE value="Minor Changes." />
     <MESSAGE value="[BUG] LookAndFeel and deserialization..." />
-    <option name="LAST_COMMIT_MESSAGE" value="[BUG] LookAndFeel and deserialization..." />
+    <MESSAGE value="Better Basic LookAndFeel." />
+    <option name="LAST_COMMIT_MESSAGE" value="Better Basic LookAndFeel." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1712,8 +1709,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/CustomComponents/ChoosePencilSizeButton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18294574">
-          <caret line="33" column="48" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.7627907">
+          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding />
         </state>
       </provider>
