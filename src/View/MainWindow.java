@@ -45,9 +45,6 @@ public class MainWindow extends JFrame implements Observer
         this.getContentPane().add(toolBox, BorderLayout.WEST);
         this.getContentPane().add(jTabbedPane, BorderLayout.CENTER);
 
-        // Test
-        test();
-
         setVisible(true);
         splashScreenToDispose.dispose();
     }
