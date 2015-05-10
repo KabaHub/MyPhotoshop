@@ -299,4 +299,9 @@ public class ImagePanel extends CustomJPanel implements Serializable, Scrollable
     {
         this.zoom += zoom;
     }
+
+    public Color getPixelColor(Point p)
+    {
+        return new Color(layers.get(currentLayer).getImage().getRGB(p.x, p.y));
+    }
 }

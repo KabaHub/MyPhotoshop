@@ -4,6 +4,7 @@ import Model.Project;
 import Model.Model;
 import Model.ToolType;
 
+import java.awt.*;
 import java.awt.event.*;
 
 /**
@@ -52,5 +53,16 @@ public class ProjectMouseController extends MouseAdapter
     {
         project.drawPencil();
         project.clearPencilPreview();
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e)
+    {
+        if (model.getCurrentTool() == ToolType.EYEDROPPER_TOOL)
+        {
+            Color pixelColor = project.getImagePanel().getPixelColor(e.getPoint());
+            model.setChosenColor(pixelColor);
+            model.forceColorUpdate(pixelColor);
+        }
     }
 }

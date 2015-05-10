@@ -26,6 +26,7 @@ public class MainWindow extends JFrame implements Observer
 
 //    private CustomJPanel toolBox = new CustomJPanel(CustomJPanel.GREY);
     private JToolBar toolBox = new JToolBar(JToolBar.VERTICAL);
+    private ChooseColorButton chooseColorButton;
 
     private String language = "en";
 
@@ -75,7 +76,7 @@ public class MainWindow extends JFrame implements Observer
         toolBox.add(eyeDropperButton);
         toolBox.addSeparator();
         toolBox.addSeparator();
-        ChooseColorButton chooseColorButton = new ChooseColorButton(model);
+        chooseColorButton = new ChooseColorButton(model);
         toolBox.add(chooseColorButton);
         toolBox.addSeparator();
         ChoosePencilSizeButton choosePencilSizeButton = new ChoosePencilSizeButton(model);
@@ -154,6 +155,11 @@ public class MainWindow extends JFrame implements Observer
                 jTabbedPane.setSelectedComponent(projectPanel);
                 projectPanel.update();
             }
+        }
+        else if (arg.getClass().getName().contentEquals("java.awt.Color"))
+        {
+            chooseColorButton.update();
+            chooseColorButton.repaint();
         }
     }
 }

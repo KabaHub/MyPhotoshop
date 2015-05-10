@@ -393,62 +393,59 @@ public class Project extends Observable implements Serializable
                     }
             }
 
-            if (image != null)
-            {
-                image = new BufferedImage(image.getWidth(), image.getHeight(), image.getType());
-                Graphics2D g = (Graphics2D) image.getGraphics();
-                g.setBackground(new Color(80, 80, 80));
-                if (!(toolType == ToolType.ERASER_TOOL && imagePanel.getCurrentLayer() != 0))
-                g.drawImage(imagePanel.getImage(), 0, 0, null);
+            image = new BufferedImage(image.getWidth(), image.getHeight(), image.getType());
+            Graphics2D g = (Graphics2D) image.getGraphics();
+            g.setBackground(new Color(80, 80, 80));
+            if (!(toolType == ToolType.ERASER_TOOL && imagePanel.getCurrentLayer() != 0))
+            g.drawImage(imagePanel.getImage(), 0, 0, null);
 
-                if (toolType == ToolType.BRUSH_TOOL)
-                    g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-                if (toolType == ToolType.PENCIL_TOOL || toolType == ToolType.BRUSH_TOOL)
+            if (toolType == ToolType.BRUSH_TOOL)
+                g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            if (toolType == ToolType.PENCIL_TOOL || toolType == ToolType.BRUSH_TOOL)
+            {
+                g.setColor(imagePanel.pencilColor);
+                int width = imagePanel.getWidth();
+                int height = imagePanel.getHeight();
+                int realWidth = imagePanel.getImage().getWidth();
+                int realHeight = imagePanel.getImage().getHeight();
+                BasicStroke line = new BasicStroke(imagePanel.pencilSize, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND);
+                g.setStroke(line);
+                ArrayList<Point> previewPencil = imagePanel.previewPencil;
+                for (int j = 0; j < previewPencil.size() - 1; j++)
                 {
-                    g.setColor(imagePanel.pencilColor);
+                    Point p = previewPencil.get(j);
+                    Point next = previewPencil.get(j + 1);
+                    int posX = p.x * realWidth / width;
+                    int posY = p.y * realHeight / height;
+                    int nextPosX = next.x * realWidth / width;
+                    int nextPosY = next.y * realHeight / height;
+                    g.drawLine(posX, posY, nextPosX, nextPosY);
+                }
+            } else if (toolType == ToolType.ERASER_TOOL)
+            {
+                if (getCurrentLayer() != 0)
+                {
+                    g.drawImage(erasedImage, 0, 0, null);
+                }
+                else
+                {
                     int width = imagePanel.getWidth();
                     int height = imagePanel.getHeight();
                     int realWidth = imagePanel.getImage().getWidth();
                     int realHeight = imagePanel.getImage().getHeight();
-                    BasicStroke line = new BasicStroke(imagePanel.pencilSize, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND);
-                    g.setStroke(line);
-                    ArrayList<Point> previewPencil = imagePanel.previewPencil;
-                    for (int j = 0; j < previewPencil.size() - 1; j++)
+                    g.setColor(new Color(80, 80, 80));
+                    for (Point p : imagePanel.previewPencil)
                     {
-                        Point p = previewPencil.get(j);
-                        Point next = previewPencil.get(j + 1);
                         int posX = p.x * realWidth / width;
                         int posY = p.y * realHeight / height;
-                        int nextPosX = next.x * realWidth / width;
-                        int nextPosY = next.y * realHeight / height;
-                        g.drawLine(posX, posY, nextPosX, nextPosY);
-                    }
-                } else if (toolType == ToolType.ERASER_TOOL)
-                {
-                    if (getCurrentLayer() != 0)
-                    {
-                        g.drawImage(erasedImage, 0, 0, null);
-                    }
-                    else
-                    {
-                        int width = imagePanel.getWidth();
-                        int height = imagePanel.getHeight();
-                        int realWidth = imagePanel.getImage().getWidth();
-                        int realHeight = imagePanel.getImage().getHeight();
-                        g.setColor(new Color(80, 80, 80));
-                        for (Point p : imagePanel.previewPencil)
-                        {
-                            int posX = p.x * realWidth / width;
-                            int posY = p.y * realHeight / height;
 //                            g2d.clearRect(posX - pencilSize / 2, posY - pencilSize / 2, pencilSize, pencilSize);
-                            g.fillRect(posX - imagePanel.pencilSize / 2, posY - imagePanel.pencilSize / 2, imagePanel.pencilSize, imagePanel.pencilSize);
-                        }
+                        g.fillRect(posX - imagePanel.pencilSize / 2, posY - imagePanel.pencilSize / 2, imagePanel.pencilSize, imagePanel.pencilSize);
                     }
                 }
-                g.dispose();
-                setImageChanges(image, "Pencil Tool");
-                isPluginRunning = false;
             }
+            g.dispose();
+            setImageChanges(image, "Pencil Tool");
+            isPluginRunning = false;
             setChanged();
             notifyObservers(this);
         }

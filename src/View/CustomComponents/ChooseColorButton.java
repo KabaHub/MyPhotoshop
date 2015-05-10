@@ -41,6 +41,11 @@ public class ChooseColorButton extends JButton
         setCursor(new Cursor(Cursor.HAND_CURSOR));
     }
 
+    public void update()
+    {
+        color = model.getChosenColor();
+    }
+
     @Override
     public void paintComponent(Graphics g)
     {

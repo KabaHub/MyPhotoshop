@@ -146,4 +146,16 @@ public class Model extends Observable
     {
         this.pencilType = pencilType;
     }
+
+    public void forceColorUpdate(Color color)
+    {
+        setChanged();
+        notifyObservers(color);
+    }
+
+    public void forceUpdate(Object obj)
+    {
+        setChanged();
+        notifyObservers(obj);
+    }
 }
